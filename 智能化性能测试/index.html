@@ -1,0 +1,1819 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E6%99%BA%E8%83%BD%E5%8C%96%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>智能化性能测试 - YouQu Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YouQu Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              智能化性能测试
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    YouQu Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    框架功能介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RELEASE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    版本更新记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化测试架构设计规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 应用库设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 开发规范
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 经验总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%94%A8%E4%BE%8B%E7%AD%9B%E9%80%89%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 用例筛选指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 执行器使用指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、简述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、代码结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    三、环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="三、环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、硬件环境
+  </a>
+  
+    <nav class="md-nav" aria-label="1、硬件环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    （1）设备清单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    （2）硬件环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）服务端推荐配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、测试机环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、服务端一键环境部署
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    四、配置项
+  </a>
+  
+    <nav class="md-nav" aria-label="四、配置项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、服务端配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2、测试机配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3、场景个性化配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    五、测试流程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    六、用例编写及方法参数指引
+  </a>
+  
+    <nav class="md-nav" aria-label="六、用例编写及方法参数指引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    1、用例实例说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    2、方法参数说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    七、执行入口
+  </a>
+  
+    <nav class="md-nav" aria-label="七、执行入口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1、用例组织
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2、命令行参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    八、测试报告
+  </a>
+  
+    <nav class="md-nav" aria-label="八、测试报告">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1json" class="md-nav__link">
+    1、Json 报告
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2excel" class="md-nav__link">
+    2、Excel 报告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    九、USB 串口驱动键鼠方法
+  </a>
+  
+    <nav class="md-nav" aria-label="九、USB 串口驱动键鼠方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    1、键盘操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    2、鼠标操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    十、继电器控制主机开机/重启
+  </a>
+  
+    <nav class="md-nav" aria-label="十、继电器控制主机开机/重启">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    1、继电器设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2usb" class="md-nav__link">
+    2、USB 延长线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    3、杜邦线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、安装图文教程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    十一、常见问题说明
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://funny-dream.github.io/funny-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客文章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://youqu-dev.uniontech.com/tool" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    定级工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、简述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、代码结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    三、环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="三、环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、硬件环境
+  </a>
+  
+    <nav class="md-nav" aria-label="1、硬件环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    （1）设备清单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    （2）硬件环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）服务端推荐配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、测试机环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、服务端一键环境部署
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    四、配置项
+  </a>
+  
+    <nav class="md-nav" aria-label="四、配置项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、服务端配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2、测试机配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3、场景个性化配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    五、测试流程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    六、用例编写及方法参数指引
+  </a>
+  
+    <nav class="md-nav" aria-label="六、用例编写及方法参数指引">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    1、用例实例说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    2、方法参数说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    七、执行入口
+  </a>
+  
+    <nav class="md-nav" aria-label="七、执行入口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1、用例组织
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2、命令行参数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    八、测试报告
+  </a>
+  
+    <nav class="md-nav" aria-label="八、测试报告">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1json" class="md-nav__link">
+    1、Json 报告
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2excel" class="md-nav__link">
+    2、Excel 报告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    九、USB 串口驱动键鼠方法
+  </a>
+  
+    <nav class="md-nav" aria-label="九、USB 串口驱动键鼠方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    1、键盘操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    2、鼠标操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    十、继电器控制主机开机/重启
+  </a>
+  
+    <nav class="md-nav" aria-label="十、继电器控制主机开机/重启">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    1、继电器设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2usb" class="md-nav__link">
+    2、USB 延长线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    3、杜邦线
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、安装图文教程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    十一、常见问题说明
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/perflogo.png" /></p>
+<h1 id="_1">智能化性能测试<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># =============================================</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Attribution : Application Test Department III</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Time        : 2023/1/3</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Author      : ut003281</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># =============================================</span>
+</code></pre></div>
+<h2 id="_2">一、简述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>智能化性能测试</p>
+<p>通过自动化手段对应用进行性能测试，提供方便的环境部署、运行配置、用例编写等，用于桌面应用的冷热启动、资源拷贝、页面跳转等性能场景测试。</p>
+<p>仓库地址：https://gerrit.uniontech.com/admin/repos/autotest-perf-aitest</p>
+<h2 id="_3">二、代码结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>autotest-perf-aitest
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├──<span class="w"> </span>apps<span class="w">                    </span><span class="c1"># 存放所有应用性能测试脚本</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├──<span class="w"> </span>conftest.py<span class="w">             </span><span class="c1"># pytest hook相关方法</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├──<span class="w"> </span>CURRENT<span class="w">                 </span><span class="c1"># 版本内容</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├──<span class="w"> </span>docs<span class="w">                    </span><span class="c1"># 文档</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│<span class="w">   </span>├──<span class="w"> </span>键值对照表.pdf<span class="w">        </span><span class="c1"># 串口线code与按键的对照</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│<span class="w">   </span>├──<span class="w"> </span>性能自动化测试脚本执行器使用指南.md<span class="w">     </span><span class="c1"># 执行器脚本使用指南</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│<span class="w">   </span>├──<span class="w"> </span>USB串口转USB键盘鼠标线协议文件V1.0.pdf<span class="w">      </span><span class="c1"># 串口协议</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│<span class="w">   </span>└──<span class="w"> </span>xserver-xorg-input-libinput-0.28.2.zip<span class="w">  </span><span class="c1"># Linux下绝对坐标操作依赖的源码，可根据架构打包</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├──<span class="w"> </span>manage.py<span class="w">   </span><span class="c1"># 功能主入口</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├──<span class="w"> </span>pytest.ini<span class="w">  </span><span class="c1"># pytst 配置</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├──<span class="w"> </span>README.md
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├──<span class="w"> </span>setting<span class="w">     </span><span class="c1"># 设置</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│<span class="w">   </span>├──<span class="w"> </span>client.ini<span class="w">  </span><span class="c1"># 测试机 IP 设置</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│<span class="w">   </span>├──<span class="w"> </span>config.py<span class="w">   </span><span class="c1"># 全局配置</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│<span class="w">   </span>├──<span class="w"> </span>dev_env.sh<span class="w">  </span><span class="c1"># 宿主机环境部署脚本</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│<span class="w">   </span>├──<span class="w"> </span>docker-compose_no_relay.yml<span class="w"> </span><span class="c1"># 无继电器容器集群</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│<span class="w">   </span>├──<span class="w"> </span>docker-compose.yml<span class="w">      </span><span class="c1"># 有继电器容器集群</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│<span class="w">   </span>├──<span class="w"> </span>docker_login.sh<span class="w">     </span><span class="c1"># docker 登陆</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│<span class="w">   </span>├──<span class="w"> </span>res
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>black.png<span class="w">       </span><span class="c1"># 全黑图片，用于修改壁纸</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_5000.deb<span class="w">       </span><span class="c1"># 3A5000 架构鼠标绝对坐标依赖</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_amd64.deb<span class="w">      </span><span class="c1"># amd 架构鼠标绝对坐标依赖</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_arm64.deb<span class="w">      </span><span class="c1"># arm 架构鼠标绝对坐标依赖</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_mips64.deb<span class="w">     </span><span class="c1"># mips 架构鼠标绝对坐标依赖</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_sw_64.deb<span class="w">      </span><span class="c1"># sw 架构鼠标绝对坐标依赖</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>│<span class="w">   </span>├──<span class="w"> </span>server.ini<span class="w">      </span><span class="c1"># 服务器配置</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>│<span class="w">   </span>├──<span class="w"> </span>setup.sh<span class="w">        </span><span class="c1"># 容器环境部署脚本</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>│<span class="w">   </span>├──<span class="w"> </span>template<span class="w">        </span><span class="c1"># 创建 app 基础脚本模板</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>app_template
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span><span class="si">${</span><span class="nv">app_name</span><span class="si">}</span>_widget.py-tpl
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>control-tpl
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>images
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>│<span class="w">   </span>│<span class="w">       </span>│<span class="w">   </span>└──<span class="w"> </span>readme
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>__init__.py-tpl
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>test_<span class="si">${</span><span class="nv">app_name</span><span class="si">}</span>_01_scene.json-tpl
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>test_<span class="si">${</span><span class="nv">app_name</span><span class="si">}</span>_01_scene.py-tpl
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>│<span class="w">   </span>└──<span class="w"> </span>uos_docker<span class="w">      </span><span class="c1"># 容器环境配置</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>│<span class="w">       </span>├──<span class="w"> </span>dockerfile
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>│<span class="w">       </span>└──<span class="w"> </span>requirements.txt
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>└──<span class="w"> </span>src
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span>├──<span class="w"> </span>analysis_save.py<span class="w">    </span><span class="c1"># 解析图片流结果，汇总生成 excel 报告</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span>├──<span class="w"> </span>base_widget.py<span class="w">      </span><span class="c1"># 封装的基础操作，应用调用的主入口方法</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span>├──<span class="w"> </span>cmdctl.py<span class="w">           </span><span class="c1"># 调用命令行使用</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span>├──<span class="w"> </span>global_value.py<span class="w">     </span><span class="c1"># 全局变量</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">    </span>├──<span class="w"> </span>image_utils.py<span class="w">      </span><span class="c1"># 图片相关方法</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">    </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">    </span>├──<span class="w"> </span>logger_utils.py<span class="w">     </span><span class="c1"># 日志配置</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">    </span>├──<span class="w"> </span>pdocr.py<span class="w">            </span><span class="c1"># ocr 配置</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">    </span>├──<span class="w"> </span>public_method.py<span class="w">    </span><span class="c1"># 一些方便的封住</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">    </span>├──<span class="w"> </span>record.py<span class="w">           </span><span class="c1"># 录屏相关</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">    </span>├──<span class="w"> </span>rtk<span class="w">                 </span><span class="c1"># 运行相关</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>_base.py<span class="w">        </span><span class="c1"># 一些枚举</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>install_env.py<span class="w">  </span><span class="c1"># 安装环境</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>local_runner.py<span class="w"> </span><span class="c1"># 运行用例</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="w">    </span>├──<span class="w"> </span>serial_communication<span class="w">    </span><span class="c1"># 串口相关</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>power_control.py<span class="w">    </span><span class="c1"># 继电器操作，使用继电器连接主机电源，控制开关机</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>serial_common.py<span class="w">    </span><span class="c1"># 串口公共方法</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>usb_mk.py<span class="w">           </span><span class="c1"># 键鼠操作基础封装</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">    </span>├──<span class="w"> </span>shortcut_key.py<span class="w">         </span><span class="c1"># 快捷键的封装</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">    </span>├──<span class="w"> </span>singleton.py<span class="w">            </span><span class="c1"># 单例模式</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">    </span>├──<span class="w"> </span>start_app.py<span class="w">            </span><span class="c1"># 创建 app</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="w">    </span>└──<span class="w"> </span>write_xlsx.py<span class="w">           </span><span class="c1"># 生成 excel</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="c1"># __init__.py 文件为标识该目录是一个Python的模块包，项目中的__init__.py均为空文件。</span>
+</code></pre></div>
+<h2 id="_4">三、环境搭建<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1">1、硬件环境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">（1）设备清单<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>测试机至少一台。</li>
+<li>服务端一台。（仅支持 <code>AMD</code> 架构，若需其他架构，咨询相关开发人员）</li>
+<li>采集盒一个。 （<code>ACASIS</code>  <code>HDMI</code> 视频采集盒，https://item.jd.com/100013302599.html#crumb-wrap ）</li>
+<li>USB串口转USB键鼠协议线。（优胜电子科技USB串口转USB键鼠协议线B类，https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-1385258877.57.7ea037891D6nKh&amp;id=611894882981 ）</li>
+</ul>
+<h4 id="2">（2）硬件环境搭建<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>采集盒，<code>HDMI</code> 端连接测试机， <code>USB</code> 端连接到服务器上。</li>
+<li><code>USB</code> 串口线，白色端连接服务器，黑色端连接测试机（<code>USB3.0</code> 接口上）。</li>
+<li>如果需要可以接 <code>USB</code> 延长线。</li>
+<li>测试机上可以不接显示器。</li>
+</ul>
+<h4 id="3">（3）服务端推荐配置<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>配置越高，解析速度越快。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>处理器:<span class="w"> </span>Intel<span class="o">(</span>R<span class="o">)</span><span class="w"> </span>Core<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span>i3-10100<span class="w"> </span>CPU<span class="w"> </span>@<span class="w"> </span><span class="m">3</span>.60GHz<span class="w"> </span><span class="o">(</span>四核<span class="w"> </span>/<span class="w"> </span>八逻辑处理器<span class="o">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>主板:<span class="w"> </span>B460-N2<span class="o">(</span>J<span class="o">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>内存:<span class="w"> </span>8GB<span class="o">(</span>TF32D4U2S1MEH-8<span class="w"> </span>DDR4<span class="w"> </span>3200MHz<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3ns<span class="o">))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>显示适配器:<span class="w"> </span>UHD<span class="w"> </span>Graphics<span class="w"> </span><span class="m">630</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>存储设备:<span class="w"> </span>FORESEE<span class="w"> </span>P900F256GBH<span class="w"> </span><span class="o">(</span><span class="m">256</span><span class="w"> </span>GB<span class="o">)</span>/ST1000DM003-1SB102<span class="w"> </span><span class="o">(</span><span class="m">1</span>.00<span class="w"> </span>TB<span class="o">)</span>
+</code></pre></div>
+<h3 id="2_1">2、测试机环境搭建<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>打开控制中心，账户设置为【自动登录】和【无密码登录】，电源管理中使用电源全部设置为【从不】，开启开发者模式。</p>
+</li>
+<li>
+<p>根据应用性能测试要求，导入相关测试资源，比如：导入相册、影院、音乐的测试资源。</p>
+</li>
+<li>
+<p>在服务端打开相机应用后，将测试机桌面壁纸更换为纯色壁纸（注意，服务端需提前开启相机后再设置测试机壁纸，建议纯黑壁纸 <code>setting/res/black.png</code>）</p>
+</li>
+<li>
+<p>在文件管理器中，将选项 主菜单-设置-预览-图片预览 取消勾选（如不取消，会影响截图录屏应用的性能数据） </p>
+</li>
+<li>
+<p>移动或删除系统 Logo ，排除桌面右下角 Logo 的影响（重启生效）。</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>/usr/share/deepin/uos_logo.svg<span class="w"> </span>~/Pictures/
+</code></pre></div>
+<ul>
+<li>安装鼠标绝对坐标操作依赖（必须安装！！）</li>
+<li>
+<p><code>AMD</code> 安装  <code>setting/res</code> 目录下 <code>xserver-xorg-input-libinput_0.28.2-2_amd64.deb</code> </p>
+</li>
+<li>
+<p><code>ARM</code> 安装  <code>setting/res</code> 目录下 <code>xserver-xorg-input-libinput_0.28.2-2_arm64.deb</code></p>
+</li>
+<li>
+<p><code>MIPS</code> 安装  setting/<code>res</code> 目录下 <code>xserver-xorg-input-libinput_0.28.2-2_mips64.deb</code></p>
+</li>
+<li>
+<p><code>3A5000</code> 安装  <code>setting/res</code> 目录下 <code>xserver-xorg-input-libinput_0.28.2-2_5000.deb</code></p>
+</li>
+<li>
+<p>安装命令 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>dkpg<span class="w"> </span>-i<span class="w"> </span>xserver-xorg-input-libinput_0.28.2-2_amd64.deb
+</code></pre></div>
+</li>
+</ul>
+<p>安装时会提示已存在相同版本，请忽略，直接覆盖安装，安装完成后，必须重启主机才生效</p>
+<h3 id="3_1">3、服务端一键环境部署<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>环境搭建前必须先连接上 <code>USB</code> 串口线和采集盒。</p>
+<p>宿主机环境安装</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>install<span class="w"> </span>--env<span class="w"> </span>host
+</code></pre></div>
+<p>容器环境安装</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>install<span class="w"> </span>--env<span class="w"> </span>docker
+</code></pre></div>
+<h2 id="_5">四、配置项<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1、服务端配置<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p><code>setting/config/server.ini</code> </p>
+<p>用于配置测试过程中的一些配置项，包含了所有服务端所有的可配置项。</p>
+<ul>
+<li><strong>本地无网络运行</strong></li>
+<li>将配置项 <code>network=0</code> 即可开始测试。</li>
+<li><strong>本地有网络运行</strong></li>
+<li>配置项 <code>network=1</code> </li>
+<li>(1)配置项 <code>client_alias=</code> 配置为你要测试的测试机别名，如 <code>Alias1</code> 测试机别名在 <code>setting/config/client.ini</code> 中进行配置，此时，直接运行 <code>python3 manager</code> 即可开始测试。</li>
+<li>(2)配置项 <code>client_alias=</code> 为空，测试机别名在 <code>config/client.ini</code> 中进行配置，此时，直接运行 <code>python3 manager --client_alias Alias1</code>，即可开始测试。(<code>Alias1</code> 为你配置的测试机别名)</li>
+<li>(1)和(2)只要使用其一即可。</li>
+<li><strong>有网络运行，且需要通过 <code>Jenkins</code> 上运行一个 <code>job</code> ，同时控制多台机器。</strong></li>
+<li>配置项 <code>network=1</code> </li>
+<li>配置项 <code>client_alias=</code> 不用配置，在运行 <code>run.sh</code> 的时候直接空格加别名即可，比如：测试机别名为 <code>Alias1</code> ，且已经在 <code>config/client.ini</code> 中配置了 <code>Alias1</code> 的<code>user</code> <code>ip</code> <code>password</code> ，则运行 <code>bash run.sh Alias1</code> 即可开始测试。</li>
+<li>在 <code>Jenkins</code>  <code>pipeline</code> 里面通过并行 <code>stage</code> 或并行调用下层任务的方式可以实现大规模的性能测试需求。</li>
+</ul>
+<p><strong>详细配置项说明：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">;=============================== CASE CONFIG ===================================</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">[case]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">;执行的应用名称</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">;为空表示执行 apps/ 目录下所有应用的用例</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="na">APP_NAME</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">;执行包含关键词的用例</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="na">KEYWORDS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">;执行包含用例标签的用例</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="na">TAGS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">;1、KEYWORDS 和 TAGS 都为空表示执行 APP_NAME 的所有用例</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">;2、KEYWORDS 和 TAGS 都支持逻辑组合，即 and/or/not 的表达式, e.g. TAGS = L1 or smoke</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">[case_conf]</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1"># 尾帧识别的方式stage按阶段划分，ocr通过文案识别，match 图片匹配，ocr文案识别较慢，不推荐使用</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="na">find_by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">stage</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1"># 最后一个稳定阶段的帧数识别</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1"># 首帧存在后的第一个大于该配置帧数的阶段的首帧作为性能尾帧</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="na">final_stable_num</span><span class="o">=</span><span class="s">100</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="c1"># 从该帧数开始识别文案或图片，减少分析时间</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="na">start_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">150</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1"># 识别的文案</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="na">text</span><span class="o">=</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="c1"># 识别图片</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="na">match</span><span class="o">=</span><span class="s">apps/xxx/images/match.png</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="c1"># 识别相似度</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="na">match_rate</span><span class="o">=</span><span class="s">0.9</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="c1"># 用例操作执行之后，停止录屏之前的等待时间，单位秒</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="c1"># 比如热启动用例，从点击打开到停止录屏，中间等待5秒；</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="na">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">15</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="c1"># 单条用例执行的次数</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="na">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="c1"># 稳定阶段划分的相似度</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="na">stable_similarity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.9997</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="k">[server]</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="c1"># 调试模式=1，为开启调试模式，0为关闭。</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="c1"># 调试模式下默认只执行一次用例，不关机</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="c1"># 编写用例的过程中建议开启maintain。</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="na">MAINTAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="c1"># 运行的环境docker容器环境，host宿主机环境</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="na">ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">docker</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="c1"># 服务端密码</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="na">PASSWORD</span><span class="o">=</span><span class="s">1</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="c1"># 指定测试机别名</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="c1"># 测试机别名在 config/client.ini 中进行配置，比如：</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="c1"># [AMD]</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="c1"># ip=10.8.15.86</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="c1"># user=uos</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="c1"># 其中 AMD 为测试机别名，则client_alias=AMD</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="na">CLIENT_ALIAS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">x86（Intel-i7）</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="c1"># 1 开启网络, 0 关闭网络</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="c1"># （1）服务端与测试机须在同一网段下，你可以尝试在服务端通过ssh连接测试机，如果可以连接，说明网络正常。</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="c1"># （2）当input_type=FILE_NAME 时，必须开启网络。</span>
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="na">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="c1"># 性能结果统计单位 毫秒—ms, 秒—s</span>
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="na">UNIT</span><span class="o">=</span><span class="s">ms</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="c1"># 测试机开机进入桌面后等待时间,单位/秒</span>
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="na">STARTUP_DELAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">60</span>
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="c1"># 1为删除缓存，0为不删除缓存</span>
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="c1"># 用例执行完后会在report目录下生成智能解析的一些缓存图片。</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="na">CACHE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="c1"># 默认为空，报告会保存在项目下report目录中；</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="c1"># 指定报告目录则存放到指定目录。</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="na">REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report</span>
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="c1"># 服务端从测试机获取的icon资源会缓存在项目下input目录中</span>
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="na">INPUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">input/</span>
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="c1"># 1为测试完关机，0为测试完不关机</span>
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a><span class="na">SHUTDOWN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="c1"># 解析进程数（不推荐修改）</span>
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="c1"># 3个进程解析视频已经能够满足，即使增加进程数也不能减少整体耗时</span>
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a><span class="c1"># 另外还要看CPU核数是否支持。</span>
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a><span class="na">PARSING_PROCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="c1"># 1为使用继电器开关机，0为使用reboot命令重启。依赖继电器硬件设备，需要使用联系开发者</span>
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a><span class="na">RELAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a><span class="c1"># 获取测试应用的版本, %s 占位应用名</span>
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a><span class="c1"># 如果该配置为空，则不获取应用的版本信息。</span>
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a><span class="na">COMMAND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">apt policy %s 2&gt;/dev/null|grep &quot;已安装&quot;|awk -F &quot;：&quot; &quot;{print \$2}&quot;</span>
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a><span class="c1"># 关机等待开启时间，单位秒</span>
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a><span class="c1"># 根据测试机性能不同，开关机耗时可能不同，根据实际测试机情况配置。</span>
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a><span class="na">SHUTDOWN_DELAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30</span>
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a><span class="c1"># 可用于图像识别的图片格式，以英文逗号隔开。</span>
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a><span class="c1"># 该配置项不建议修改，目前我们仅验证了jpg,jpeg,png这三种常用的图片格式。</span>
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a><span class="na">INPUT_TYPES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">jpg,jpeg,png</span>
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a><span class="c1"># 性能分析补帧，等于或低于该值的不稳定阶段视为稳定阶段，在最后计算性能结果时需要减掉。</span>
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a><span class="na">UN_STAB_START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a><span class="c1"># 服务端获取测试机图像的帧率，即每秒获取多少张测试机上的图像。</span>
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="c1"># 默认帧率为30帧/秒，该配置项不建议修改，可能会对解析结果造成偏差。</span>
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a><span class="na">FPS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30</span>
+<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a><span class="c1"># 以下场景类型会重启测试机,多种场景使用逗号隔开</span>
+<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a><span class="na">SCENE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cold</span>
+<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a><span class="c1">;OCR服务端地址（不可随意修改）</span>
+<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a><span class="na">OCR_SERVER_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">http://10.8.13.78:8890</span>
+<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a><span class="c1">#屏幕图片临时存放位置</span>
+<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a><span class="na">SCREEN_CACHE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/tmp/screen</span>
+<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>
+<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a><span class="c1"># =======================================</span>
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a><span class="k">[log]</span>
+<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a><span class="c1"># 日志级别，OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL</span>
+<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a><span class="c1"># 用例执行过程中的一些日志输出，log_cli=INFO表示 仅输出INFO及以上级别的日志。</span>
+<a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a><span class="na">LOG_LEVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DEBUG</span>
+<a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a><span class="c1"># 日志文件保存路径</span>
+<a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a><span class="na">LOG_PATH</span><span class="o">=</span><span class="w"> </span><span class="s">logs</span>
+<a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a>
+<a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a><span class="c1"># =======================================</span>
+<a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a><span class="k">[dockerhub]</span>
+<a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a><span class="c1"># 容器登陆账号</span>
+<a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a><span class="na">DOCKER_USER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">user</span>
+<a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a><span class="c1"># 容器登陆密码</span>
+<a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a><span class="na">DOCKER_PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">User1234</span>
+</code></pre></div>
+<h3 id="2_2">2、测试机配置<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p><code>setting/config/client.ini</code></p>
+<p>用于配置测试机的信息。</p>
+<ul>
+<li>有网络的情况下，服务端需要动态获取测试机上的一些资源，因此你需要写入 <code>测试机别名</code> 、 <code>user</code> 、<code>ip</code>、 <code>password</code> 。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 测试机别名</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">[Alias1]</span><span class="w"> </span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># 测试机ip</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="na">ip</span><span class="o">=</span><span class="s">10.8.15.86</span><span class="w"> </span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># 测试机用户名</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="na">user</span><span class="o">=</span><span class="s">uos</span>
+</code></pre></div>
+<p>命名建议：<code>AliasA1</code>、<code>AliasA2</code>、<code>AliasB1</code>、<code>AliasB2</code>，不要重名。</p>
+<ul>
+<li>无网络情况下，仅需要关注测试机分辨率配置项 <code>width=</code>、 <code>height=</code> 即可。</li>
+</ul>
+<p><strong>详细配置项说明：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[client]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># 默认测试机用户名，密码，ip</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">ip</span><span class="o">=</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="na">user</span><span class="o">=</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># 测试机密码</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="na">password</span><span class="o">=</span><span class="s">1</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># 测试机主题</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="na">theme</span><span class="o">=</span><span class="s">bloom</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1"># 测试机icon目录</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="na">path</span><span class="o">=</span><span class="s">/usr/share/icons</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="c1"># 系统desktop文件的存放目录，UOS系统默认为/usr/share/applications</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="na">desktop_path</span><span class="o">=</span><span class="s">/usr/share/applications</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1"># 用于判断测试机是否开机进入桌面的识别标识。</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c1"># 1、通过桌面图标识别。</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="c1">#   - type=FILE_NAME时，服务器和测试机必须在同一局域网内。</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="c1">#   - power_on=dde-computer表示通过桌面计算机图标判断开机进入桌面。</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="c1"># 2、通过本地图片作为开机识别。</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="c1">#   - type= 传入为图片格式，type支持的类型包含在server.ini内配置项input_type=jpg,jpeg,png。</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1">#   - power_on= 传入的是本地图片的路径。</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="na">type</span><span class="o">=</span><span class="s">FILE_NAME</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="na">power_on</span><span class="o">=</span><span class="s">dde-computer</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="c1"># 测试机分辨率配置（测试机连接采集盒，采集盒的分辨率）</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="na">height</span><span class="o">=</span><span class="s">1080</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="na">width</span><span class="o">=</span><span class="s">1920</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="k">[AliasA1]</span><span class="w"> </span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="na">ip</span><span class="o">=</span><span class="s">10.8.15.86</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="na">user</span><span class="o">=</span><span class="s">uos</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="c1"># password=1 如果这里不写密码，默认取上面client里面的password</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="k">[AliasA2]</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="na">ip</span><span class="o">=</span><span class="s">10.8.15.20</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="na">user</span><span class="o">=</span><span class="s">uos</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="c1"># password=1 如果这里不写密码，默认取上面client里面的password</span>
+</code></pre></div>
+<h3 id="3_2">3、场景个性化配置<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>随着测试场景的不断引入，发现现有服务端里的配置项并不适用于所有的性能场景，于是将服务端配置进行一个提取，可做单个场景的个性化配置，当然原来的服务端配置功能保留，只是当你配置了场景个性化配置后，优先使用个性化配置里面的内容，以下是对个性化配置的介绍。</p>
+<p>目前每一个 py 文件对应一个性能测试场景，于是在同级目录下创建一个与之同名的 json 文件，作为个性化配置文件</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apps
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├──<span class="w"> </span>album
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>├──<span class="w"> </span>test_album_01_start.json<span class="w">  </span><span class="c1"># 个性化配置文件</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>└──<span class="w"> </span>test_album_01_start.py<span class="w">  </span><span class="c1"># 性能场景文件</span>
+</code></pre></div>
+<p>以下是对 json 文件中配置的解释，若某项配置不需要，可以缺失，但不能为空；</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test_album_start&quot;</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">标题；必须</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;app_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepin-album&quot;</span><span class="p">,</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="err">场景所属的应用；必须</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&quot;scene&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hot&quot;</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="err">场景别名；必须</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;deepin-album&quot;</span><span class="p">],</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="err">这条用例里面需要用到的所有ico</span><span class="kc">n</span><span class="err">，用例执行之前会从测试机上拷贝所有需要用的ico</span><span class="kc">n</span><span class="err">到服务端，用于图像识别。；可缺失</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="err">注意：列表中元素为应用desk</span><span class="kc">t</span><span class="err">op文件的文件名，相册的desk</span><span class="kc">t</span><span class="err">op文件名为deepi</span><span class="kc">n</span><span class="mi">-</span><span class="err">album.desk</span><span class="kc">t</span><span class="err">op，</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="err">只需要写deepi</span><span class="kc">n</span><span class="mi">-</span><span class="err">album即可，“.desk</span><span class="kc">t</span><span class="err">op”已经在底层做了拼接。</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                         </span><span class="err">#</span><span class="w"> </span><span class="err">图片对比的区域设置项，某些应用当前屏幕的部分区域需要将其去掉，可以设置此项，如果没有则可不写；可确实</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nt">&quot;x-coordinate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">              </span><span class="err">#</span><span class="w"> </span><span class="err">左上角横坐标</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="nt">&quot;y-coordinate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">              </span><span class="err">#</span><span class="w"> </span><span class="err">左上角纵坐标</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">850</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="err">横向长度</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="w">                  </span><span class="err">#</span><span class="w"> </span><span class="err">纵向高度</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">                       </span><span class="err">#</span><span class="w"> </span><span class="err">场景执行的次数；必须</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">  </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">                    </span><span class="err">#</span><span class="w"> </span><span class="err">该条用例操作执行之后，停止录屏之前的等待时间，单位秒，针对于某些特定场景，该配置为可选项，覆盖</span><span class="w"> </span><span class="err">server.i</span><span class="kc">n</span><span class="err">i</span><span class="w"> </span><span class="err">中的配置；可缺失</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">  </span><span class="nt">&quot;stable_similarity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9997</span><span class="p">,</span><span class="w">      </span><span class="err">#</span><span class="w"> </span><span class="err">性能场景分阶段时的图片相似度对比，前后图片低于该值，则分为不稳定阶段；可缺失</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span><span class="nt">&quot;find_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stage&quot;</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="err">尾帧识别的方式s</span><span class="kc">ta</span><span class="err">ge按阶段划分，ocr通过文案识别，ma</span><span class="kc">t</span><span class="err">ch</span><span class="w"> </span><span class="err">图片匹配</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="nt">&quot;final_stable_num&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">查找最后一个大于该值的稳定阶段的首帧作为性能的尾祯；可缺失</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">  </span><span class="nt">&quot;start_num&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">  </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w">                       </span><span class="err">#</span><span class="w"> </span><span class="err">ocr识别的文案</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">  </span><span class="nt">&quot;match&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/xxx/images/match.png&quot;</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">图像匹配的图片文件路径</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">  </span><span class="nt">&quot;match_rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">                       </span><span class="err">#</span><span class="w"> </span><span class="err">匹配相似度</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_6">五、测试流程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图1测试流程.png" /></p>
+<h2 id="_7">六、用例编写及方法参数指引<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1、用例实例说明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># 标准库导入</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># 导入三方库pytest</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kn">import</span> <span class="nn">pytest</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># 导入用例执行要用到的Widget类</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="kn">from</span> <span class="nn">src.base_widget</span> <span class="kn">import</span> <span class="n">BaseWidget</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">class</span> <span class="nc">TestStart</span><span class="p">:</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  <span class="c1"># class级别的fixture，测试用例执行之前执行。autouse=True 自动在当前作用域下使用。</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>  <span class="c1"># 测试热启动之前需要预启动。</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>  <span class="k">def</span> <span class="nf">application_pre_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="c1"># 入参规则在第2点中详细描述。</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">right_click_element</span><span class="p">(</span><span class="s2">&quot;deepin-album&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="c1"># 入参规则在第2点中详细描述。</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">click_element</span><span class="p">(</span><span class="s2">&quot;apps/autotest_deepin_album/picture/open.png&quot;</span><span class="p">,</span> <span class="n">input_type</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="c1"># 快捷键关闭窗口</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">hot_key</span><span class="p">(</span><span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;f4&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>  <span class="c1"># 默认为function级别的fixture，用例执行之前，class级别fixture执行之后执行。</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>  <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>  <span class="k">def</span> <span class="nf">setup_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>    <span class="c1"># 右键点击 deepin-album 图标</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">right_click_element</span><span class="p">(</span><span class="s2">&quot;deepin-album&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>    <span class="c1"># 移动到右键菜单中打开（open.png）</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>    <span class="c1"># 入参规则在第2点中详细描述。</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="o">*</span><span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;apps/autotest_deepin_album/picture/open.png&quot;</span><span class="p">,</span> <span class="n">input_type</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">))</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>    <span class="c1"># 等待移动完成</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>    <span class="k">def</span> <span class="nf">test_album_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>    <span class="c1"># 点击“打开”</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>    <span class="n">BaseWidget</span><span class="p">()</span><span class="o">.</span><span class="n">click</span><span class="p">()</span> 
+</code></pre></div>
+<h3 id="2_3">2、方法参数说明<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>2.1、<strong><code>find_element</code> 方法</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">find_element</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">input_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;FILE_NAME&quot;</span><span class="p">,</span> <span class="n">fill_color_position</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">)):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="k">pass</span>
+</code></pre></div>
+<ul>
+<li><strong>参数 <code>element</code> 和 <code>input_type</code></strong>  </li>
+</ul>
+<p><strong>（1）通过应用 <code>icon</code> 识别元素</strong></p>
+<div class="highlight"><pre><span></span><code>- `input_type` 参数为默认参数，默认值为 `FIEL_NAME` ，表示通过应用 `icon` 寻找元素，此方法会动态获取测试机上的应用 `icon` 图标。
+</code></pre></div>
+<ul>
+<li>举例：默认情况下 <code>input_type</code> 参数不需要传入， <code>find_element("deepin-album")</code>，表示通过 <code>deepin-album</code> 的应用 <code>icon</code> 来获取坐标，注意，此时传入的 <code>deepin-album</code> 参数实际是 <code>desktop</code>文件的文件名，和2.3中的 <code>icon</code> 变量一致。</li>
+<li>我们建议优先使用这种方法，但此方法依赖网络，请根据测试环境实际情况选择。</li>
+</ul>
+<p><strong>（2）通过本地图片识别元素</strong></p>
+<div class="highlight"><pre><span></span><code>- 参数 `input_type` 传入图片格式，比如截取的本地图片格式为 `png`，那么 `input_type=&quot;png&quot;`，此时参数 `element ` 传入图片的路径，建议存放在对应的产品  `apps/app/picture/` 目录下，路径为项目根目录下的相对路径。
+- 举例：`find_element(&quot;apps/autotest_deepin_album/picture/open.png&quot;, input_type=&quot;png&quot;))`，表示通过本地图片 `open.png` 识别元素。
+</code></pre></div>
+<ul>
+<li>
+<p><strong>参数 <code>fill_color_position</code></strong></p>
+</li>
+<li>
+<p><code>fill_color_position</code> 参数为默认参数，默认值为 <code>(-1, -1)</code>，<code>(-1, -1)</code> 表示取屏幕中右下角最后一个像素点作为填充坐标，在  <code>1920x1080</code> 屏幕分辨率下即实际坐标为 <code>(1919, 1079)</code>  ，这样的写法可以适配不同大小的屏幕。</p>
+</li>
+<li>任务栏在屏幕不同方位：<ul>
+<li>任务栏在屏幕下方，从任务栏启动不需要传入该参数。</li>
+<li>任务栏在屏幕左边，<code>fill_color_position=(1, 1)</code></li>
+<li>任务栏在屏幕右边，<code>fill_color_position=(-1, -1)</code></li>
+<li>任务栏在屏幕上边，<code>fill_color_position=(1, 1)</code></li>
+</ul>
+</li>
+<li>从桌面启动应用，则需要传入除任务栏以外其他位置的坐标，比如(100, 100)，只要这个坐标为除应用和任务栏区域都可以。</li>
+<li>从启动器里面启动应用，需要填充的坐标为启动器区域。</li>
+</ul>
+<p>注：通过应用 <code>icon</code> 识别时，从测试机获取的 <code>icon</code> 原文件为 <code>svg</code> 矢量图，转换为 <code>png</code> 之后需要填充边缘透明部分。                                                                                                           </p>
+<ul>
+<li>
+<p><strong>参数 <code>size</code></strong> </p>
+</li>
+<li>
+<p><code>size</code> 参数为默认参数，默认值为 <code>(25, 70)</code>，表示测试机上 <code>dock</code> 栏上应用图标的大小范围。</p>
+</li>
+<li><code>UOS</code> 系统 <code>dock</code> 栏是可以上下拖动大小的，随着 <code>dock</code> 栏大小改变，应用图标的范围为25到70之间。</li>
+<li>如果你的测试机操作系统上 <code>dock</code> 栏大小不一样，可以根据实际情况传入大小范围。</li>
+</ul>
+<p>2.2、<code>click_element</code>、 <code>right_click_element</code>， <code>double_click_element</code> 这几个方法参数规则与 <code>find_element</code> 方法一样。他们实际上是在  <code>find_element</code>  方法基础之上做了二次封装，增加了鼠标的动作，如果你不想使用这几个方法，在用例中也可以通过  <code>find_element</code> 获取到坐标，然后将坐标传入到键鼠的方法中，可以实现同样的效果。</p>
+<p>2.3、用例类中有个类变量 <code>icon = ["deepin-album"]</code> 需要特殊说明，列表中的元素为这条用例里面需要用到的所有 <code>icon</code>，用例执行之前会从测试机上拷贝所有需要用的 <code>icon</code> 到服务端用于图像识别。列表中元素为应用 <code>desktop</code> 文件的文件名，相册的 <code>desktop</code> 文件名为 <code>deepin-album.desktop</code>，只需要写 <code>deepin-album</code> 即可，<code>.desktop</code> 已经在底层做了拼接。</p>
+<h2 id="_8">七、执行入口<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1、用例组织<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>在 <code>setting/config/server.ini</code> 文件中 <code>APP_NAME=</code> 字段为用例的执行的目录，默认为 <code>apps</code> 目录下所有用例。如果你想指定执行某一个应用的用例，你可以将该配置项指定到应用的用例目录，比如：<code>APP_NAME=deepin_album</code>， 表示执行相册目录下的用例。</p>
+<h3 id="2_4">2、命令行参数<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>通过命令行参数配置参数</p>
+<p>以下为 <code>python3 manage.py run</code> 提供的一些参数选项：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span>-a<span class="w"> </span>APP,<span class="w"> </span>--app<span class="w"> </span>APP<span class="w">     </span>应用名称：deepin-music
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span>-k<span class="w"> </span>KEYWORDS,<span class="w"> </span>--keywords<span class="w"> </span>KEYWORDS
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">                        </span>用例的关键词
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span>-t<span class="w"> </span>TAGS,<span class="w"> </span>--tags<span class="w"> </span>TAGS<span class="w">  </span>用例的标签
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>--log_level<span class="w"> </span>LOG_LEVEL<span class="w"> </span>日志输出级别
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>--env<span class="w"> </span><span class="o">{</span>host,docker<span class="o">}</span><span class="w"> </span>在宿主机或容器环境执行
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span>--client_alias<span class="w">  </span>选择测试机别名,<span class="w"> </span>可选项为client.ini中已配置,<span class="w"> </span>默认值为<span class="w"> </span>zx-x86.
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span>--count<span class="w"> </span>指定用例执行次数
+</code></pre></div>
+<p>在一些 CI 环境下使用命令行参数会更加方便：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--app<span class="w"> </span>deepin-music<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--env<span class="w"> </span>docker
+</code></pre></div>
+<p>注：在容器中执行时，若强制退出，容器并不会停止运行！</p>
+<h2 id="_9">八、测试报告<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1json">1、Json 报告<a class="headerlink" href="#1json" title="Permanent link">&para;</a></h3>
+<p>自研视频解析工具会对单条用例执行一轮生成一个 <code>json</code> 文件，存放于 <code>report/{app_name}/{scene}/{run_num}</code> 目录下，命名格式为：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>report.json<span class="w">    </span>
+</code></pre></div>
+<p><code>json</code> 内容举例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">[</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="nt">&quot;Stab1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">            </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">2...150</span><span class="p">,</span><span class="mi">151</span><span class="p">],</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">            </span><span class="nt">&quot;startStub&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stab&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="nt">&quot;Stab2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">            </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">152</span><span class="p">,</span><span class="mf">153...169</span><span class="p">,</span><span class="mi">170</span><span class="p">],</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">            </span><span class="nt">&quot;startStub&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UnStab&quot;</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">        </span><span class="nt">&quot;Stab3&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">            </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">171</span><span class="p">,</span><span class="mf">172...300</span><span class="p">,</span><span class="mi">301</span><span class="p">],</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">            </span><span class="nt">&quot;startStub&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UnStab&quot;</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="p">]</span>
+</code></pre></div>
+<p>说明：</p>
+<ul>
+<li><code>Stab</code> ：表示解析过程中不同的阶段。</li>
+<li><code>images</code> ：表示每一帧的图片序号。</li>
+<li><code>startStub</code>： 为识别尾帧的阶段表示，如果 <code>"startStub": 1</code> ，说明尾帧出现在该阶段。</li>
+<li><code>type</code>： 为 <code>Stab</code> 或 <code>UnStab</code> ，表示稳定阶段或不稳定阶段。</li>
+</ul>
+<p>各阶段有帧数补偿，默认补偿的帧数为 3 帧（可以通过 <code>server.ini</code> 里面 <code>un_stab_start=3</code> 进行配置），表示小于等于 3 帧的不稳定阶段视为稳定阶段，在最后计算性能结果时前后均需要减掉。</p>
+<p>应用启动阶段就是在 <code>Stab2</code> 阶段，启动时间为：171 减 151 再减掉前后补偿帧数 6 帧，即 14 帧，视频帧率 30 帧/秒，因此启动耗时为：14 * 33 = 462 ms</p>
+<h3 id="2excel">2、Excel 报告<a class="headerlink" href="#2excel" title="Permanent link">&para;</a></h3>
+<p>所有用例执行并解析完之后会 <code>report</code> 目录下生成一个汇总数据的 <code>Excel</code> 文件，文件名为：<code>{time}_perf_time.xlsx</code>。</p>
+<p>注意，<code>report</code> 目录为可配置项，默认情况下会在项目根目录下生成，如果你将 <code>report</code>，指定到项目下其他路径，则会在对应的路径下生成 <code>json</code> 和 <code>Excel</code> 文件。 </p>
+<p>你也可以根据需要读取所有 <code>json</code> / <code>excel</code> 报告的数据，生成你自己想要的一些测试报告形式。</p>
+<h2 id="usb">九、USB 串口驱动键鼠方法<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h2>
+<p>位于 <code>src/utils/control/serial_communication</code> 目录下的 <code>usb_mk.py</code> 文件</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">usb_mk</span> <span class="o">=</span> <span class="n">UsbMk</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="1_5">1、键盘操作<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p>（1）按下键盘按键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键</span>
+</code></pre></div>
+<p>（2）按下键盘按键并且不放</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key_down</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键不放</span>
+</code></pre></div>
+<p>（3）组合按键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端</span>
+</code></pre></div>
+<p>（4）组合按键不放</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key_down</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端不放</span>
+</code></pre></div>
+<p>（5）释放所有键盘按键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">key_up</span><span class="p">()</span>
+</code></pre></div>
+<p>（6）键盘输入字符串（支持传入汉字，会自动转成拼音输入）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">input_text</span><span class="p">(</span><span class="s2">&quot;reboot&quot;</span><span class="p">)</span>   <span class="c1"># 输入字符串reboot</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键</span>
+</code></pre></div>
+<h3 id="2_5">2、鼠标操作<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>（1）按下鼠标左键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</code></pre></div>
+<p>（2）按下鼠标左键不放</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">mouse_down</span><span class="p">()</span> 
+</code></pre></div>
+<p>（3）释放鼠标所有按键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">mouse_up</span><span class="p">()</span>  
+</code></pre></div>
+<p>（4）按下鼠标右键</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">right_click</span><span class="p">()</span>  
+</code></pre></div>
+<p>（5）鼠标左键双击</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">double_click</span><span class="p">()</span> 
+</code></pre></div>
+<p>（6）恢复鼠标至初始位置，默认左上角</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_to_init</span><span class="p">()</span>  
+</code></pre></div>
+<p>（7）移动鼠标至相对坐标</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_rel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标向左边移动100个像素，向下移动200个像素</span>
+</code></pre></div>
+<p>（8）以屏幕左上角为圆心坐标移动鼠标至屏幕绝对坐标</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标移动至屏幕坐标（100, 200）</span>
+</code></pre></div>
+<p>（9）按下鼠标左键，拖动到绝对坐标位置</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">drag_to</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 按下鼠标拖动至屏幕坐标（100, 200）</span>
+</code></pre></div>
+<p>（10）按下鼠标左键，拖动到相对坐标位置</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">drag_rel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标向左边移动100个像素，向下移动200个像素</span>
+</code></pre></div>
+<h2 id="_10">十、继电器控制主机开机/重启<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>（若不使用继电器，可忽略该步骤，执行时会通过命令 <code>reboot</code>）</p>
+<h3 id="1_6">1、继电器设备<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<p><code>LCUS-2</code> 型 双路 <code>USB</code> 智能串口控制继电器。</p>
+<p>https://item.taobao.com/item.htm?spm=a1z09.2.0.0.41d72e8dUYx2pi&amp;id=582653718178&amp;_u=i25r20ia6a2e</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图3LCUS-2继电器正反面.png" /></p>
+<h3 id="2usb">2、USB 延长线<a class="headerlink" href="#2usb" title="Permanent link">&para;</a></h3>
+<p>普通的 <code>USB</code> 线即可。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图4USB延长线.png" /></p>
+<h3 id="3_3">3、杜邦线<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>3.1、<code>40P</code> 母对公杜邦线。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图5-40P母对公杜邦线.png" /></p>
+<p>3.2、一母二公杜邦线。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图6一母二公杜邦线.png" /></p>
+<h3 id="4">4、安装图文教程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>4.1、使用 <code>USB</code> 延长线连接控制端和继电器。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图7继电器连接控制端.jpg" /></p>
+<p>4.2、在继电器常端和公共端均连接一根杜邦线。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图8继电器连接杜邦线.png" /></p>
+<p>4.3、在主板上开机针和重启针上插上一母二公杜邦线。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图9电源排针.png" /></p>
+<p>4.4、将开机针外接的一母二公杜邦线的两根公线分别接入继电器的1路继电器（如图 1左侧继电器）和原电源开关。</p>
+<p>4.5、将重启针外接的一母二公杜邦线的两根公线分别接入继电器的2路继电器（如图 1 右侧继电器）和原电源开关。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图10开机重启针接线.jpg" /></p>
+<p>若想保留原电源开关的电源灯，可根据如上图所示，使用杜邦线连接主板上的电源灯和原电源开关</p>
+<h2 id="_11">十一、常见问题说明<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><strong>1、</strong><code>ERROR: for uos  Cannot restart container 2301b1a1395d7959ee6523d61b61c87084649af530786cdb8fb5b3ecbcbd1068: linux runtime spec devices: error gathering device information while adding custom device "/dev/ttyACM0": no such file or directory</code></p>
+<p>检查 USB 串口线连接状态，查看 <code>/dev/ttyACM0</code> 是否存在，若存在 <code>/dev/ttyACMn</code>（n为任意数字），重启电脑解决。</p>
+<p><strong>2、</strong><code>Error response from daemon: Container 5e700fdc769e8c74666d68a7f2bc3de58268b4594cf88706609d59f8dbc7362d is not running</code></p>
+<p>容器启动失败</p>
+<p>1）检查哪一个容器未启动</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span><span class="c1"># 列出运行中的 Docker 容器</span>
+</code></pre></div>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图11正常容器列表.png" /></p>
+<p>2）缺少 uos 容器，检查 USB 串口连接线和采集盒连接线是否正常，重启后执行 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>bash<span class="w"> </span>install/setup.up<span class="w"> </span><span class="c1"># 重新完整部署环境</span>
+</code></pre></div>
+<p>或执行</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo<span class="w"> </span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build<span class="w">   </span><span class="c1"># 仅重新构建 Docker 镜像</span>
+</code></pre></div>
+<p><strong>3、</strong>若部署时提示挂载 <code>ttyACM0</code>、<code>video0</code> 失败，请检查 USB 串口线及采集盒是否接触良好，若接触良好，重启即可解决。</p>
+<p>4、若出现图片能识别，但是鼠标未移动操作时，安装绝对鼠标操作的依赖包，见第三节第二小节测试机环境搭建，安装完成后，必须重启测试机。</p>
+<p>5、由于通过采集卡获取的测试机实时画面，包含了鼠标的样式，所以对图片识别时，鼠标若停留在图标上层，则会对识别结果造成影响，需要将鼠标移动至其他位置，或者隐藏鼠标解决。</p>
+<p>6、Excel 报告中，测试场景列与用例中的不一致，关键字scene、app_name、架构别名，不能包含下划线和英文符号的圆括号。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 UnionTech Software Technology Co. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1479 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/">
+      
+      
+        <link rel="next" href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>AT 基础框架设计方案 - YouQu Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#at" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YouQu Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AT 基础框架设计方案
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    YouQu Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    框架功能介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RELEASE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    版本更新记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化测试架构设计规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、目标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、设计方案
+  </a>
+  
+    <nav class="md-nav" aria-label="二、设计方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、统一概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、架构图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、目录结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、详细方案
+  </a>
+  
+    <nav class="md-nav" aria-label="三、详细方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1apps" class="md-nav__link">
+    1、应用库（apps）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2src" class="md-nav__link">
+    2、核心库（src）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3public" class="md-nav__link">
+    3、公共方法库（public）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4conftestpy" class="md-nav__link">
+    4、conftest.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5setting" class="md-nav__link">
+    5、setting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、规范
+  </a>
+  
+    <nav class="md-nav" aria-label="四、规范">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、版本及依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、核心库独立性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、兼容性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5fixture" class="md-nav__link">
+    5、fixture 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、方法编写规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7case" class="md-nav__link">
+    7、用例（case）规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8、其他规范
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 应用库设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 开发规范
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 经验总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%94%A8%E4%BE%8B%E7%AD%9B%E9%80%89%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 用例筛选指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 执行器使用指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://funny-dream.github.io/funny-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客文章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://youqu-dev.uniontech.com/tool" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    定级工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、目标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、设计方案
+  </a>
+  
+    <nav class="md-nav" aria-label="二、设计方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、统一概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、架构图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、目录结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、详细方案
+  </a>
+  
+    <nav class="md-nav" aria-label="三、详细方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1apps" class="md-nav__link">
+    1、应用库（apps）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2src" class="md-nav__link">
+    2、核心库（src）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3public" class="md-nav__link">
+    3、公共方法库（public）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4conftestpy" class="md-nav__link">
+    4、conftest.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5setting" class="md-nav__link">
+    5、setting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、规范
+  </a>
+  
+    <nav class="md-nav" aria-label="四、规范">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、版本及依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、核心库独立性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、兼容性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5fixture" class="md-nav__link">
+    5、fixture 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、方法编写规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7case" class="md-nav__link">
+    7、用例（case）规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8、其他规范
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="at">AT 基础框架设计方案<a class="headerlink" href="#at" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ====================================</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Author  : Mikigo</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Time    : 2022/3/18</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># version ：1.0</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ====================================</span>
+</code></pre></div>
+<h2 id="_1">一、目标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>做一个简单、好用、功能强大的自动化测试框架。</p>
+<ul>
+<li>作为自动化测试的一个基础框架，任何应用都能很方便的接入进来；</li>
+<li>提供所有自动化测试所需要的底层功能，并对外提供唯一的接口，方便应用库使用；</li>
+<li>整合公共库，减少应用库代码量和方法维护。</li>
+</ul>
+<h2 id="_2">二、设计方案<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1、统一概念<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>基础框架</strong></li>
+</ul>
+<p>本项目是一个自动化测试的基础框架（<code>AutoTest Basic Frame</code>），全称为“自动化测试基础框架（AT 基础框架）”。</p>
+<p>AT 基础框架是做为一个自动化测试的基础框架来设计的，它提供了自动化测试所要用的基础功能，任何应用接入进来都能快速方便的进行方法和用例编写，同时在用例标签化管理、批量跳过、标签化执行、分布式执行、多种报告输出、优美的执行日志、失败自动录屏和截图、自动环境清理等等，它都提供了完善的解决方案，更重要的是这一切使用起来都非常简单。</p>
+<p>基础框架中包含应用库（<code>apps</code>）、核心库（<code>src</code>）、公共方法库（<code>public</code>）。</p>
+<ul>
+<li><strong>应用库（<code>apps</code>）</strong></li>
+</ul>
+<p>各个应用自己的仓库，里面主要包含的是用例、方法及一些测试资源，比如文件管理器叫 <code>autotest-dde-file-manager</code> 。</p>
+<ul>
+<li><strong>核心库（<code>src</code>）</strong></li>
+</ul>
+<p>核心库自动化测试所要用的到所有底层核心功能，这是最重要的一个部分，灵魂。具体功能模块及说明会在下面第四个章节详细描述。</p>
+<ul>
+<li><strong>公共方法库（<code>public</code>）</strong></li>
+</ul>
+<p>多个应用都要用到的一些操作方法，按照应用划分存放，主要是为了减少代码量，消除应用间的耦合关系。</p>
+<h3 id="2">2、架构图<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>整体的框架设计在《自动化测试架构设计》文档里面已经有详细描述了，这里贴一下整体的架构图：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/frame_after.png" /></p>
+<p>为了突显本文的重点，抽取其中重要功能模块，如下图：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/basic_frame.png" /></p>
+<h3 id="3">3、目录结构<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>autotest-basic-frame<span class="w">  </span><span class="c1"># 自动化测试基础框架</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├──<span class="w"> </span>apps<span class="w">  </span><span class="c1"># 应用库</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│<span class="w">   </span>├──<span class="w"> </span>autotest-dde-file-manager<span class="w">  </span><span class="c1"># 单独的应用仓库（应用库详细目录结构请看应用库设计方案）</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="k">case</span><span class="w">  </span><span class="c1"># 用例</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>config.ini<span class="w"> </span><span class="c1"># 局部配置</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>config.py<span class="w">  </span><span class="c1"># 局部配置</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>conftest.py<span class="w">  </span><span class="c1"># Pytest 本地插件</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>dfm_assert.py<span class="w">  </span><span class="c1"># 断言方法模块</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>assert_res<span class="w">  </span><span class="c1"># 断言的图片资源</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>tag<span class="w">  </span><span class="c1"># 标签</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>widget<span class="w">  </span><span class="c1"># 方法</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>base_widget.py
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>ui.ini<span class="w">  </span><span class="c1"># UI 定位的坐标配置文件</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>case_res<span class="w">  </span><span class="c1"># 测试数据（用例需要用到的资源）</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>pic_res<span class="w">  </span><span class="c1"># 图像识别元素定位要用的图片</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│<span class="w">   </span>│<span class="w">           </span>├──<span class="w"> </span>xxx.png
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│<span class="w">   </span>│<span class="w">           </span>...
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│<span class="w">   </span>├──<span class="w"> </span>autotest-deepin-music<span class="w">  </span><span class="c1"># 单独的应用仓库</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│<span class="w">   </span>│<span class="w">  </span>├──<span class="w"> </span><span class="k">case</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│<span class="w">   </span>│<span class="w">  </span>├──<span class="w"> </span>...
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│<span class="w">   </span>...
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>├──<span class="w"> </span>public<span class="w">  </span><span class="c1"># 公共方法库</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│<span class="w">   </span>├──<span class="w"> </span>dde_dock_public_widget<span class="w">  </span><span class="c1"># dde_dock 的公共方法 package</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>dde_dock_public_widget.py
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>ui.ini<span class="w"> </span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>res<span class="w"> </span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>│<span class="w">   </span>├──<span class="w"> </span>dde_desktop_public_widget<span class="w">  </span><span class="c1"># dde_desktop 的公共方法 package</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>dde_desktop_public_widget.py
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>ui.ini<span class="w"> </span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>res<span class="w"> </span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>│<span class="w">   </span>...
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>├──<span class="w"> </span>src<span class="w">  </span><span class="c1"># 核心库</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>│<span class="w">   </span>├──<span class="w"> </span>button_center.py
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>│<span class="w">   </span>├──<span class="w"> </span>cmdtrl.py
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>│<span class="w">   </span>├──<span class="w"> </span>dogtails.py
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>│<span class="w">   </span>├──<span class="w"> </span>find_image.py
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>│<span class="w">   </span>├──<span class="w"> </span>global_config.py
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>│<span class="w">   </span>├──<span class="w"> </span>...
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>│<span class="w">   </span>...
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>├──<span class="w"> </span>setting<span class="w">  </span><span class="c1"># 全局配置模块</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>│<span class="w">   </span>├──<span class="w"> </span>config.py
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>│<span class="w">   </span>└──<span class="w"> </span>global_config.ini
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>├──<span class="w"> </span>conftest.py<span class="w">  </span><span class="c1"># Pytest 本地插件模块（Hook）</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>├──<span class="w"> </span>pytest.ini<span class="w">  </span><span class="c1"># Pytest 默认配置文件</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>├──<span class="w"> </span>docs<span class="w">  </span><span class="c1"># 文档目录</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>└──<span class="w"> </span>manage.py<span class="w">  </span><span class="c1"># 执行器</span>
+</code></pre></div>
+<h2 id="_3">三、详细方案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1apps">1、应用库（<code>apps</code>）<a class="headerlink" href="#1apps" title="Permanent link">&para;</a></h3>
+<p>所有应用库均放置在基础框架下的 <code>apps</code> 目录下（见第二章节第3段目录结构内容）。应用库的架构设计可以参考《AT 应用库设计方案》文档。</p>
+<h3 id="2src">2、核心库（<code>src</code>）<a class="headerlink" href="#2src" title="Permanent link">&para;</a></h3>
+<p>在 <code>src</code> 目录下为自动化测试的底层核心组件，通常来讲如果你需要使用到其中某一个功能模块，那么你需要显示的导入这个模块，然后才能使用该模块下的功能，如果你用到了十个功能模块，那你就需要导入十个。但是我们想让事情变得简单，一次导入，使用所有。</p>
+<p>将所有的功能模块都进入到 <code>src</code> 的名称空间，在 <code>src/__init__.py</code> 里面我们设计成这样：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># src/__init__.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span> <span class="nn">.cmdctl</span> <span class="kn">import</span> <span class="n">CmdCtl</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">from</span> <span class="nn">.dogtails</span> <span class="kn">import</span> <span class="n">Dogtail</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">from</span> <span class="nn">.find_image</span> <span class="kn">import</span> <span class="n">FindImage</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">from</span> <span class="nn">.button_center</span> <span class="kn">import</span> <span class="n">ButtonCenter</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">class</span> <span class="nc">Src</span><span class="p">(</span><span class="n">CmdCtl</span><span class="p">,</span> <span class="n">FindImage</span><span class="p">):</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;dogtail or button center param</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">        :param kwargs: app_name, desc, number</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            <span class="n">app_name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;APP_NAME&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">desc</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DESC&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>            <span class="k">if</span> <span class="n">app_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">desc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                <span class="k">raise</span> <span class="ne">ValueError</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>            <span class="n">number</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>            <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>            <span class="c1"># 对象组合</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">dog</span> <span class="o">=</span> <span class="n">Dogtail</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ButtonCenter</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+<p>需要传递参数的采用对象组合，没有参数的使用继承，继承的类符合 <code>Mixin</code> 设计模式。</p>
+<p>应用库里面使用的时候在 <code>widget/base_widget.py</code> 里面只需要唯一继承 <code>Src</code> ：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 应用库里面方法基类</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># widget/base_widget.py</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">Src</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">class</span> <span class="nc">BaseWidget</span><span class="p">(</span><span class="n">Src</span><span class="p">):</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;方法基类&quot;&quot;&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;dde-file-manager&quot;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">DESC</span> <span class="o">=</span> <span class="s2">&quot;/usr/bin/dde-file-manager&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">Src</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">APP_NAME</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">APP_NAME</span><span class="p">,</span> <span class="n">DESC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">DESC</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="p">)</span>
+</code></pre></div>
+<p>要使用核心库的功能，只需要写一个导入 <code>from src import Src</code> 即可。</p>
+<p>写 <code>__init__</code> 构造函数的原因是通过参数构造应用，并且传递 <code>number</code> 进来，可以实现多窗口的控制。</p>
+<h3 id="3public">3、公共方法库（<code>public</code>）<a class="headerlink" href="#3public" title="Permanent link">&para;</a></h3>
+<p>公共方法库里面每个应用都是一个单独的 <code>py</code> 文件，相互之间是独立的，每个 <code>py</code> 文件里面是该应用的方法类，比如：最常用的方法类 <code>dde_desktop_public_widget.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># dde_desktop_widget.py</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">Src</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span> <span class="nc">_DdeDesktopPublicBaseWidget</span><span class="p">(</span><span class="n">Src</span><span class="p">):</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;桌面公共方法基类&quot;&quot;&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;dde-desktop&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">DESC</span> <span class="o">=</span> <span class="s2">&quot;/usr/bin/dde-desktop&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="n">Src</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">APP_NAME</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">APP_NAME</span><span class="p">,</span> <span class="n">DESC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">DESC</span><span class="p">)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">class</span> <span class="nc">DdeDesktopPublicWidget</span><span class="p">(</span><span class="n">_DdeDesktopPublicBaseWidget</span><span class="p">):</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;桌面公共方法类&quot;&quot;&quot;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="k">def</span> <span class="nf">click_music_dir_by_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;在文件选择框点击音乐目录&quot;&quot;&quot;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">btn_center</span><span class="p">(</span><span class="s2">&quot;侧边栏-音乐&quot;</span><span class="p">))</span>   
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">def</span> <span class="nf">click_xxx_by_attr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="k">pass</span>
+</code></pre></div>
+<p>公共方法库意义：</p>
+<ul>
+<li>
+<p>公共方法库里面所封装的一些操作方法都是至少被2个应用都用到的，这样做可以减少整体代码量，从而减轻应用库代码的维护工作。</p>
+</li>
+<li>
+<p>公共方法库里面的编写形式（命名规则、定位的方案写法、注释的写法等等）具有一定的模板作用，这样即使是各个应用库都独立维护，所有的编码风格都是趋于相同的，因为大家都应该参照公共库里面的一些写法来写自己应用库里面的一些方法类，这样使得从公司的角度去看所有应用的自动化测试项目都是统一的。</p>
+</li>
+<li>可以通过公共方法库里面的一些方法，了解到其他应用的功能，对于我们需求理解，了解系统的方方面面也有好处。</li>
+</ul>
+<p>当然，如果你的应用本身是属于根本就不需要和其他应用交互的，那么你可能不会用到这里面的功能，没关系，你所有的方法都可以直接写在应用库的业务层。</p>
+<h3 id="4conftestpy">4、<code>conftest.py</code><a class="headerlink" href="#4conftestpy" title="Permanent link">&para;</a></h3>
+<p><code>conftest.py</code> 从功能上将是属于核心库（<code>src</code>）的内容，但是由于它的特殊性，即它是对应用库中的用例生效的，而且它的作用域是当前目录及以下，因此我们将它放到项目根目录。我们框架中有不少核心功能都是在这里面进行开发的，后面第四章会讲到细节。</p>
+<p><code>pytest.ini</code> 作用和 <code>conftest.py</code> 类似，是 <code>Pytest</code> 框架的固定配置文件，目前配置了一些通用的命令行执行参数，也放在项目根目录。</p>
+<p>根目录下的 <code>conftest.py</code> 文件只会用来写 <code>Hook</code> 函数，<code>apps</code> 目录下的 的 <code>conftest.py</code> 文件只会用来写 <code>fixture</code> 。</p>
+<h3 id="5setting">5、setting<a class="headerlink" href="#5setting" title="Permanent link">&para;</a></h3>
+<p>全局配置模块，包含了以下配置文件：</p>
+<p>（1）<code>ini</code> 配置文件</p>
+<p>主要配置一些全局的配置项，譬如：失败重跑次数、是否失败录屏、单条用例超时时间、会话超时时间、执行时日志级别、生成的报告类型、以及分布式执行的一些策略配置项等等。</p>
+<p>（2）<code>config.py</code> 配置文件</p>
+<p>主要提供配置文件读取、动态获取一些常量（如项目根目录绝对路径 <code>(BASE_DIR)</code>、系统架构（<code>SYS_FRAME</code>）、时间字符串（<code>strftime</code>）、本机 <code>USERNAME</code>  <code>IP</code> 等等）、公共 URL 等。</p>
+<h2 id="_4">四、规范<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1、版本及依赖<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>基础框架会根据自身的功能开发进行版本发布，不与某个应用版本绑定，但是，应用库会依赖于基础框架的版本。因此，我们建议在<strong>应用库</strong>目录下保存一个文本文件用于记录所依赖的基础框架版本，类似于开发应用的 <code>debian/control</code> 文件的功能，为了保持统一，这个文件就命名为 <code>control</code>，放在应用库根目录下。</p>
+<h3 id="2_1">2、核心库独立性<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>核心库不建议针对某一个应用单独做代码上特殊处理，通常考虑针对某一种场景进行处理，这些场景通常是存在一些共性的。比如说：桌面的ID分配存在问题，我们可以通过逻辑处理解决ID分配错误的问题，但是这部分逻辑我们会在桌面的方法层里面去做。</p>
+<h3 id="3_1">3、兼容性<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>为了保持兼容性，公共方法库里面原则上不对老方法进行修改或删除，只进行新增。涉及到老方法修改或删除的，会进行提前预告，并在第二个版本之后（中间会隔一个版本过度）正式实施修改或删除。</p>
+<h3 id="4">4、命名规范<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>用例 ID</li>
+</ul>
+<p>每个应用自己维护一套 ID，在PMS上用例标题上将自动化ID以标签的形式写入，比如：[101]打开-启动应用后dock右键菜单</p>
+<p>一个用例类里面有多个用例时，在用例名称后面加序号。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">TestFileManager</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;文管用例&quot;&quot;&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">def</span> <span class="nf">test_xxx_015_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">pass</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">def</span> <span class="nf">test_xxx_015_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="k">pass</span>
+</code></pre></div>
+<p>注意 015_1，不要写015_01。</p>
+<ul>
+<li>
+<p>不建议使用 PMS 上的用例ID：</p>
+</li>
+<li>
+<p>PMS 上是6位数，不够直观，也不好维护，在自动化下面去找一个带有 6 位数的文件是一个糟糕的事情。</p>
+</li>
+<li>
+<p>PMS 上的 ID 可能会发生变化，比如导出来导进去的过程中可能存在问题，如果发生变化之后，要想找出来对应修改自动化用例 ID，将会是件非常痛苦的事情。</p>
+</li>
+<li>
+<p><strong>函数命名关键词列表</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">名称</th>
+<th style="text-align: left;">单词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">左键点击</td>
+<td style="text-align: left;">click</td>
+</tr>
+<tr>
+<td style="text-align: left;">右键点击</td>
+<td style="text-align: left;">right_click</td>
+</tr>
+<tr>
+<td style="text-align: left;">双击</td>
+<td style="text-align: left;">double_click</td>
+</tr>
+<tr>
+<td style="text-align: left;">移动</td>
+<td style="text-align: left;">move_to</td>
+</tr>
+<tr>
+<td style="text-align: left;">拖动</td>
+<td style="text-align: left;">drag</td>
+</tr>
+<tr>
+<td style="text-align: left;">新建</td>
+<td style="text-align: left;">new</td>
+</tr>
+<tr>
+<td style="text-align: left;">拖动到</td>
+<td style="text-align: left;">drag_to</td>
+</tr>
+<tr>
+<td style="text-align: left;">从哪里拖动到哪里</td>
+<td style="text-align: left;">drag_something_from_xxx_to_xxx</td>
+</tr>
+<tr>
+<td style="text-align: left;">获取</td>
+<td style="text-align: left;">get</td>
+</tr>
+<tr>
+<td style="text-align: left;">获取某个元素的坐标</td>
+<td style="text-align: left;">get_location</td>
+</tr>
+<tr>
+<td style="text-align: left;">非特殊文件</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr>
+<td style="text-align: left;">word文件</td>
+<td style="text-align: left;">doc</td>
+</tr>
+<tr>
+<td style="text-align: left;">text文件</td>
+<td style="text-align: left;">text</td>
+</tr>
+<tr>
+<td style="text-align: left;">文件夹</td>
+<td style="text-align: left;">dir</td>
+</tr>
+</tbody>
+</table>
+<p><em>关键词持续增加</em></p>
+<ul>
+<li><strong>常量关键词列表</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">名称</th>
+<th style="text-align: left;">单词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">应用名称</td>
+<td style="text-align: left;"><code>APP_NAME</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">应用描述</td>
+<td style="text-align: left;"><code>DESC</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">本应用以外的其他应用，比如帮助</td>
+<td style="text-align: left;"><code>HELP</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>其他名称列表</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align: left;">单词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方法包名</td>
+<td style="text-align: left;">widget</td>
+</tr>
+<tr>
+<td>方法文件名<br />（文管举例）</td>
+<td style="text-align: left;"><code>dfm_widget.py</code><br /><code>title_widget.py</code><br /><code>right_view_widget.py</code><br /><code>left_view_widget.py</code><br /><code>pop_widget.py</code><br /><code>base_widget.py</code><br /><code>dfm_assert.py</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>断言语句命名规范</strong></p>
+<p>断言语句都是以 assert 开头</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">断言</th>
+<th style="text-align: left;">语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">判断文件是否存在</td>
+<td style="text-align: left;">assert_file_exists<br />assert_file_not_exists</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断桌面目录下文件是否存在</td>
+<td style="text-align: left;">assert_file_exists_in_desktop<br />assert_file_not_exists_in_desktop</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断图片存在</td>
+<td style="text-align: left;">assert_image_exists<br />assert_image_not_exists</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断影院中是否存在图片</td>
+<td style="text-align: left;">assert_image_exists_in_movie<br />assert_image_not_exists_in_movie</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断元素是否存在</td>
+<td style="text-align: left;">assert_element_exist<br />assert_element_not_exist</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断是否相等</td>
+<td style="text-align: left;">assert_equal<br />assert_not_equal</td>
+</tr>
+<tr>
+<td style="text-align: left;">判断是否为真</td>
+<td style="text-align: left;">assert_true<br />assert_false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5fixture">5、fixture 规范<a class="headerlink" href="#5fixture" title="Permanent link">&para;</a></h3>
+<p>由于 <code>Pytest</code> 框架中支持 <code>fixture</code> 的写法和  <code>Xunit</code> 写法的，所以应用库中可能存在混用的情况，为统一编码风格方便后续用例代码维护，现做以下规范说明：</p>
+<ul>
+<li>抛弃 <code>Xunit</code> 的写法，统一采用 <code>Pytest</code> <code>fixture</code> 的写法。</li>
+<li>应用内 <code>fixture</code> 谨慎使用 <code>autouse=True</code> ，非必要的情况下非常不建议使用这个参数。</li>
+<li>调用 <code>fixture</code> 不能使用 <code>@pytest.mark.usefixture()</code>，使用直接在用例里面传入函数对象。</li>
+<li>建议在一个 <code>conftest.py</code> 里面去写，一个应用也尽量维护一个 <code>conftest.py</code>文件。</li>
+<li><code>fixture</code> 也需要写功能说明，函数名称要有具体含义。</li>
+</ul>
+<h3 id="6">6、方法编写规范<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>方法类型：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span> <span class="n">没有用到实例对象</span><span class="err">：</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="k">if</span> <span class="n">没有用到类对象</span><span class="err">：</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>      <span class="n">写静态方法</span><span class="err">，</span><span class="n">函数前加</span> <span class="nd">@staticmethod</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">else</span><span class="err">：</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>      <span class="n">写类方法</span><span class="err">，</span><span class="n">函数前加</span> <span class="nd">@classmethod</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">直接写实例方法</span>
+</code></pre></div>
+<p>举例:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span> <span class="nc">TitleWidget</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">def</span> <span class="nf">click_xxx_by_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">pass</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="nd">@staticmethod</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="k">def</span> <span class="nf">click_xxx_by_ui</span><span class="p">():</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="k">pass</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="nd">@classmethod</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="k">def</span> <span class="nf">click_xxx_by_ui</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="k">pass</span>
+</code></pre></div>
+<ul>
+<li>
+<p>函数名称不出现数字，需要表示数量的用单词表示。</p>
+</li>
+<li>
+<p>函数功能注释。</p>
+</li>
+<li>
+<p>没有参数，没有返回</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">&quot;&quot;&quot;点击某个元素&quot;&quot;&quot;</span>
+</code></pre></div>
+<ul>
+<li>有参数，没有返回</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="sd">&quot;&quot;&quot;点击某个元素</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="sd">arg1:xxx</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">arg2:xxx</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+<ul>
+<li>有参数，有返回</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="sd">&quot;&quot;&quot;点击某个元素</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="sd">arg1:xxx</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="sd">arg1:xxx</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="sd">return: xxx</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+<p>​       用 <code>Pycharm</code> 的注释模板也可以，只要体现了参数的类型和返回就行了。</p>
+<ul>
+<li>暂不要求写类型注解。</li>
+</ul>
+<h3 id="7case">7、用例（case）规范<a class="headerlink" href="#7case" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>以类的形式写用例，用例类集成用例基类。</p>
+</li>
+<li>
+<p>用例类需要写注释。</p>
+</li>
+<li>
+<p>测试用例函数说明（建议直接复制 PMS 上用例名称）</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="sd">&quot;&quot;&quot;右侧预览-图片类型信息栏基本信息&quot;&quot;&quot;</span>
+</code></pre></div>
+<ul>
+<li>不写调试代码</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">pytest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>
+<p>所有用例都继承 <code>BaseCase</code>。</p>
+</li>
+<li>
+<p><code>BaseCase</code> 里面放一些测试数据的常量，比如文件名称，应用名称，简单讲就是一些通用的字符串。</p>
+</li>
+</ul>
+<p>这类是属于测试数据。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span> <span class="nc">BaseCase</span><span class="p">(</span><span class="n">DfmAssert</span><span class="p">):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;用例基类&quot;&quot;&quot;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="n">NEW_FILE</span> <span class="o">=</span> <span class="s2">&quot;新建文本.txt&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">TEST_FILE</span> <span class="o">=</span> <span class="s2">&quot;test.txt&quot;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">NEW_DIR</span> <span class="o">=</span> <span class="s2">&quot;新建文件夹&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="n">NEW_WORD</span> <span class="o">=</span> <span class="s2">&quot;新建Word文档.doc&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">APP_HELP</span> <span class="o">=</span> <span class="s2">&quot;damn&quot;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">class</span> <span class="nc">TestFileManager</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">def</span> <span class="nf">test_xxx_001</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;用例标题（复制PMS上用例标题）&quot;&quot;&quot;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="n">dfm</span> <span class="o">=</span> <span class="n">DfmWidget</span><span class="p">()</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="n">dfm</span><span class="o">.</span><span class="n">click_xxx_by_attr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NEW_FILE</span><span class="p">)</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="n">dfm</span><span class="o">.</span><span class="n">new_file_in_desktop_by_cmd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NEW_FILE</span><span class="p">)</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">dfm</span><span class="o">.</span><span class="n">get_process_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">APP_NAME</span><span class="p">))</span>
+</code></pre></div>
+<p>用例里面尽量减少字符串的出现，更要减少相同字符串的出现。</p>
+<ul>
+<li>统一文件注释头。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1"># _*_ coding:utf-8 _*_</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="sd">:Author:email@uniontech.com</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="sd">:Date  :${DATE} ${TIME}</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h3 id="8">8、其他规范<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>日志打印要在方法最前面，否则代码报错没有日志输出，不好定位问题。（我们会考虑继续使用拦截器打印日志）</li>
+<li>所有的操作都需要有日志，包括 <code>sleep()</code>，我们会重写一个有日志输入的 <code>sleep</code>。</li>
+<li>业务层日志级别为 <code>INFO</code>。</li>
+<li>hook 函数只能写到根目录下的 <code>conftest.py</code> 里面。</li>
+<li><code>apps</code> 目录下的 <code>conftest.py</code> 原则上不会新增 <code>fixture</code>。</li>
+<li>固定目录或元素控件的操作，将操作方法写死，文件类操作将文件名留参数。</li>
+<li>路径拼接规范：</li>
+<li>系统中固定目录，路径拼接时使用波浪符号，比如：<code>~/Desktop/</code>，下层使用 <code>os.path.expanduser()</code>，它可以自动识别波浪符号。</li>
+<li>项目下路径使用配置文件中的路径，比如：<code>Config.BASE_PATH</code>，因为项目是可以在任意路径运行的，需要动态拼接路径。</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 UnionTech Software Technology Co. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>

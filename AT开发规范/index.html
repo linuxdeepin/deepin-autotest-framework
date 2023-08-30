@@ -1,0 +1,1047 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/">
+      
+      
+        <link rel="next" href="../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>AT 开发规范 - YouQu Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#at" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YouQu Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AT 开发规范
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    YouQu Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    框架功能介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RELEASE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    版本更新记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化测试架构设计规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 应用库设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AT 开发规范
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 经验总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%94%A8%E4%BE%8B%E7%AD%9B%E9%80%89%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 用例筛选指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 执行器使用指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://funny-dream.github.io/funny-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客文章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://youqu-dev.uniontech.com/tool" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    定级工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="at">AT 开发规范<a class="headerlink" href="#at" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ================================================</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Attribution : Chengdu Testing Department</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Time        : 2022/6/16</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Author      : Mikigo</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ================================================</span>
+</code></pre></div>
+<p>AT 开发规范是根据自动化测试运行两年多来，遇到问题解决问题而形成的一些解决方案，或者说经验总结；这些经验符合我们现阶段 AT 所应用的场景需要，也是我们经过长期思考，不断试错不断修正，并在自动化测试项目实践中检验过可行的。以此，希望能帮助参与到自动化的相关人员减少试错成本，更好、更快的编写用例及维护用例。</p>
+<h1 id="_1">一、标签化管理规范<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>标签化管理文档请参考： <a href="http://10.8.10.215/用例标签化管理操作指引.html">《用例标签化管理操作指引》</a> </p>
+<p>以下说几个容易出现的问题：</p>
+<h2 id="1">1. 对应关系<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>写完自动化用例之后，请在 <code>CSV</code> 文件中标记用例的 ID、等级。为了提醒标记，执行用例时在首行会输出 <code>ERROR</code> 日志： <code>CSV 文件里面没有对应的 ID</code>；</li>
+</ul>
+<p>在最终提交代码之前，你需要在 <code>CSV</code> 文件里面将ID、用例等级等标签补全，如果 <code>CSV</code> 文件里面没有对应 ID，后续在批量执行的时候，这些用例是不会执行的。</p>
+<h2 id="2">2. 名称一致<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>CSV</code> 文件的文件名、用例函数中间的名称一致、用例 <code>py</code> 文件中间的名称，这三个名称一致。</li>
+</ul>
+<p>举例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># test_music_001.py</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">def</span> <span class="nf">test_music_001</span><span class="p">():</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;用例标题&quot;&quot;&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">pass</span>
+</code></pre></div>
+<p>那么 <code>CSV</code> 文件的名称为 <code>music.csv</code>。</p>
+<p>AT 框架底层代码实现是将 <code>CSV</code> 文件的名称与用例函数名称名称（<code>item.name</code>）进行对应，因此，注意 <code>CSV</code> 文件名称对应的是用例函数名称，即 <code>def test_music_001</code> 里面的 <code>music</code> ，而不是 <code>test_music_001.py</code> 里面的 <code>music</code> 。</p>
+<p>这里细细品一下哈~</p>
+<p>如果你将上例写成了这样:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># test_music_001.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">test_movie_001</span><span class="p">():</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;用例标题&quot;&quot;&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">pass</span>
+</code></pre></div>
+<p>用例执行没问题，但是标签化管理是不生效的，框架无法将 <code>music.csv</code>文件里面标签，添加到 <code>test_movie_001</code>这个用例中，因为他们没有对应关系。</p>
+<h1 id="tag">二、分支及 tag 管理规范<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h1>
+<p>参考《<a href="https://filewh.uniontech.com/lib/d01a57df-cba6-44f2-af8e-4cc412ad1880/file/01.%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E4%BD%93%E7%B3%BB/02%20%E4%BA%A7%E5%93%81%E7%A0%94%E5%8F%91/01-3%20%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/02-%E8%A7%84%E8%8C%83/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83%20V2.0.pdf">自动化测试代码管理规范</a>》</p>
+<h2 id="2-tag">2. 应用库 tag<a class="headerlink" href="#2-tag" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>应用库 tag 根据应用交付节点生成，每次打 tag 之前，相关测试人员需要进行用例调试；</p>
+</li>
+<li>
+<p>调试用例是指的在全架构（x86、arm、mips）上调试通过；</p>
+</li>
+<li>
+<p>用例通过率达到 <strong>90%</strong> 以上才能打 tag，通过 Jenkins 执行器执行用例，保留通过率结果；</p>
+</li>
+<li>
+<p>用例通过率：通过用例数 / (总用例数 - 已废弃用例)    <em>跳过的用例不算通过</em> </p>
+</li>
+<li>
+<p><a href="https://jenkinswh.uniontech.com/view/CI/job/chengdu/job/AT_test/job/all_client_test/">Jenkins 执行器</a></p>
+</li>
+<li>
+<p>你可能会在一个交付周期内持续的进行AT用例调试，但是最终 AT 用例打 tag 的应用版本，<strong>需要使用应用集成交付的最新应用版本</strong>，可以使用应用的提测版本；一定要确保调试用例的应用版本是最新的，不然集成进去之后，持续集成就会出问题；</p>
+</li>
+<li>
+<p>tag 号怎么打？</p>
+</li>
+</ul>
+<p>根据持续集成的要求生成，其中应用版本号需要与项目经理确认本次即将集成的应用版本号是多少；</p>
+<p>tag 的 commit 信息格式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># commit msg</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">version</span><span class="o">:</span><span class="s">5.6.5</span>
+</code></pre></div>
+<p>其中 <code>5.6.5</code> 写应用的集成版本号。</p>
+<p>生成 tag 的命令参考：<a href="http://10.8.10.215/README.html#git">《Git 标签》</a></p>
+<h2 id="3-tag">3. 基础框架 tag<a class="headerlink" href="#3-tag" title="Permanent link">&para;</a></h2>
+<p>基础框架 tag 不与业务挂钩，根据自身的功能开发按需发布版本，在根目录下 <code>CURRENT</code> 文件中记录的当前版本号和历史版本号，及其对应新增了哪些功能，有助于应用选择合适的基础框架版本。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># CURRENT</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">[current]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.9.5</span>
+</code></pre></div>
+<p>应用库根目录下的 <code>control</code> 文件记录当前应用库依赖的基础库版本。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># control</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">[Depends]</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">autotest-basic-frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.9.5</span>
+</code></pre></div>
+<p>用例在执行时会校验两个文件的版本号是否一致，如果不一致，会打印 <code>error</code> 日志。</p>
+<h1 id="_2">三、仓库权限管理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h2 id="1_1">1. 基础框架<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>自动化测试基础框架仓库：https://gerrit.uniontech.com/admin/repos/autotest-basic-frame</li>
+</ul>
+<p>基础框架不允许匿名访问，如果你登录 <code>gerrit</code> 之后仍然无法访问以上链接，则需要申请访问权限；</p>
+<h2 id="2_1">2. 应用仓库<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>自动化应用仓库：  <code>https://gerrit.uniontech.com/admin/repos/autotest_ +  app_name</code></li>
+</ul>
+<p>链接后面的 <code>app_name</code> 中间以下划线连接，比如音乐：https://gerrit.uniontech.com/admin/repos/autotest_deepin_music</p>
+<h1 id="_3">四、方法编写&amp;调用规范<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>方法编写整体设计思路参考：[《AT应用库设计方案》]</p>
+<h2 id="1_2">1. 方法编写<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h2>
+<p>写方法的时候注意方法归属，比如文件管理器的界面区域划分为：<code>TitleWidget</code> 、<code>RightViewWidget</code>、<code>LeftViewWidget</code> 、<code>PopWidget</code>，方法是在哪个区域操作的，就写在哪个类里面。</p>
+<p>举例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">apps.dde_file_manager.widget</span> <span class="kn">import</span> <span class="n">BaseWidget</span>  <span class="c1"># dde_file_manager 为仓库名称</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">class</span> <span class="nc">TitleWidget</span><span class="p">(</span><span class="n">BaseWidget</span><span class="p">):</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;标题栏方法类&quot;&quot;&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">def</span> <span class="nf">click_xxx_in_title_by_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;点击标题栏xxx&quot;&quot;&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="c1"># self.dog.find_element_by_attr(&quot;xxxx&quot;).click()</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">btn_center</span><span class="p">(</span><span class="s2">&quot;xxx&quot;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>动作开头，注意是动词</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>click
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>double_click
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>right_click
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>get
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>make
+</code></pre></div>
+<ul>
+<li>
+<p>元素对象名称</p>
+</li>
+<li>
+<p>界面元素直接与元素名称相同，没有名称的就取一个好听易懂的名字。</p>
+</li>
+<li>
+<p><strong>加上类的关键词</strong></p>
+</li>
+<li>
+<p>避免方法重名，同时可以标记区域。</p>
+</li>
+<li>
+<p>标定操作方法</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>by_ui
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>by_attr
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>by_mk
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>by_img
+</code></pre></div>
+<h2 id="2_2">2. 方法调用<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在用例中调用方法，通过该应用唯一的出口进行调用，比如文管：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">DfmWidget</span><span class="p">(</span><span class="n">TitleWidget</span><span class="p">,</span> <span class="n">RightViewWidget</span><span class="p">,</span> <span class="n">LeftViewWidget</span><span class="p">,</span> <span class="n">PopWidget</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">pass</span>
+</code></pre></div>
+<p><strong>不要在用例中单独去调用</strong> <code>TitleWidget</code> 、<code>RightViewWidget</code>、<code>LeftViewWidget</code> 、<code>PopWidget</code> 这些类，否则后期用例会变得不好维护；</p>
+<h1 id="_4">五、用例编写规范<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h2 id="1_3">1. 基于类写用例<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h2>
+<p>所有用例都应该基于类去写：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="k">def</span> <span class="nf">test_music_001</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;音乐启动&quot;&quot;&quot;</span>
+</code></pre></div>
+<p>注意以下几点：</p>
+<ul>
+<li>
+<p>类名不要随便取，同一个应用应该使用同一个类名，用例类名称必须以 Test 开头，遵循大驼峰命名规范；</p>
+</li>
+<li>
+<p>用例类继承 <code>BaseCase</code>，一个应用只有一个 <code>BaseCase</code></p>
+</li>
+<li>
+<p>一个 <code>py</code> 文件里面只有一个类，我们称为一个测试类；</p>
+</li>
+<li>
+<p>一个类里面可以有多个用例函数，这取决这条用例有多少个测试点：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span> <span class="nf">test_music_001_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;任务栏启动音乐&quot;&quot;&quot;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span> <span class="nf">test_music_001_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;启动器启动音乐&quot;&quot;&quot;</span>    
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">def</span> <span class="nf">test_music_001_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;桌面启动音乐&quot;&quot;&quot;</span>
+</code></pre></div>
+<h2 id="2_3">2. 用例函数规范<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>用例函数以 test 开头，遵循蛇形命名规范，中间为用例的模块名称，后面加用例 ID，最后加测试点序号，即 <code>test_${module}_${case_id}[_${index}]</code> ；</li>
+</ul>
+<p>比如：<code>test_music_001_1</code>，index 从 1 开始。</p>
+<ul>
+<li>
+<p>函数功能说明里面写用例标题，直接复制 PMS 上用例标题即可，注意用三对双引号，不要用其他注释，更不要用井号注释写用例标题；</p>
+</li>
+<li>
+<p>直接复制 <code>PMS</code> 用例</p>
+</li>
+</ul>
+<p>用例步骤直接将 <code>PMS</code> 上用例步骤和预期复制进来，然后进行批量注释（<code>ctrl + /</code>），在注释的基础上去写用例脚本会更加方便全面，也比你自己写注释更节约时间：</p>
+<p>举例，<code>PMS</code> 用例：</p>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/pms_case.png" /></p>
+<p>直接选中用例内容，复制下来，然后粘贴到自动化用例脚本中：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">def</span> <span class="nf">test_music_182</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="c1"># 1</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="c1"># 切换为平铺视图</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="c1"># 2</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="c1"># 双击任意演唱者封面</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="c1"># 进入演唱者详情页面</span>
+</code></pre></div>
+<p>上例中井号注释部分就是直接从 <code>PMS</code> 上复制过来的，在此基础上写用例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">def</span> <span class="nf">test_music_182</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        <span class="c1"># 1</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_icon_mode_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        <span class="c1"># 切换为平铺视图</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        <span class="c1"># 2</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="c1"># 双击任意演唱者封面</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="n">music</span><span class="o">.</span><span class="n">double_click_first_singer_in_singer_icon_view_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="c1"># 进入演唱者详情页面</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_xxx</span>
+</code></pre></div>
+<p>你看，非常清楚每一步在做什么，重点是省去了写注释的时间，真的炒鸡方便。</p>
+<ul>
+<li>不写 <code>if __name__ == '__main__':</code>，不写多余的代码；</li>
+</ul>
+<h2 id="3">3. 数据驱动<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>如果用例操作步骤是相同的，只是一些参数变化，尽量使用数据驱动来实现用例；</p>
+</li>
+<li>
+<p>如果你需要使用外部文件存放数据驱动的数据，不能因此引入依赖，尽量使用一些标准库能读取的文件格式，比如 <code>json、ini、CSV、xml、txt</code> 等文件格式；不建议使用 <code>Yaml、Excel、MySQL</code> 等数据格式；</p>
+</li>
+<li>
+<p>读取数据时也尽量使用标准库去做，如使用 <code>pandas</code> 处理 <code>CSV</code> 就属于大材小用了，正常的数据驱动还没到需要大数据分析来处理的地步；</p>
+</li>
+<li>
+<p>数据驱动的外部文件存放在 <code>widget/ddt/</code> 目录下；</p>
+</li>
+<li>
+<p>数据驱动的写法：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">def</span> <span class="nf">test_smb_049</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</code></pre></div>
+<p>以上这种参数化的写法本身没什么问题，但是，这里必须要补充一个没有用的小知识：</p>
+<ul>
+<li>
+<p>如果参数化数据里面的字符会原封不动的输出到 <code>item.name</code> 里面，显示非常不优雅，而且可以会引入一些意想不到的问题，可以感受一下：</p>
+<p>参数：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s2">&quot;一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三&quot;</span><span class="p">,</span> <span class="s2">&quot;qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyui&quot;</span><span class="p">,</span>  <span class="s2">&quot;12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678&quot;</span><span class="p">,</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="p">]</span>
+</code></pre></div>
+<p>现象是这样色儿的：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span>一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三<span class="o">]</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span>qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyui<span class="o">]</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span><span class="m">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678</span><span class="o">]</span>
+</code></pre></div>
+<p>说实话，看着心里堵得慌，如果这里面包含一些<strong>特殊字符</strong>或者是<strong>超长</strong>，可能会有一些很奇妙的事情发生。</p>
+</li>
+<li>
+<p>parametrize 里面有个参数：ids，可以解决此类问题，就像这样：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">def</span> <span class="nf">test_smb_049</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</code></pre></div>
+<p>再来感受一下：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span><span class="m">1</span><span class="o">]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span><span class="m">2</span><span class="o">]</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>test_smb_049.py::TestFileManager::test_smb_049<span class="o">[</span><span class="m">3</span><span class="o">]</span>
+</code></pre></div>
+<p>明显好多了，所以尽量使用 ids 这个参数。</p>
+</li>
+<li>
+<p>不建议使用 <code>fixture</code> 的数据驱动方式，框架虽然支持，但可读性比较差；如果你不知道这句话在说啥，那你可以忽略，我也不打算详细说这种实现方式，操作比较骚。</p>
+</li>
+</ul>
+<h2 id="4">4. 断言资源<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>用例断言的图片资源，直接放在用例模块的同级目录下的 <code>assert_res</code> 目录下，图片名称以用例的模块名称 + 用例 ID 命名；</li>
+<li>图像识别断言，不要截取一张很大的图，图片资源包含的元素太多了，非常容易受到需求影响，建议是进行局部的断言；</li>
+<li>图像识别的默认匹配度是 0.9，如果断言的场景对于精确度要求没那么高，可以在断言语句里面传入小于 0.9 的参数。</li>
+</ul>
+<h2 id="5">5. 元素定位<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>用于用例操作步骤中进行元素定位的图片资源，放到 <code>widget/pic_res</code> 目录下，图片名称命名为该元素的名称；</li>
+<li>用于元素定位的图片截取时尽量精确到这个具体的按钮，图片也不要太大；</li>
+<li>基于 UI 定位的操作较快，合理加入等待时间能提高用例的稳定性。</li>
+</ul>
+<h2 id="6">6. 用例资源<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>用例执行过程中需要使用到的一些资源，比如音乐可能需要一些 mp3 的资源用于测试，存放在 <code>widget/case_res</code> 目录下，前提是这些资源不超过 <code>10M</code>；</p>
+</li>
+<li>
+<p>如果是一些比较大的资源，建议放到统一的 ftp 服务器 （ftp://10.8.10.245），需要执行用例的时候再下载下来；</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="sa">f</span><span class="s2">&quot;wget ftp://</span><span class="si">{</span><span class="n">Config</span><span class="o">.</span><span class="n">FTP_IP</span><span class="si">}</span><span class="s2">/uploads/多媒体/影院/auto/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">;unzip </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">;rm -rf </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">;&quot;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>测试资源下载到应用 <code>widget/case_res</code> 目录下；</p>
+</li>
+<li>
+<p>禁止将测试资源存放在个人的机器上；</p>
+</li>
+<li>
+<p>应该尽量保证，一个资源在一次用例执行中只需要下载一次，所以你不能每次使用的时候都去下载，这样可能会耗费大量的网络资源，而因为先判断本地是否存在此资源，如果不存在再去下载；</p>
+</li>
+<li>
+<p>测试用例执行过程中，你可能需要将资源拷贝到对应的测试目录下，比如将 mp3 文件拷贝到 <code>~/Music</code> 目录下，但是我们更建议你使用发送快捷链接的方式替代拷贝的操作，因为在拷贝大文件时是很消耗系统资源的，而创建链接则不会；</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">def</span> <span class="nf">recovery_many_movies_in_movie_by_cmd</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;恢复多个视频文件至视频目录中&quot;&quot;&quot;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">work_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/home/</span><span class="si">{</span><span class="n">Config</span><span class="o">.</span><span class="n">USERNAME</span><span class="si">}</span><span class="s2">/Videos/auto&quot;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">code_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Config</span><span class="o">.</span><span class="n">CASE_RES_PATH</span><span class="si">}</span><span class="s2">/auto&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">run_cmd</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm -rf </span><span class="si">{</span><span class="n">work_path</span><span class="si">}</span><span class="s2">;mkdir </span><span class="si">{</span><span class="n">work_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">code_path</span><span class="p">):</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">run_cmd</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mkdir -p </span><span class="si">{</span><span class="n">code_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ln -s </span><span class="si">{</span><span class="n">code_path</span><span class="si">}</span><span class="s2">/* </span><span class="si">{</span><span class="n">work_path</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">run_cmd</span><span class="p">(</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>        <span class="sa">f</span><span class="s2">&quot;cd </span><span class="si">{</span><span class="n">code_path</span><span class="si">}</span><span class="s2">/;&quot;</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">wget_file</span><span class="p">(</span><span class="s1">&#39;auto.zip&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>        <span class="sa">f</span><span class="s2">&quot;ln -s </span><span class="si">{</span><span class="n">code_path</span><span class="si">}</span><span class="s2">/* </span><span class="si">{</span><span class="n">work_path</span><span class="si">}</span><span class="s2">/ &gt; /dev/null 2&gt;&amp;1&quot;</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    <span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>资源下载过程中注意超时的问题，如果你的测试资源很大，要特别注意这问题，如果你使用强制等待下载结束( <code>os.system</code> )，可能会造成用例执行时长变得不可接受，目前我们发现在持续集成环境执行时网络下载速度很慢，所以超时机制是很有必要的；<code>run_cmd</code> 方法有一个默认超时的时间，你可以根据资源大小对超时时间进行调整；</li>
+</ul>
+<h1 id="_5">六、用例调试技巧<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<h2 id="1_4">1. 日志<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>一定要先看报错，看 error 日志，通常能明确的告诉你具体哪里代码报错；</li>
+<li>结合报错点前面的error、 info 和 debug 日志看否是正常。</li>
+</ul>
+<h2 id="2_4">2. 断点调试<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>方法报错：</li>
+<li>在方法库中找到对应的方法，单独调用，看是否能正常执行；</li>
+<li>通常单个方法的执行是比较简单的，如果单个方法报错，很快就能排查出问题；在方法内部打断点，使用 <code>Debug</code> 运行，看方法内部数据传递是否存在问题；</li>
+<li>如果单个方法调用没问题，那么在用例中报错的方法前面打断点，使用 <code>Debug</code> 运行，看用例的业务逻辑和数据传递是否存在问题；</li>
+<li>断言报错：</li>
+<li>断言为数据断言，根据表达式进行断言语句进行修改；</li>
+<li>文件生成类断言，查看是否需要加等待时间；</li>
+<li>图像断言，在断言语句处打断点，使用 <code>Debug</code> 运行，用例运行到断言处会停止，查看此时断言的图片与用例执行的现场存在什么差异，此时也可以进行重新截图，从而替换新的图片；</li>
+</ul>
+<h2 id="3_1">3. 远程执行<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>远程执行指的是编辑器通过指定远程解释器执行自动化代码；</li>
+</ul>
+<p>远程执行的好处是可以很方便的 <code>Debug</code> 运行，不用在测试机上打开编辑器，用例执行速度更快；</p>
+<p>支持远程执行功能的编辑器：</p>
+<ul>
+<li>专业版 <code>Pycharm</code> </li>
+<li>
+<p><code>VScode</code> ，需要使用插件 <code>Remote-SSH</code></p>
+</li>
+<li>
+<p>远程执行配置</p>
+</li>
+</ul>
+<p>以 <code>Pycharm</code> 为例：</p>
+<p><code>File</code> —&gt; <code>Settings</code> —&gt; <code>Project</code> —&gt; <code>Python Interpreter</code> —&gt; <code>右边设置按钮</code> —&gt; <code>Add...</code> —&gt; <code>SSH Interpreter</code> —&gt; <code>New server configuration(填入host和username)</code> —&gt; <code>Next</code> —&gt; <code>password（测试机密码）</code> —&gt;  <code>Interpreter(选择远程解释器)</code> —&gt; <code>Finish</code> </p>
+<h2 id="4_1">4. 环境清理<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>如果用例里面的 <code>teardown</code> 没有执行，大概率是因为 <code>setup</code> 里面代码报错，这两个是一对的，<code>setup</code> 里面报错，<code>teardown</code> 里面的代码不会执行；</li>
+<li>目前我们已经将各应用的 <code>clean_all</code> 这个 <code>fixture</code> 改成了终结器，确保始终能执行到这步，但是用例里面的 <code>fixture</code>，还是需要我们小心处理；</li>
+<li>要执行 <code>clean_all</code> 需要在编辑器运行参数加 <code>--clean yes</code>，写用例的时候请加上，不然你不确定用例执行之后的环境是否恢复；</li>
+<li><code>setup</code> 可以不要，将 <code>setup</code> 放到用例里面是一种稳妥的做法，<code>teardown</code> 一定要。</li>
+</ul>
+<h2 id="5_1">5. 元素定位不准（坐标返回不对）<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>基于 <code>UI</code> 定位的方法，可能受到窗口 ID 的变化，导致坐标返回不准，默认取最新的一个窗口用于定位，但如果实际需要定位的不是最新的窗口，那么在用例中需要重新实例化方法类对象，并在类中传入对应的窗口序号；</li>
+<li>基于属性定位的方法，目前遇到的笔记本上，由于屏幕缩放比例为 1.25，导致坐标返回不准，我们默认使用缩放比例为 1；</li>
+<li>基于图像定位的方法，如果当前屏幕中存在多个相同的目标元素，可能出现定位不准；支持通过参数控制，返回多个坐标；</li>
+<li>基于 OCR 定位的方法，如果当前屏幕中存在多个相同的文字元素，可能出现定位不准；同样支持通过参数控制，返回多个坐标；</li>
+</ul>
+<h2 id="6_1">6. 键鼠操作不准<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>鼠标操作不生效，比如右键、双击无响应；</li>
+<li>键盘操作不生效，或者延迟输入，比如用例需要输入“我是中国人”，实际只输入了“我国人”；</li>
+</ul>
+<p>以上问题排除应用卡顿等问题，大概率是由于工具的问题，目前键鼠操作我们使用三个工具：<code>Dogtail</code> 提供的键鼠工具、<code>PyAutoGUI</code>、<code>Xdotool</code> ；</p>
+<p>有同学可能要说为啥要用三个啊，用一个不就好了，简单讲就是各有优点各有缺点。</p>
+<p>如果你遇到键鼠的问题，可以试试通过不同的工具操作；键盘输入延迟的问题，一般是因为输入速度太快了，系统没反应过来，常见于 <code>ARM</code> 和 <code>MIPS</code> 上，修改参数 delay_time 的值，单位为毫秒；</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># mouse_key.py</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">def</span> <span class="nf">input_message</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">delay_time</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="sd">    输入字符串</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="sd">    :param message: 输入的内容</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="sd">    :param delay_time: 延迟时间</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="sd">    :param interval:</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="sd">    :return:</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>如果不是方法的问题，则需要继续和开发一起排除，是否为应用接受键鼠信号处理的问题，这类情况我们也是遇到过的，具体问题具体分析。</p>
+<p>比如影院就重写了一个右键的方法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># base_widget.py</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">def</span> <span class="nf">right_click</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">_x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="sd">    重写底层单击鼠标右键</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="sd">    解决影院右键触发release事件的问题（右键主窗口会播放视频）</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">mouse_down</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">mouse_up</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="_6">七、其他不为人知的细节<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<ul>
+<li>在一段时间内尽量编写同一个应用或模块的用例，能对该用例已有方法熟悉，避免过多重复业务代码的封装；</li>
+<li>相同的场景下，各架构等待时间不同，建议使用框架提供的 sleep，我们做了不同架构的倍数放大；</li>
+<li>编写用例时，尽量考虑到每一步异常后的环境恢复，需要建议这种意识，随时要考虑到，这步操作有没有可能出错，出错了改怎么办；</li>
+<li>提交代码的时候注意不要把一些临时的测试资源提交进去了，比如测试了一个影片，有些同学习惯使用 <code>git add .</code> ，然后就全部提交到代码仓库了，这样即使后期把大文件删了，<code>.git</code> 文件里面也会很大，造成代码仓库变得十分臃肿。</li>
+</ul>
+<p>更多细节查看：《AT经验总结》</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 UnionTech Software Technology Co. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>

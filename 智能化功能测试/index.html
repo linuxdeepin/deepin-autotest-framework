@@ -1,0 +1,1650 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/">
+      
+      
+        <link rel="next" href="../%E6%99%BA%E8%83%BD%E5%8C%96%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>智能化功能测试 - YouQu Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YouQu Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              智能化功能测试
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+
+    </a>
+    YouQu Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deepin-autotest-framework
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    框架功能介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RELEASE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    版本更新记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化测试架构设计规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 应用库设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 开发规范
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 经验总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E7%94%A8%E4%BE%8B%E7%AD%9B%E9%80%89%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 用例筛选指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 执行器使用指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、方案概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、深度学习环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="二、深度学习环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、虚拟环境安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、安装依赖
+  </a>
+  
+    <nav class="md-nav" aria-label="2、安装依赖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    （1）创建虚拟环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pytorch" class="md-nav__link">
+    （2）安装 Pytorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mmcv" class="md-nav__link">
+    （3）安装 MMCV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    （4）安装显卡驱动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    三、数据标注
+  </a>
+  
+    <nav class="md-nav" aria-label="三、数据标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、数据标注
+  </a>
+  
+    <nav class="md-nav" aria-label="1、数据标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    （1）转换大小并重命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    （2）工具标注
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2、智能标注
+  </a>
+  
+    <nav class="md-nav" aria-label="2、智能标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    （1）模板数据集准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    （2）素材集准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）开始标注
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mmdetection" class="md-nav__link">
+    四、MMDetection
+  </a>
+  
+    <nav class="md-nav" aria-label="四、MMDetection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mmdetection" class="md-nav__link">
+    1、 MMDetection 代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-voc2coco" class="md-nav__link">
+    2、拉取 voc2coco 代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-coco" class="md-nav__link">
+    3、转换 coco 数据集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4、修改配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、缓存清理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、训练模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、快捷操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、硬件环境
+  </a>
+  
+    <nav class="md-nav" aria-label="五、硬件环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    1、设备清单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2、硬件环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、推荐配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_mk" class="md-nav__link">
+    六、USB_MK串口驱动方法
+  </a>
+  
+    <nav class="md-nav" aria-label="六、USB_MK串口驱动方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    1、键盘操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    2、鼠标操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    七、方法调用入参规则
+  </a>
+  
+    <nav class="md-nav" aria-label="七、方法调用入参规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    1、基类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    2、入参说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    八、隐藏鼠标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    九、智能自动化的意义
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%99%BA%E8%83%BD%E5%8C%96%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://funny-dream.github.io/funny-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客文章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://youqu-dev.uniontech.com/tool" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    定级工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一、方案概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    二、深度学习环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="二、深度学习环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、虚拟环境安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、安装依赖
+  </a>
+  
+    <nav class="md-nav" aria-label="2、安装依赖">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    （1）创建虚拟环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pytorch" class="md-nav__link">
+    （2）安装 Pytorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mmcv" class="md-nav__link">
+    （3）安装 MMCV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    （4）安装显卡驱动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    三、数据标注
+  </a>
+  
+    <nav class="md-nav" aria-label="三、数据标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、数据标注
+  </a>
+  
+    <nav class="md-nav" aria-label="1、数据标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    （1）转换大小并重命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    （2）工具标注
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2、智能标注
+  </a>
+  
+    <nav class="md-nav" aria-label="2、智能标注">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    （1）模板数据集准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    （2）素材集准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    （3）开始标注
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mmdetection" class="md-nav__link">
+    四、MMDetection
+  </a>
+  
+    <nav class="md-nav" aria-label="四、MMDetection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mmdetection" class="md-nav__link">
+    1、 MMDetection 代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-voc2coco" class="md-nav__link">
+    2、拉取 voc2coco 代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-coco" class="md-nav__link">
+    3、转换 coco 数据集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4、修改配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、缓存清理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、训练模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、快捷操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、硬件环境
+  </a>
+  
+    <nav class="md-nav" aria-label="五、硬件环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    1、设备清单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2、硬件环境搭建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、推荐配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_mk" class="md-nav__link">
+    六、USB_MK串口驱动方法
+  </a>
+  
+    <nav class="md-nav" aria-label="六、USB_MK串口驱动方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    1、键盘操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    2、鼠标操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    七、方法调用入参规则
+  </a>
+  
+    <nav class="md-nav" aria-label="七、方法调用入参规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    1、基类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    2、入参说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    八、隐藏鼠标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    九、智能自动化的意义
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/aitest.png" /></p>
+<h1 id="_1">智能化功能测试<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Attribution ：chengdu Test Team</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Date        ：2021/08/20</span>
+</code></pre></div>
+<p>此方案仍在演进中
+此方案仍在演进中</p>
+<p>仓库地址：https://gitlabcd.uniontech.com/autotest/cd-desktop-aitest</p>
+<h2 id="_2">一、方案概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>基于深度学习智能识别应用的元素控件，用于在自动化测试操作过程中的元素定位以及判断结果时的断言处理；自动化测试过程中，测试机上的画面通过采集盒传输到服务器上，服务器对视频画面进行智能识别后，服务器智能判断用例是否执行成功，然后对测试机下发下一步操作指令，测试机接受并执行下一步操作。</p>
+<p>服务器与测试机之间的链接：</p>
+<ul>
+<li>服务器通过 USB 串口设备（USB-HID 协议）模拟鼠标键盘对测试机进行操作。</li>
+<li>通过视频采集设备捕获测试机的实时画面传输给服务器。</li>
+</ul>
+<p>服务器对采集的画面进行智能识别，识别其中的元素控件，并返回元素控件在屏幕中的坐标，服务器通过智能化分析，如果测试结果与预期一致将下一步操作指令通过串口模拟键鼠信号发送给测试机；如果测试结果与预期不一致将会进入中断处理及异常结果输出，继续执行后续场景，直至所有用例测试完成。</p>
+<h2 id="_3">二、深度学习环境搭建<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>模型训练主要对 GPU 有要求，训练模型的机器显存不低于 6G，其他配置无特殊要求。</p>
+<p><strong>推荐性价比较高配置</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>操作系统:<span class="w"> </span>UnionTech<span class="w"> </span>OS<span class="w"> </span>Desktop<span class="w"> </span><span class="m">20</span><span class="w"> </span>Professional<span class="w"> </span>Linux<span class="w"> </span>version<span class="w"> </span><span class="m">4</span>.19.0-desktop-amd64<span class="w"> </span><span class="o">(</span>deepin@deepin-PC<span class="o">)</span><span class="w"> </span><span class="o">(</span>Uos<span class="w"> </span><span class="m">8</span>.3.0.3-3+rebuild<span class="o">)</span><span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>处理器:<span class="w"> </span>Intel<span class="o">(</span>R<span class="o">)</span><span class="w"> </span>Core<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span>i7-10700<span class="w"> </span>CPU<span class="w"> </span>@<span class="w"> </span><span class="m">2</span>.90GHz<span class="w"> </span><span class="o">(</span>八核<span class="w"> </span>/<span class="w"> </span>十六逻辑处理器<span class="o">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>主板:<span class="w"> </span>B460M-HDV<span class="o">(</span>RD<span class="o">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>内存:<span class="w"> </span>8GB<span class="o">(</span>TF32D4U2S1MEH-8<span class="w"> </span>DDR4<span class="w"> </span>2933MHz<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3ns<span class="o">))</span>/8GB<span class="o">(</span>TF32D4U2S1MEH-8<span class="w"> </span>DDR4<span class="w"> </span>2933MHz<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3ns<span class="o">))</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>显示适配器:<span class="w"> </span>TU116<span class="w"> </span><span class="o">[</span>GeForce<span class="w"> </span>GTX<span class="w"> </span><span class="m">1660</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="1">1、虚拟环境安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>~
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wget<span class="w"> </span>-c<span class="w"> </span>https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+</code></pre></div>
+<p>一路回车</p>
+<p>第一次提示输入  yes/no ：输入  <code>yes</code></p>
+<p>继续一路回车</p>
+<p>第二次提示：输入  <code>no</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>~/miniconda3/bin
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>activate
+</code></pre></div>
+<p>激活conda环境</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.<span class="w"> </span>./activate
+</code></pre></div>
+<p>添加公司内网源</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>bioconda
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+</code></pre></div>
+<p>如果是外网添加外网源</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+</code></pre></div>
+<p>如果要删除源</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--remove-key<span class="w"> </span>channels
+</code></pre></div>
+<h3 id="2">2、安装依赖<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">（1）创建虚拟环境<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>mmlab<span class="w"> </span>--all<span class="w"> </span><span class="c1"># 移除所有虚拟环境</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>mmlab<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>mmlab
+</code></pre></div>
+<h4 id="2-pytorch">（2）安装 Pytorch<a class="headerlink" href="#2-pytorch" title="Permanent link">&para;</a></h4>
+<p>在mmlab虚拟环境中执行</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.7.0+cu101<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.8.1+cu101<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.7.0<span class="w"> </span>-f<span class="w"> </span>https://download.pytorch.org/whl/torch_stable.html<span class="w"> </span>-i<span class="w"> </span>http://pypi.douban.com/simple<span class="w"> </span>--trusted-host<span class="w"> </span>pypi.douban.com
+</code></pre></div>
+<h4 id="3-mmcv">（3）安装 MMCV<a class="headerlink" href="#3-mmcv" title="Permanent link">&para;</a></h4>
+<p>在mmlab虚拟环境中执行</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mmcv-full<span class="o">==</span><span class="m">1</span>.3.3<span class="w"> </span>-f<span class="w"> </span>https://download.openmmlab.com/mmcv/dist/cu101/torch1.7.0/index.html<span class="w"> </span>-i<span class="w"> </span>http://pypi.douban.com/simple<span class="w"> </span>--trusted-host<span class="w"> </span>pypi.douban.com
+</code></pre></div>
+<h4 id="4">（4）安装显卡驱动<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>根据你的显卡下载对应驱动，比如我的显卡为 <code>GTX1660</code>，驱动版本为 430，驱动下载地址：https://www.nvidia.cn/Download/Find.aspx?lang=cn</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>CTRL+ALT+F2<span class="w"> </span>进入tty
+</code></pre></div>
+<p>禁用 nouveau 驱动</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/modprobe.d/blacklist-nouveau.conf
+</code></pre></div>
+<p>填入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>blacklist<span class="w"> </span>nouveau<span class="w"> </span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>options<span class="w"> </span>nouveau<span class="w"> </span><span class="nv">modeset</span><span class="o">=</span><span class="m">0</span>
+</code></pre></div>
+<p>刷新配置文件</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>update-initramfs<span class="w"> </span>-u<span class="w"> </span>
+</code></pre></div>
+<p>reboot 重启后再进入 tty</p>
+<p>关闭图像界面，输入命令关闭图像界面</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>service<span class="w"> </span>lightdm<span class="w"> </span>stop
+</code></pre></div>
+<p>安装驱动</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span>NVIDIA-Linux-x86_64-430.run
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>./NVIDIA-Linux-x86_64-430.run
+</code></pre></div>
+<p>reboot重启，nvidia-smi查看安装状态。注意看下cuda版本，10.1，driver版。</p>
+<h2 id="_4">三、数据标注<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1、数据标注<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>标注之前需要先转换图片大小，并且以数字命名，每组命名递增</p>
+<h4 id="1_3">（1）转换大小并重命名<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
+<p>rename_pic.py</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kn">import</span> <span class="nn">cv2</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="kn">import</span> <span class="nn">time</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kn">import</span> <span class="nn">getpass</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">username</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">source_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/home/</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">/Desktop/right_menu&quot;</span> <span class="c1"># 图片路径</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">source_dest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;tmp&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source_dest</span><span class="p">):</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">source_dest</span><span class="p">)</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="n">start_name</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="n">file_name_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">source_path</span><span class="p">):</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">):</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>        <span class="n">file_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="n">start_name</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start_name</span><span class="p">)</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">file_name_list</span><span class="p">:</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span><span class="n">file</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">start_name</span><span class="p">)</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">))</span>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>    <span class="n">start_name</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">source_path</span><span class="p">):</span>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>    <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="p">(</span><span class="mi">960</span><span class="p">,</span> <span class="mi">540</span><span class="p">))</span>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>    <span class="n">resizeImage</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_dest</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">resizeImage</span><span class="p">)</span>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resizeImage</span><span class="p">),</span> <span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rm -rf </span><span class="si">{</span><span class="n">source_path</span><span class="si">}</span><span class="s1">/*&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mv </span><span class="si">{</span><span class="n">source_dest</span><span class="si">}</span><span class="s1">/* </span><span class="si">{</span><span class="n">source_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rm -rf </span><span class="si">{</span><span class="n">source_dest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;下一个序号：&quot;</span><span class="p">,</span> <span class="n">start_name</span><span class="p">)</span>
+</code></pre></div>
+<p>根据终端输出的下一个序号的提示，执行 Python 文件的时候传参。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python<span class="w"> </span>rename_pic.py<span class="w"> </span><span class="m">249</span>
+</code></pre></div>
+<h4 id="2_1">（2）工具标注<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<p>使用工具 labelImg 标注</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">PyQt5</span><span class="o">==</span><span class="m">5</span>.13
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>labelImg
+</code></pre></div>
+<p>终端直接输入 labelImg，回车</p>
+<p>标注模式选择：<code>PascalVOC</code></p>
+<h3 id="2_2">2、智能标注<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>打开屏幕录制软件，录制手动操作一次测试用例，然后将录制的视频进行分帧，然后对比前两帧图标相似度，剔除相似度过高的图片，在保证素材多样性的前提下，剔除重复多余的图片生成待标注的素材集，然后取出控件模板数据集，通过 OpenCV 模板匹配获取控件在待标注的素材图片中所在的左上、左下、右上、右下四处坐标，从而根据模板数据集生成标注数据。参考目录 AnnotationMaterial</p>
+<h4 id="1_4">（1）模板数据集准备<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h4>
+<p>1、在界面截取需要标注的元素控件，放在目录下 AnnotationMaterial/template/img</p>
+<p>2、维护控件名与元素控件的键对，一个控件名可对应多个元素控件</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">menu</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">menu.jpg</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">menu1.jpg</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">menu2.jpg</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">menu3.jpg</span>
+</code></pre></div>
+<h4 id="2_3">（2）素材集准备<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p>录制视频或或屏幕截图放置目录 AnnotationMaterial/source</p>
+<h4 id="3">（3）开始标注<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>python3<span class="w"> </span>AnnotationMaterial/main.py
+</code></pre></div>
+<p>生成的标注数据存放在 AnnotationMaterial/result</p>
+<h2 id="mmdetection">四、MMDetection<a class="headerlink" href="#mmdetection" title="Permanent link">&para;</a></h2>
+<h3 id="1-mmdetection">1、 MMDetection 代码<a class="headerlink" href="#1-mmdetection" title="Permanent link">&para;</a></h3>
+<p>MMDetection 是一个有名的深度学习目标检测开源项目，也是 <code>openMMlab</code> 的招牌项目，为什么选择它，小孩儿没娘说来话长，感兴趣可以自行深入了解；</p>
+<p>你可以直接在 GitHub 上克隆代码，也可以直接使用咱们仓库下 Train 目录中代码，Train 中的代码也是从 GitHub 上拉取的，不过我们根据项目需要做了一些二次开发，推荐直接使用它。</p>
+<p>如果你想从 GitHub 上拉：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/open-mmlab/mmdetection.git
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># 不能直接拉取主分支，建议使用2.12版本，不同的版本对应的mmcv版本是不同的</span>
+</code></pre></div>
+<h3 id="2-voc2coco">2、拉取 voc2coco 代码<a class="headerlink" href="#2-voc2coco" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Tony607/voc2coco.git
+</code></pre></div>
+<h3 id="3-coco">3、转换 coco 数据集<a class="headerlink" href="#3-coco" title="Permanent link">&para;</a></h3>
+<p>将所有的图片和xml文件放入train2017，从中挑选几组放入val2017（测试集）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">cd</span><span class="w"> </span>mmdetection/data/coco
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>python<span class="w"> </span>voc2coco.py<span class="w"> </span>train2017<span class="w"> </span>annotations/instances_train2017.json
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>python<span class="w"> </span>voc2coco.py<span class="w"> </span>val2017<span class="w"> </span>annotations/instances_val2017.json
+</code></pre></div>
+<p>生成json文件</p>
+<h3 id="4_1">4、修改配置<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><strong>（1）读取模型名称</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">module_name</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./instances_train2017.json&#39;</span><span class="p">,</span> <span class="s2">&quot;r+&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="n">json_file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="n">json_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="n">module_list</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;categories&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="k">for</span> <span class="n">module_info</span> <span class="ow">in</span> <span class="n">module_list</span><span class="p">:</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">module_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>    <span class="n">module_name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;module_num:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">module_name</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># 注意对比instances_train2017.json里面模型名称的顺序，与CLASSES和coco_classes里面的顺序保持一致。</span>
+</code></pre></div>
+<p><strong>（2）修改 faster_rcnn_r101_2x_coco.py</strong></p>
+<p><code>mmdetection/xianjin/faster_rcnn_r101_2x_coco.py</code></p>
+<p>修改46行，<code>num_clasess</code>的值，新增1个，就 +1；</p>
+<p><strong>（3）修改 coco.py</strong></p>
+<p><code>mmdetection/mmdet/datasets/coco.py</code></p>
+<p>CLASSES = ()，在里面添加模型名称；</p>
+<p><strong>（4）修改 class_names.py</strong></p>
+<p><code>mmdetection/mmdet/core/evaluation/class_names.py</code></p>
+<p><code>coco_classes</code> 里面添加模型名称；</p>
+<h3 id="5">5、缓存清理<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>删除 mmdetection/build 目录</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</code></pre></div>
+<h3 id="6">6、训练模型<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>（1）指定自己配置的训练模型；
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>python<span class="w"> </span>tools/train.py<span class="w"> </span>xianjin/faster_rcnn_r101_fpn_2x_coco.py<span class="w"> </span>--gpus<span class="w"> </span><span class="m">1</span>
+</code></pre></div></p>
+<p>（2）查看训练结果的测试集结果；</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>python<span class="w"> </span>tools/train.py<span class="w"> </span>xianjin/faster_rcnn_r101_fpn_2x_coco.py<span class="w"> </span>xianjin/epoch_24.pth<span class="w"> </span>--show
+</code></pre></div>
+（3）查看训练结果的准确度；
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>python<span class="w"> </span>tools/analysis_tools/analyze_logs.py<span class="w"> </span>plot_curve<span class="w"> </span>xianjin/20210530_011907.log.json<span class="w"> </span>--keys<span class="w"> </span>acc
+</code></pre></div></p>
+<h3 id="7">7、快捷操作<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>python3<span class="w"> </span>run.py
+</code></pre></div>
+<p>将以上 4 - 7 步操作整合成 run.py，一键完成。</p>
+<h2 id="_5">五、硬件环境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h4 id="1_5">1、设备清单<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>测试机至少一台；</li>
+<li>服务端一台（目前仅支持AMD架构）；</li>
+<li>采集盒一个 （ACASIS hdmi视频采集卡，https://item.jd.com/10024310742602.html ）；</li>
+<li>USB串口转USB键鼠协议线（优胜电子科技USB串口转USB键鼠协议线B类，https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-1385258877.57.7ea037891D6nKh&amp;id=611894882981 ）；</li>
+</ul>
+<h4 id="2_4">2、硬件环境搭建<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>采集盒，HDMI 端连接测试机， USB 端连接到服务器上；</li>
+<li>USB 串口线，白色端连接服务器，黑色端连接测试机；</li>
+<li>如果需要可以接USB延长线；</li>
+<li>测试机上可以不接显示器；</li>
+</ul>
+<h4 id="3_1">3、推荐配置<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<p>执行用例的服务端对配置没有特殊要求，如果条件允许配置越高，识别速度用例执行速度越快。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>处理器:<span class="w"> </span>Intel<span class="o">(</span>R<span class="o">)</span><span class="w"> </span>Core<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span>i3-10100<span class="w"> </span>CPU<span class="w"> </span>@<span class="w"> </span><span class="m">3</span>.60GHz<span class="w"> </span><span class="o">(</span>四核<span class="w"> </span>/<span class="w"> </span>八逻辑处理器<span class="o">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>主板:<span class="w"> </span>B460-N2<span class="o">(</span>J<span class="o">)</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>内存:<span class="w"> </span>8GB<span class="o">(</span>TF32D4U2S1MEH-8<span class="w"> </span>DDR4<span class="w"> </span>3200MHz<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3ns<span class="o">))</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>显示适配器:<span class="w"> </span>UHD<span class="w"> </span>Graphics<span class="w"> </span><span class="m">630</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>存储设备:<span class="w"> </span>FORESEE<span class="w"> </span>P900F256GBH<span class="w"> </span><span class="o">(</span><span class="m">256</span><span class="w"> </span>GB<span class="o">)</span>/ST1000DM003-1SB102<span class="w"> </span><span class="o">(</span><span class="m">1</span>.00<span class="w"> </span>TB<span class="o">)</span>
+</code></pre></div>
+<p>测试机上不执行任何脚本，具体配置根据测试需要决定。</p>
+<h2 id="usb_mk">六、USB_MK串口驱动方法<a class="headerlink" href="#usb_mk" title="Permanent link">&para;</a></h2>
+<p>位于control_method目录下的usb_mk.py文件</p>
+<p>（1）列出可通信的端口</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>serial.tools.list_ports<span class="w"> </span>-v
+</code></pre></div>
+<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/图1串口列表.png" /></p>
+<p>（2）修改串口的权限</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/dev/ttyACM0
+</code></pre></div>
+<p>（3）实例化USB_MK</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kn">import</span> <span class="nn">UsbMk</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">usb_mk</span> <span class="o">=</span> <span class="n">UsbMk</span><span class="p">(</span><span class="s2">&quot;/dev/ttyACM0&quot;</span><span class="p">,</span> <span class="mi">9600</span><span class="p">)</span>   <span class="c1"># 设备默认9600为波特率，控制传输速率</span>
+</code></pre></div>
+<p>（4）USB串口设备默认波特率为9600（经测试波特率9600准确性最好）。</p>
+<h3 id="1_6">1、键盘操作<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<p>（1）按下键盘按键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键</span>
+</code></pre></div></p>
+<p>（2）按下键盘按键并且不放
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key_down</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键不放</span>
+</code></pre></div></p>
+<p>（3）组合按键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端</span>
+</code></pre></div></p>
+<p>（4）组合按键不放
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key_down</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端不放</span>
+</code></pre></div></p>
+<p>（5）释放所有键盘按键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">key_up</span><span class="p">()</span>   <span class="c1"># 释放所有键盘按键</span>
+</code></pre></div></p>
+<p>（6）键盘输入字符串（汉字会自动转成拼音输入）
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">hot_key</span><span class="p">(</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span>   <span class="c1"># 按下组合按键ctrl+alt+T调起终端</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">input_text</span><span class="p">(</span><span class="s2">&quot;reboot&quot;</span><span class="p">)</span>   <span class="c1"># 输入字符串reboot</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">press_key</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">)</span>   <span class="c1"># 按下键盘enter键</span>
+</code></pre></div></p>
+<h3 id="2_5">2、鼠标操作<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>（1）按下鼠标左键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>   <span class="c1"># 按下鼠标左键</span>
+</code></pre></div></p>
+<p>（2）按下鼠标左键不放
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">mouse_down</span><span class="p">()</span>   <span class="c1"># 按下鼠标左键不放</span>
+</code></pre></div></p>
+<p>（3）释放鼠标所有按键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">mouse_up</span><span class="p">()</span>   <span class="c1"># 释放鼠标所有按键</span>
+</code></pre></div></p>
+<p>（3）按下鼠标右键
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">right_click</span><span class="p">()</span>   <span class="c1"># 释放鼠标所有按键</span>
+</code></pre></div></p>
+<p>（4）鼠标左键双击
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">double_click</span><span class="p">()</span>   <span class="c1"># 释放鼠标所有按键</span>
+</code></pre></div></p>
+<p>（5）恢复鼠标至初始位置，默认左上角
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_to_init</span><span class="p">()</span>   <span class="c1"># 恢复鼠标至初始位置，默认左上角</span>
+</code></pre></div></p>
+<p>（6）移动鼠标至相对坐标
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_rel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标向左边移动100个像素，向下移动200个像素</span>
+</code></pre></div></p>
+<p>（7）以屏幕左上角为圆心坐标移动鼠标至屏幕绝对坐标
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标移动至屏幕坐标（100, 200）</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="c1"># 注：因Linux系统不支持鼠标绝对路径，所以会鼠标会先移动到初始位置</span>
+</code></pre></div></p>
+<p>（8）按下鼠标左键，拖动到绝对坐标位置
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">drag_to</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 按下鼠标拖动至屏幕坐标（100, 200）</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="c1"># 注：因Linux系统不支持鼠标绝对路径，所以会鼠标会先移动到初始位置</span>
+</code></pre></div></p>
+<p>（9）按下鼠标左键，拖动到相对坐标位置
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="n">usb_mk</span><span class="o">.</span><span class="n">drag_rel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1"># 鼠标向左边移动100个像素，向下移动200个像素</span>
+</code></pre></div></p>
+<h2 id="_6">七、方法调用入参规则<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">1、基类<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">image</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_usb</span> <span class="o">=</span> <span class="n">usb_mk</span>
+<a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>
+<a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a>    <span class="k">def</span> <span class="nf">find_element_by_ai</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2_6">2、入参说明<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>图像识别方法入口为 Base 类下的 find_element_by_ai 。仅接受一个参数 element，类型为 string。</p>
+<p>可识别的 string 格式：</p>
+<p>（1）大图标（  图标大于 40 像素）：识别某个大图标，例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="n">Base</span><span class="p">()</span><span class="o">.</span><span class="n">find_element_by_ai</span><span class="p">(</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>（2）大图标 / 小图标（图标小于 40 像素）：识别某个小图标，例：window/search_btn</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="n">Base</span><span class="p">()</span><span class="o">.</span><span class="n">find_element_by_ai</span><span class="p">(</span><span class="s2">&quot;window/search_btn&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>（3）大图标 / OCR：识别某个大图标内的文字，例：menu/属性</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="n">Base</span><span class="p">()</span><span class="o">.</span><span class="n">find_element_by_ai</span><span class="p">(</span><span class="s2">&quot;menu/属性&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>（4）OCR：全屏识别文字</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="n">Base</span><span class="p">()</span><span class="o">.</span><span class="n">find_element_by_ai</span><span class="p">(</span><span class="s2">&quot;搜索&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_7">八、隐藏鼠标<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>通过采集盒传输过来的视频流，在识别过程中可能受到鼠标影响，因此用例执行过程中需要隐藏鼠标。</p>
+<p>屏蔽鼠标光标显示</p>
+<p>```shell script
+ /etc/lightdm/lightdm.conf
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>在`[Seat:*]`下面添加参数
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>```shell script
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>xserver-command=X -bs -core -nocursor
+</code></pre></div></p>
+<h2 id="_8">九、智能自动化的意义<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>1、改善 Acessibility 定位的稳定性问题</strong></p>
+<p>Acessibility 属性定位存在偶尔失效的情况</p>
+<p>（1）开发在做新需求开发时可能涉及到对属性标签的修改或者层级的调整，可能造成自动化用例无法定位到元素。</p>
+<ul>
+<li>比如1040阶段，音乐重构的时候，开发对部分属性和层级做了修改，导致自动化用例定位方法80%需要修改。</li>
+<li>开发新功能的时候偶尔也会对属性做调整，遇到5次。</li>
+</ul>
+<p>（2）目前主要使用Dogtail识别应用Acessibility属性进行定位，是获取应用当前界面的属性tree，在应用跳转后，Dogtail存在无法及时获取当前属性列表的情况。</p>
+<ul>
+<li>多媒体调用文管窗口的时候，出现找不到文管里面元素的情况，目前出现10+次。</li>
+<li>应用设置页面的属性偶尔存在找不到的情况，遇到5次。</li>
+</ul>
+<p>（3）Dogtail工具本身存在问题，有时定位元素的时候很慢，让人无法接受，目前出现过很多次。</p>
+<ul>
+<li>执行用例的时候，定位元素的时间比平常慢3倍，出现4次。</li>
+</ul>
+<p><strong>2、解决了使用绝对图像识别定位的容错性差的问题</strong></p>
+<p>部分控件无法添加 Acessibility 属性从而使用图像识别定位出现的容错性差的问题。</p>
+<p>（1）图像识别定位方法需要维护大量的目标图片资源，在 UI 发生变化之后，会涉及到目标资源的替换，比较耗费人力。</p>
+<p>（2）图像识别的定位方法对比精度比较搞，如果UI 的变更会造成无法准确定位到，自动化脚本健壮性不足。</p>
+<p><strong>3、使用机器分离，解决了自动化脚本对应用的影响，真实还原用户的使用场景</strong></p>
+<p>机器分离的架构设计，保证了测试机的测试环境完全等同于用户，排除测试脚本的影响。</p>
+<p>（1）目前的功能自动化是在测试机上直接运行自动化测试脚本，加上用例执行过程中我们添加了一些进程监控、视频录制等功能，自动化脚本本身会消耗一些系统资源，无法还原真是的用户使用场景。</p>
+<p>（2）性能测试需要排除其他程序的资源消耗影响，性能自动化采用机器分离，保证了性能数据的准确性。</p>
+<p>以前的用例执行耗时没条在30秒左右，现在用例耗时在10秒。</p>
+<p><strong>4、解决了UI 调整导致定位失败的不稳定性问题</strong></p>
+<p>（1）解决了因 UI 调整导致控件位置变化或色差变化后定位不准确的问题，只要控件文案和控件外边框无变化均可准确定位；</p>
+<p>（2）目前也会采用基于UI的定位方案，如果UI位置有调整，会导致元素无法定位。</p>
+<p><strong>5、简化了用例结构，提升编写友好度</strong></p>
+<p>（1）智能自动化识别元素的方法只有一个，就是基于我们训练的模型识别视频流中的元素，经过脚本封装之后，在自动化用例中所有定位的操作都只需要调用这一个方法就行了，编写自动化脚本的难度大大降低。</p>
+<p>（2）也是由于调用方法简单，在 UI 自动化测试框架中的分层结构将会减少，多继承的情况会减少，自动化代码的调用结构也会变得简单，而且功能测试同学编写自动化用例会更加容易上手。</p>
+<p>以前写用例由于需要结合不同的模块，调用不同的方法，编写一条用例并完成调试的时间平均在20-30分钟，现在写用例脚本能在5分钟左右完成。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 UnionTech Software Technology Co. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>
