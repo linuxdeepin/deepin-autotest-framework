@@ -857,7 +857,7 @@
 <p>文件管理器从业务复杂度和用例量来讲，在系统所有应用中，是很有代表性的，难度也是最大的，因此我们选取文件管理器作为应用库改造的实验应用，给后续其他应用改造提供切实可行的思路和方案。</p>
 <h3 id="1">1、分层设计图<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>整体仍然遵循 PO 设计理念，根据业务需要，将文管业务层进行 3 层划分：</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0dfm_frame.png" /></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c3661c6c8e54ff47db.png" /></p>
 <h3 id="2">2、目录结构<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>autotest-dde-file-manager<span class="w">  </span><span class="c1"># 应用仓库</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">  </span><span class="c1"># 用例</span>
@@ -911,9 +911,9 @@
 <p>文管主界面分为三个区域：标题栏、右边视图区域、左边视图区域</p>
 <p>弹窗：设置界面弹窗、保险箱弹窗、删除确认弹窗、及各种网络弹窗</p>
 <p>右键菜单：暂时不考虑为单独的模块，考虑以图像识别的定位方案做成公共库。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0dfm.png" /></p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0pop1.png" /></p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0pop2.png" /></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c3661c6c8e54ff4806.png" /></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c8661c6c8e54ff4d1b.png" /></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c9661c6c8e54ff4d5a.png" /></p>
 <ul>
 <li>各个模块只继承基类</li>
 </ul>
