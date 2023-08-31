@@ -849,7 +849,7 @@
 </ul>
 <h2 id="_2">一、背景介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1">1、现有架构介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/frame_before.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/frame_before.png" /></p>
 <p>现有自动化测试架构整体分为三层：用例层（业务逻辑层）、中间层（元素定位和操作方法层）、核心层（底层功能库层）。</p>
 <ul>
 <li>用例层：即应用的用例，专注于业务功能逻辑，不关心元素的定位和操作；</li>
@@ -894,7 +894,7 @@
 <h2 id="_3">二、方案设计<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>为解决现有问题，适应不断丰富的测试场景，更好的发挥自动化测试的作用，需要对自动化架构及各功能模块进行重新设计规划。</p>
 <h3 id="1_1">1、架构设计<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/frame_after.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/frame_after.png" /></p>
 <h3 id="2_1">2、设计思路<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <p>框架的运行逻辑：通过核心层提供一个基础能力，业务层根据实际业务需求（测试用例）动态加载核心层，执行入口加载相应的用例集并控制执行，应用层根据实际测试需求，通过相应的配置项进行配置，从而触发自动化测试任务。</p>
 <ul>

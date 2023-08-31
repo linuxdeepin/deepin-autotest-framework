@@ -1910,7 +1910,7 @@
 <p>【原理实现】</p>
 <p>在测试过程中需要获取的坐标是相对于整个屏幕的坐标，我们可以截取到整个屏幕的图片（screen）；</p>
 <p>在元素识别的过程中，我们需要截取某个元素的小图进行识别，比如截取播放按钮：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/play_btn.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/play_btn.png" /></p>
 <p>那么实际上，元素定位的问题就转换为，将截图的小图（play_btn）拿到整个屏幕的大图（screen）中去做匹配，如果匹配成功，返回小图在大图中的坐标（ x,  y ）即可。</p>
 <p>为了方便描述，以下我将整个屏幕的截图称为：大图，某个元素图片的截图称为：小图。</p>
 <p>基于 OpenCV 的模板匹配 <code>cv.matchTemplate()</code> 功能，我们实现了图像定位的功能，框架提供了一个图像识别的底层接口（一般不对上层提供调用）：</p>
@@ -1999,11 +1999,11 @@
 <h3 id="2">2、气泡识别<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>【背景】</p>
 <p>气泡识别指的是，某些场景下要定位的元素是一些会消失的小弹窗，这类场景在用例执行过程中进行图像识别时就可能存在不稳定性，有可能图像识别的时候气泡已经消失了，也有可能气泡出现的时间太短了，不容易捕捉到，就像气泡一样，出现一下就消失，因此我们形象的称之为 “气泡识别”；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/pop.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/pop.png" /></p>
 <p>【原理实现】</p>
 <p>为了能稳定的识别气泡类场景，我们采用的方案是：</p>
 <p>在一段时间内（包含气泡从出现到消失），不停的截取这段时间内的大图，以此确保在截取的一堆图片中，肯定有至少一张图片能捕捉到气泡，最后再对这一堆图片逐个进行图像识别；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/pop_rec.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/pop_rec.png" /></p>
 <p>代码示例：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">get_during</span><span class="p">(</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="bp">cls</span><span class="p">,</span>
@@ -2032,7 +2032,7 @@
 <h4 id="31">3.1、自研图像识别技术<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
 <p>【原理】</p>
 <p>为了实现识别图像的目的，我们可以通过将图片的每个像素的RGB值，与整个屏幕中的RGB进行对比，如果小图上的RGB值与对应大图位置的RGB都相等，则匹配成功，即可返回小图在大图中的中心坐标点。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/rec_line.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/rec_line.png" /></p>
 <p>1、读取小图和大图的RGB值</p>
 <p>（1）小图的RGB值</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">small_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>small_pic.load<span class="o">()</span><span class="w"> </span>
@@ -2043,15 +2043,15 @@
 </code></pre></div>
 <p>2、将小图与大图的RGB值进行匹配</p>
 <p>（1）匹配从大图的坐标（0，0）开始匹配，匹配小图里面所有的坐标点（0，0）—（small_pic.width，small_pic.height）；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/start.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/start.png" /></p>
 <p>（2）如果在大图的（0，0）对应的所有小图的RGB值不相等，则移动到下一个坐标点（1，0），同样匹配小图里面所有的坐标点（0，0）—（small_pic.width，small_pic.height）；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/secend.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/secend.png" /></p>
 <p>（3）按照这样的规律将这一行每移动一个坐标点，都将小图所有的RGB与对应大图的值进行匹配；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/line_end.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/line_end.png" /></p>
 <p>（4）如果在大图的其中一个坐标点上匹配到了小图的所有RGB值，则此时返回小图在大图中的坐标点；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/center.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/center.png" /></p>
 <p>（5）如果匹配了大图所有的坐标点，都没有匹配到，则说明大图中不存在小图，匹配失败；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/end.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/end.png" /></p>
 <p>【代码实现】</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span> <span class="nc">ImageRgb</span><span class="p">:</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -2098,7 +2098,7 @@
 <p>在远程服务器上部署 OpenCV 的环境，并将其部署为 RPC 服务，测试机上不用安装 OpenCV 依赖，而是通过请求 RPC 服务的方式进行图像识别；</p>
 <p>【原理】</p>
 <p>测试机截取当前屏幕图片以及模板图片，发送给 RPC 服务端，服务端拿到两张图片进行图像识别，最后将识别结果返回给测试机；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/cv_rpc.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/cv_rpc.png" /></p>
 <p>要特殊说明的是： RPC 是一种协议，许多语言都是支持的，比如说服务端也可以用 C++ 来实现，客户端使用 Python 也是可以调用的。</p>
 <p>【代码实现】</p>
 <p>服务端代码示意（Service）：</p>
@@ -2167,22 +2167,22 @@
 <p>右键菜单的元素定位是一个难点，过去我们调研和使用过的元素定位操作方法有 4 种：</p>
 <p><strong>第一种：步长操作法</strong></p>
 <p>在右键菜单呼出来之后，通过键盘的 <code>up</code>、<code>down</code> 按键，进行选择菜单选择，选中目标之后 <code>enter</code> 即可；比如：在桌面点击右键菜单之后，按 1 次 <code>down</code> ，会出现下图：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu1.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu1.png" /></p>
 <p>继续再按 2 次 <code>down</code>，会出现这样：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu2.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu2.png" /></p>
 <p>再按 <code>enter</code>，会出现这样：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu3.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu3.png" /></p>
 <p>如此，“排序方式”的步长为 3；通过使用键盘上下键，就实现了对右键菜单的操作；</p>
 <p>但是，这种方式有个很烦人的问题，就是右键菜单的选项位置不可能一直不变，在需求迭代的过程中，菜单选项的变化是很大的，甚至有些应用支持自定义菜单，比如文管右键菜单可以自定义；</p>
 <p>也就是说你得经常去维护菜单选项的步长，一个选项现在的步长是 3，下个迭代可能就是 4 或者 5。</p>
 <p><strong>第二种：常规图像识别法</strong></p>
 <p>把每个菜单选项单独截图保存，图片中仅包含一个菜单选项，如下图所示：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu4.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu4.png" /></p>
 <p>这样，每个菜单选项就可以通过图像识别的方式进行元素定位；</p>
 <p>这种方式不用担心菜单选项的顺序或位置，但是需要保存大量的图片，且容易受到字体 UI 变更类需求的影响，比如：字体大小、字体间距等等需求变更都会影响，每次变更之后就需要进行大量图片资源的重新截图替换，是个比较麻烦的事情；</p>
 <p><strong>第三种：相对位移法</strong></p>
 <p>鼠标点击右键的时候，鼠标的当前坐标是可以获取到的，菜单选项的宽（ w ）一般是固定的，变化的是菜单的长度（ h ），可以通过某个选项相对于鼠标的距离在确定菜单选项的坐标，如下图所示：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu5.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu5.png" /></p>
 <p>通过维护菜单选项（相对位置）相对于鼠标位置的距离，即可轻松计算出菜单选项在屏幕中的坐标。</p>
 <p>从理论上此方案是可行的，但是这里仍然存在两个严重的问题：</p>
 <ul>
@@ -2201,15 +2201,15 @@
 </ul>
 <p>关于 OCR 识别我们在后面会详细讲到，本章节主要讲基于 OCR 识别，我们在右键菜单识别上的突破和创新；</p>
 <p>使用 OCR 识别右键菜单虽然已经很完美了，但是在一些情况下仍然存在一点问题，就是屏幕中出现多个和菜单选项文字相同的文字时，比如下面这种情况：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu6.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu6.png" /></p>
 <p>屏幕恰好出现了两个“复制”，此时要定位到菜单中的 “复制”，就需要进一步做数据处理，比如：OCR 返回 2 个“复制”的坐标，用例里面来判断用哪个，从业务上将处理起来比较麻烦，因为你得明确知道菜单在左边还是右边，然后这本身就是不确定的；</p>
 <p>怎么解决这个问题呢，这就要说道本章的主题：<strong>前后对比图像识别</strong>。</p>
 <p>【原理】</p>
 <p>在点击右键菜单之前截一张图，点击右键菜单之后再截取一张图，两张图唯一变化的就是右键菜单，将其他相同的地方都屏蔽掉，只留下菜单界面，如此即可消除干扰，如下图所示：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu7.png" /></p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu8.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu7.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu8.png" /></p>
 <p>将两种图做前后对比提取可以得到这样的图：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/menu9.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/menu9.png" /></p>
 <p>你看，通过前后图片的对比，将相同的部分给消除掉，再进行 OCR 识别，这样就不会有干扰了；</p>
 <p>代码实现请查看 <code>src/filter_image.py</code> ；</p>
 <p>代码示例：</p>
@@ -2235,9 +2235,9 @@
 <p>【原理】</p>
 <p>在切换图片之前截图保存并返回图片的路径，切换图片之后再次识别这张图片，如果不存在，说明图片已经切换了；</p>
 <p>示意图：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/diff1.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/diff1.png" /></p>
 <p>这样，我们截取了当前图片中比较有代表性的位置（一只鸟），在切换图片之后再用这张小图在当前屏幕中进行图像识别：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/diff2.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/diff2.png" /></p>
 <p>我们再拿着这张小图在当前屏幕中进行图像识别，这样在当前图片中，就不能找到这只鸟了，图像识别的结果是 False，那么也就可以判断图片切换是成功的。</p>
 <p>代码示意：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">save_temporary_picture</span><span class="p">(</span><span class="n">_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
@@ -2252,17 +2252,17 @@
 </code></pre></div>
 <p>此函数用于在操作之前截图一张临时图片，返回图片路径，最后在断言的时候再将图片路径作为参数传入断言语句即可；</p>
 <p>代码示例：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/diff3.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/diff3.png" /></p>
 <h2 id="ui">三、基于 UI 的元素定位方案<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1、背景<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>基于 UI 的元素定位方案是我们自研的一种使用简单，且效率极高、稳定性好的元素定位方案，基于元素按钮在应用中的相对位置，动态获取元素在当前屏幕中的位置，适用于各种屏幕分辨率（包括高分屏、宽屏、带鱼屏），当元素按钮位置相对于应用界面位置发生修改之后，只需要根据 UI 设计图上的源数据修改对应坐标数据就好，维护非常的方便。</p>
 <p>此类元素定位方案适用于一些元素位置相对与应用界面比较固定的应用，比如音乐（99% 的元素定位采用这种，效果非常好），不适用于界面不固定的应用，比如截图录屏，很明显不适用于这类元素定位方案。这种全新的元素定位方案有它的适用条件，如果你发现使用常规的（属性定位、图像定位）不好做时，不妨考虑使用这种，其效果一定能惊讶到你，并且迅速爱上他。</p>
 <h3 id="2_1">2、实现原理<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <p>在 UI 设计图中我们是可以获取到元素按钮相对于应用边框的距离的，然后我们可以通过技术手段获取到应用界面在当前屏幕中的位置及应用窗口的大小，示意图如下：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/ui1.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/ui1.png" /></p>
 <p><code>（x1,  y1）</code>为应用左上角相对于屏幕左上角（0, 0）的位置；<code>（x2,  y2）</code>是按钮【播放所有】的左上角相对于应用窗口左上角<code>（x1,  y1）</code>的坐标，那么实际上【播放所有】左上角相对于屏幕左上角（0, 0）的位置为：<code>（ x1 + x2,  y1 + y2 ）</code>；</p>
 <p>是按钮【播放所有】的大小（w2,  h2），可以从 UI 设计图上获取；</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/ui2.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/ui2.png" /></p>
 <p>在 UI 设计稿上点击【播放所有】图标，然后移动鼠标就就可以看到上图的参考线及数据；</p>
 <p>所以，我们可以轻松的获取到按钮【播放所有】的中心坐标为：<code>（ x1 + x2 + (w2 / 2),  y1 + y2 + ( h2 / 2) ）</code></p>
 <p>详细源代码请查看 AT 基础框架: <code>src/button_center.py</code></p>
@@ -2339,7 +2339,7 @@
 <p>安装他是个很麻烦的事情，虽然操作很简单，但其实安装包有点大，因此我们不希望直接在 <code>env.sh</code> 中加入它，这会让整个自动化环境变得非常臃肿；</p>
 <p>因此，我们想到将它做成一个 <code>RPC</code> 服务在其他机器上部署，测试机通过远程调用 <code>RPC</code> 服务的方式使用它；</p>
 <p>RPC 的调用逻辑：</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/cv_rpc.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/cv_rpc.png" /></p>
 <p>这样我们只需要在服务端部署好 OCR 识别的服务，然后通过 RPC 服务将功能提供出来，框架里面只需要调用对应的 RPC 接口就行了。</p>
 <h3 id="3_1">3、使用说明<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>服务端代码示意（Service）：</p>
@@ -2493,23 +2493,23 @@
 <h3 id="1_3">1、背景<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
 <p>传统的 UI 自动化大多都是基于浏览器的，核心是在网页的 DOM 树上查找元素，并对其进行定位操作；</p>
 <p>Linux 桌面应用大多是采用 Qt 编写的，在 Qt 中也是从最顶层的 <code>MainWindow</code> 开始构建应用，所以逻辑也是一样的，Qt 应用的自动化测试同样可以通过 DOM 树（属性树）进行元素定位，我们称之为<strong>属性定位</strong>。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/dog.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/dog.png" /></p>
 <p>借助开源工具 <code>dogtail</code> 我们可以对元素进行获取，从而进行定位操作。<code>dogtail</code> 的项目介绍可以<a href="https://gitlab.com/dogtail/dogtail/">猛戳这里</a>。</p>
 <h3 id="2_3">2、使用方法<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
 <h4 id="21sniff">2.1、sniff（嗅探器）使用<a class="headerlink" href="#21sniff" title="Permanent link">&para;</a></h4>
 <p>在终端输入 sniff 启动 AT-SPI Browser</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>mikigo@mikigo-PC:~$<span class="w"> </span>sniff
 </code></pre></div>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/sniff1.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/sniff1.png" /></p>
 <p><strong>查看应用的标签</strong></p>
 <p>在 sniff 里面可以看到系统中已启动的应用，点击应用名称前面的三角形图标，可以展开应用的标签，所有标签以 tree 的形式展示，对应应用里面的父窗口和子窗口。</p>
 <p><strong>获取元素控件的标签名称</strong></p>
 <p>首先，为了方便查看元素控件对应的位置，建议现在上方工具栏点击 <code>Actions</code>，然后勾选 <code>Hightlight Items</code>，这样在 sniff 中鼠标选中元素标签的时候，应用中会有相应的光标锁定。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/sniff2.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/sniff2.png" /></p>
 <p>在 sniff 里面点击进入应用的标签 tree 中后，点击相应的元素控件，在工具下方，会展示元素控件的 <code>Name</code>，这个就是标签名称。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/sniff3.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/sniff3.png" /></p>
 <p>在 tree 中有些地方是空白的或者是 Form，是因为开发人员在添加标签的时候没有添加，或者有些父窗口不需要添加，这种在实际业务中是不影响的，我们只要保证自动化测试用例中，要用到的元素都添加了标签即可。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/sniff4.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/sniff4.png" /></p>
 <h4 id="22">2.2、元素操作<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
 <p>获取应用对象</p>
 <p>dogtail 获取应用对象的时候，使用的是 tree 库里面的 application() 方法：</p>
@@ -2783,7 +2783,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/tag.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/tag.png" /></p>
 <h3 id="4_2">4、设计思路<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
 <p>上面介绍 <code>Pytest</code> 框架提供的标签功能 mark，使用时需要为每一个用例添加标签装饰器，则操作复杂，可维护性差，其根本问题就是标签分散在每一条用例的装饰器上，难以集中维护；于是乎将所有标签使用 <code>csv</code> 文件进行集中管理，并通过 <code>Pytest</code> 的钩子函数，读取 <code>csv</code> 文件，动态添加标签到用中。</p>
 <h3 id="5csv">5、CSV文件格式<a class="headerlink" href="#5csv" title="Permanent link">&para;</a></h3>
@@ -3005,7 +3005,7 @@
 <li>加入了失败录屏，你可以在 <code>html</code> 报告中直接看录制的视频；</li>
 <li>加入了 IP 地址、系统信息、镜像版本等；</li>
 </ul>
-<p><img alt="" src="https://raw.githubusercontent.com/mikigo/pic/main/allure.png" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/mikigo/pic@1.0/allure.png" /></p>
 <h3 id="3_5">3. 查看报告<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>本地执行</strong></li>
