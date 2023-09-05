@@ -97,7 +97,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href=".." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
       
-  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+  <img src="https://pic.imgdb.cn/item/64f05326661c6c8e54fe9bf4.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -228,7 +228,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
       
-  <img src="https://raw.githubusercontent.com/mikigo/pic/main/logo.png" alt="logo">
+  <img src="https://pic.imgdb.cn/item/64f05326661c6c8e54fe9bf4.png" alt="logo">
 
     </a>
     YouQu Docs
@@ -336,6 +336,20 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#220202395" class="md-nav__link">
+    2.2.0（2023/9/5）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2152023831" class="md-nav__link">
+    2.1.5（2023/8/31）
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#2122023822" class="md-nav__link">
@@ -728,6 +742,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#220202395" class="md-nav__link">
+    2.2.0（2023/9/5）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2152023831" class="md-nav__link">
+    2.1.5（2023/8/31）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2122023822" class="md-nav__link">
     2.1.2（2023/8/22）
   </a>
@@ -893,11 +921,37 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="220202395">2.2.0（2023/9/5）<a class="headerlink" href="#220202395" title="Permanent link">&para;</a></h2>
+<p>new</p>
+<ul>
+<li>正式启用 letmego 技术方案；</li>
+</ul>
+<p>fix</p>
+<ul>
+<li>对 docs 里面细化了远程执行章节的描述；</li>
+</ul>
+<h2 id="2152023831">2.1.5（2023/8/31）<a class="headerlink" href="#2152023831" title="Permanent link">&para;</a></h2>
+<p>new</p>
+<ul>
+<li>
+<p>将有趣的文档系统迁移到 <a href="https://github.com/linuxdeepin/deepin-autotest-framework">linuxdeepin</a> ，剥离文档中的图片资源，采用 <code>CDN</code> 加速方式加载；</p>
+</li>
+<li>
+<p>尝试合入一个有趣的功能；</p>
+</li>
+</ul>
+<p>fix</p>
+<ul>
+<li>修复了 Wayland 键鼠工具没有鼠标相对移动方法 moveRel 的问题； </li>
+<li>修复了 Wayland 下获取窗口信息功能模块中环境变量的问题；</li>
+<li>优化了 startproject 功能的一些信息输出；</li>
+<li>修复了特殊场景下 env_dev.sh 开发环境部署是可能影响到正式环境 env.sh 的问题；</li>
+</ul>
 <h2 id="2122023822">2.1.2（2023/8/22）<a class="headerlink" href="#2122023822" title="Permanent link">&para;</a></h2>
 <p>new</p>
 <ul>
 <li>增加 OCR 识别自动重试机制，默认重试 2 次，支持动态传入重试次数；</li>
-<li>使用窗管最新提供的二进制接口，优化基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下获取窗口信息的方法；感谢桌面测试部 <strong>@何权 @孙翠</strong> 、窗管研发 @黄泽铭 的大力支持。</li>
+<li>使用窗管最新提供的二进制接口，优化基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下获取窗口信息的方法；感谢桌面测试部 <strong>@何权 @孙翠</strong> 、窗管研发 <strong>@黄泽铭</strong> 的大力支持。</li>
 <li>扩充 <code>skipif</code> 条件跳过的功能函数：</li>
 <li><code>skipif_xdg_type</code> 支持 <code>x11</code> 或 <code>wayland</code> 上跳过；</li>
 <li><code>skipif_cpu_name</code> 支持不同 <code>cpu</code> 上跳过，比如：<code>skipif_cpu_name-KLVVW5821</code>；</li>
@@ -964,7 +1018,7 @@
 </code></pre></div>
 <p>只需要把 python3 替换成 youqu 就可以了，看起来很和谐~</p>
 <p><strong>4、新的文档地址</strong></p>
-<p>过去咱们 YouQu 的在线文档是部署在公司内网的，现在开源到 github 了，外部开发者肯定访问不到内网的文档，因此需要将文档部署到公网【<a href="https://mikigo.github.io/youqu-docs/">公网文档</a>】；</p>
+<p>过去咱们 YouQu 的在线文档是部署在公司内网的，现在开源到 github 了，外部开发者肯定访问不到内网的文档，因此需要将文档部署到公网【<a href="https://linuxdeepin.github.io/deepin-autotest-framework/">公网文档</a>】；</p>
 <p>公网文档使用的是 github pages（白嫖怪一顿狂喜~~），但可能会出现文档速度慢的问题（代理下就好了），不过没关系，咱们【<a href="http://youqu-dev.uniontech.com/">内网文档</a>】仍然保留，文档内容一样，访问速度更快。</p>
 <p><strong>5、其他一些小小功能更新：</strong></p>
 <p>（1）新增关闭分辨率检测的参数值；</p>
