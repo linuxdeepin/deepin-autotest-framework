@@ -1337,7 +1337,7 @@
 <p>似乎有点难以理解，我用大白话举例描述下就是，服务端想要执行 10 条用例，现在远程机器有 5 台；</p>
 <p>然后服务端就先拿着第 1 条用例给远程 1 号机执行，拿第 2 条用例给远程 2 号机执行...，如此循环直到所有用例执行完，这就是负载均衡执行。</p>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f6d694661c6c8e54a1025b.png" /></p>
-<p>使用方法和前面一样，只是需要增加一个参数：</p>
+<p>使用方法和前面一样，只是需要增加一个参数 <code>--parallel</code>：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>deepin-music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.33/uos@10.8.13.34<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--parallel<span class="w"> </span>no
 </code></pre></div>
 <h4 id="23-pms">2.3. PMS 数据回填<a class="headerlink" href="#23-pms" title="Permanent link">&para;</a></h4>
