@@ -581,9 +581,9 @@
 <li><code>CSV</code> 文件的文件名、用例函数中间的名称一致、用例 <code>py</code> 文件中间的名称，这三个名称一致。</li>
 </ul>
 <p>举例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># test_music_001.py</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># test_music_679537.py</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">def</span> <span class="nf">test_music_001</span><span class="p">():</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">():</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;用例标题&quot;&quot;&quot;</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">pass</span>
 </code></pre></div>
@@ -591,9 +591,9 @@
 <p>AT 框架底层代码实现是将 <code>CSV</code> 文件的名称与用例函数名称名称（<code>item.name</code>）进行对应，因此，注意 <code>CSV</code> 文件名称对应的是用例函数名称，即 <code>def test_music_001</code> 里面的 <code>music</code> ，而不是 <code>test_music_001.py</code> 里面的 <code>music</code> 。</p>
 <p>这里细细品一下哈~</p>
 <p>如果你将上例写成了这样:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># test_music_001.py</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># test_music_679537.py</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">test_movie_001</span><span class="p">():</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">test_movie_679537</span><span class="p">():</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;用例标题&quot;&quot;&quot;</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">pass</span>
 </code></pre></div>
@@ -714,7 +714,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="k">def</span> <span class="nf">test_music_001</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;音乐启动&quot;&quot;&quot;</span>
 </code></pre></div>
 <p>注意以下几点：</p>
@@ -735,20 +735,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span> <span class="nf">test_music_001_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;任务栏启动音乐&quot;&quot;&quot;</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span> <span class="nf">test_music_001_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span> <span class="nf">test_music_679537_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;启动器启动音乐&quot;&quot;&quot;</span>    
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">def</span> <span class="nf">test_music_001_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">def</span> <span class="nf">test_music_679537_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;桌面启动音乐&quot;&quot;&quot;</span>
 </code></pre></div>
 <h2 id="2_3">2. 用例函数规范<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>用例函数以 test 开头，遵循蛇形命名规范，中间为用例的模块名称，后面加用例 ID，最后加测试点序号，即 <code>test_${module}_${case_id}[_${index}]</code> ；</li>
 </ul>
-<p>比如：<code>test_music_001_1</code>，index 从 1 开始。</p>
+<p>比如：<code>test_music_679537_1</code>，index 从 1 开始。</p>
 <ul>
 <li>
 <p>函数功能说明里面写用例标题，直接复制 PMS 上用例标题即可，注意用三对双引号，不要用其他注释，更不要用井号注释写用例标题；</p>
@@ -764,7 +764,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">def</span> <span class="nf">test_music_182</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="c1"># 1</span>
@@ -778,7 +778,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">def</span> <span class="nf">test_music_182</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>

@@ -929,6 +929,7 @@
 <p>fix</p>
 <ul>
 <li>对 docs 里面细化了远程执行章节的描述；</li>
+<li>多 docs 里面优化了标签化管理章节的描述；</li>
 </ul>
 <h2 id="2152023831">2.1.5（2023/8/31）<a class="headerlink" href="#2152023831" title="Permanent link">&para;</a></h2>
 <p>new</p>
@@ -1228,7 +1229,7 @@
 <li>
 <p>装饰器方法指定次数；</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">def</span> <span class="nf">test_music_001</span><span class="p">():</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">():</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">pass</span>
 </code></pre></div>
 </li>
@@ -1242,7 +1243,7 @@
 </li>
 <li>
 <p><code>Python
-    def test_music_001(self):
+    def test_music_679537(self):
         pic_path = DeepinMusicWidget.save_temporary_picture(x, y, width, height)
         ...... # 中间操作
         self.assert_image_exit(pic_path)</code></p>
@@ -1252,7 +1253,7 @@
 </li>
 <li>
 <p><code>python
-    def test_music_001(self):
+    def test_music_679537(self):
         pic_path = DeepinMusicWidget.save_temporary_picture(*DeepinMusicWidget().ui.btn_size("所有音乐按钮"))
         ...... # 中间操作
         self.assert_image_exit(pic_path)</code></p>
