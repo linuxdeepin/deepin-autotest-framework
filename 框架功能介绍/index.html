@@ -2254,7 +2254,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># =============================================</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Attribution : Chengdu Test Department</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Time        : 2023/1/12</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Author      : Mikigo</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Author      : mikigo</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># =============================================</span>
 </code></pre></div>
 <h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -3330,22 +3330,28 @@
 </code></pre></div>
 <p>这样就能获取到此元素的中心坐标。</p>
 <h2 id="_6">键鼠操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><code>YouQu</code> 键鼠操作模块集成了多个键鼠操作的方案：<code>PyAutoGUI</code>、<code>xdotool</code>、<code>wayland_autotool</code>；</p>
+<p><code>YouQu</code> 键鼠操作模块集成了多个键鼠操作的方案：<code>PyAutoGUI</code>、<code>Xdotool</code>、<code>wayland_autotool</code>；</p>
 <p>有同学肯定要问，我之前就只用 <code>PyAutoGUI</code> 也都挺好的，好像用不到这么多键鼠操作的东西吧~；</p>
 <p>任何模块当然是希望越简洁通用越好，但问题是没有一种方案是通用的，它们都有自己存在的问题或者说不适用的场景，如果你还没有遇到，只能说使用的场景还不够多。</p>
 <p><code>YouQu</code> 的键鼠操作模块主要有两个：<code>MouseKey</code>、<code>ShortCut</code></p>
 <p>分别是 <strong>键鼠的基本操作模块</strong> 和 <strong>快捷键模块</strong>，基本上你能用到的键鼠操作，这里都包含了，在用例里面只需要通过方法层的类对象直接调用即可，比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="n">MusicWidget</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="kn">from</span> <span class="nn">apps.autotest_deepin_music.widget.deepin_music_widget</span> <span class="kn">import</span> <span class="n">DeepinMusicWidget</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="n">DeepinMusicWidget</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="n">DeepinMusicWidget</span><span class="o">.</span><span class="n">ctrl_c</span><span class="p">()</span>
 </code></pre></div>
 <p>当然你也可以直接通过 <code>src</code> 导入使用：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">Src</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
 <a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="n">Src</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="n">Src</span><span class="o">.</span><span class="n">ctrl_c</span><span class="p">()</span>
 </code></pre></div>
-<p>再说着直接导入键鼠模块使用：</p>
+<p>再或者直接导入键鼠模块使用：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="kn">from</span> <span class="nn">src.mouse_key</span> <span class="kn">import</span> <span class="n">MouseKey</span>
-<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>
-<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="n">MouseKey</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="kn">from</span> <span class="nn">src.shortcut</span> <span class="kn">import</span> <span class="n">ShortCut</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
+<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="n">MouseKey</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="n">ShortCut</span><span class="o">.</span><span class="n">ctrl_c</span><span class="p">()</span>
 </code></pre></div>
 <p>我们<strong>推荐第一种</strong>使用方法，因为你写用例层肯定是会导入方法层出口类的，你不需要有额外的导入代码即可使用到所有的方法。</p>
 <p>由于都是一些非常基础的内容，这里就不做过多的介绍。</p>
@@ -3380,13 +3386,12 @@
 <a id="__codelineno-61-14" name="__codelineno-61-14" href="#__codelineno-61-14"></a>        <span class="n">DeepinMusicWidget</span><span class="o">.</span><span class="n">reboot</span><span class="p">()</span>
 <a id="__codelineno-61-15" name="__codelineno-61-15" href="#__codelineno-61-15"></a>        <span class="c1"># ========== 重启之后继续执行 =========</span>
 <a id="__codelineno-61-16" name="__codelineno-61-16" href="#__codelineno-61-16"></a>        <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_music_in_dock_by_attr</span><span class="p">()</span>
-<a id="__codelineno-61-17" name="__codelineno-61-17" href="#__codelineno-61-17"></a>        <span class="n">DeepinMusicWidget</span><span class="o">.</span><span class="n">recovery_music_by_cmd</span><span class="p">()</span>
-<a id="__codelineno-61-18" name="__codelineno-61-18" href="#__codelineno-61-18"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
+<a id="__codelineno-61-17" name="__codelineno-61-17" href="#__codelineno-61-17"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
+<a id="__codelineno-61-18" name="__codelineno-61-18" href="#__codelineno-61-18"></a>        <span class="n">music</span><span class="o">.</span><span class="n">recovery_music_by_cmd</span><span class="p">()</span>
 <a id="__codelineno-61-19" name="__codelineno-61-19" href="#__codelineno-61-19"></a>        <span class="n">music</span><span class="o">.</span><span class="n">first_add_music_by_ui</span><span class="p">()</span>
-<a id="__codelineno-61-20" name="__codelineno-61-20" href="#__codelineno-61-20"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
-<a id="__codelineno-61-21" name="__codelineno-61-21" href="#__codelineno-61-21"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>
-<a id="__codelineno-61-22" name="__codelineno-61-22" href="#__codelineno-61-22"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_icon_mode_in_music_by_ui</span><span class="p">()</span>
-<a id="__codelineno-61-23" name="__codelineno-61-23" href="#__codelineno-61-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_music_image_exist</span><span class="p">(</span><span class="s2">&quot;music_679537&quot;</span><span class="p">)</span>
+<a id="__codelineno-61-20" name="__codelineno-61-20" href="#__codelineno-61-20"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-61-21" name="__codelineno-61-21" href="#__codelineno-61-21"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_icon_mode_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-61-22" name="__codelineno-61-22" href="#__codelineno-61-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_music_image_exist</span><span class="p">(</span><span class="s2">&quot;music_679537&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>（3）重启步骤最好是一个简单的reboot操作，不建议在组合步骤中间插入一个reboot；</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="nd">@letmego</span><span class="o">.</span><span class="n">mark</span>
@@ -3410,7 +3415,7 @@
 <li>用例级别：对应 <code>PMS</code> 上用例级别，分别用 <code>L1、L2、L3、L4</code> 表示；</li>
 <li>用例类型：<code>FUNC</code>（功能）、<code>PERF</code>（性能）、<code>STR</code>（压力）、<code>SEC</code>（安全）、<code>CTS</code>（兼容性）、<code>API</code>（接口）、<code>BASELINE</code>（基线-预留）</li>
 <li>设备类型：<code>PPL</code>（依赖外设的用例）、<code>COL</code>（依赖主控机的用例）</li>
-<li>用例来源：<code>BUG</code>（由 <code>Bug</code> 转的用例）</li>
+<li>一二级bug自动化：<code>BUG</code>（由 <code>Bug</code> 转的用例）</li>
 <li>上线对象：<code>CICD</code>，表示上线到 <code>CICD</code> 流水线的用例，后续可一键生成 <code>case_list.csv</code> 文件，用于导入到明道云 AT 用例列表中控制 <code>CICD</code> 跑测范围；</li>
 <li>测试级别：<code>C1 / C2 / C3 / C4</code>，具体定义参考<a href="https://doc.uniontech.com/docs/9030MdRnyXtDxjqw">流水线使用指导</a>；</li>
 <li>跳过原因：<code>skip-XXX</code>，用于控制用例是否执行；</li>
@@ -3426,7 +3431,7 @@
 <th style="text-align: center;">用例级别</th>
 <th style="text-align: center;">用例类型</th>
 <th style="text-align: center;">设备类型</th>
-<th style="text-align: center;">用例来源</th>
+<th style="text-align: center;">一二级bug自动化</th>
 <th style="text-align: center;">上线对象</th>
 <th style="text-align: center;">测试级别</th>
 <th style="text-align: center;">跳过原因</th>
