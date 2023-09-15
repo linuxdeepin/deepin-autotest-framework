@@ -592,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://funny-dream.github.io/funny-docs" class="md-nav__link">
+      <a href="https://mikigo.github.io/funny-docs" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,10 +1311,10 @@
 </code></pre></div>
 <p>​       后两种入参方式可以很方便在输入命令的过程中使用补全。</p>
 <ul>
-<li>remote 远程执行新增从命令行传入测试机信息，远程机器的<code>user@ip:password</code>,多个机器用'/'连接,如果 <code>password</code> 不传入,默认取 <code>setting/remote.ini</code> 中 <code>CLIENT_PASSWORD</code> 的值,比如：<code>uos@10.8.13.33:1</code> 或 <code>uos@10.8.13.33</code> ；</li>
+<li>remote 远程执行新增从命令行传入测试机信息，远程机器的<code>user@ip:password</code>,多个机器用'/'连接,如果 <code>password</code> 不传入,默认取 <code>setting/remote.ini</code> 中 <code>CLIENT_PASSWORD</code> 的值,比如：<code>uos@10.8.13.xx:1</code> 或 <code>uos@10.8.13.xx</code> ；</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.33/uos@10.8.13.34
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.33:1/uos@10.8.13.34:2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx:1/uos@10.8.13.xx:2
 </code></pre></div>
 <p>fix</p>
 <ul>
