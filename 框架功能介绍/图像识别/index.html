@@ -1,0 +1,1852 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E6%A0%87%E7%AD%BE%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5/">
+      
+      
+        <link rel="next" href="../%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%BD%8D/">
+      
+      
+      <link rel="icon" href="https://pic.imgdb.cn/item/650bbbe1c458853aefaae69c.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>图像识别 - YouQu Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="YouQu Docs" class="md-header__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/64f05326661c6c8e54fe9bf4.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YouQu Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              图像识别
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    youqu
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YouQu Docs" class="md-nav__button md-logo" aria-label="YouQu Docs" data-md-component="logo">
+      
+  <img src="https://pic.imgdb.cn/item/64f05326661c6c8e54fe9bf4.png" alt="logo">
+
+    </a>
+    YouQu Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linuxdeepin/deepin-autotest-framework" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    youqu
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速开始
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    详细功能介绍
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            详细功能介绍
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%89%A7%E8%A1%8C%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    执行管理器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%87%E7%AD%BE%E5%8C%96%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签化管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%87%E7%AD%BE%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签自动同步
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    图像识别
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    图像识别
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    图像识别
+  </a>
+  
+    <nav class="md-nav" aria-label="图像识别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 常规识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 气泡识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-opencv" class="md-nav__link">
+    3. 不依赖 OpenCV 的图像识别方案
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 不依赖 OpenCV 的图像识别方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1. 自研图像识别技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rpc" class="md-nav__link">
+    3.2、基于 RPC 服务实现图像识别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 右键菜单前后对比图像识别
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 右键菜单前后对比图像识别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1. 右键菜单定位的方案及问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2、最新的右键菜单终极解决方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 动态图像识别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%BD%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    属性定位
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OCR%E8%AF%86%E5%88%AB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OCR识别
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9F%BA%E4%BA%8EUI%E7%9A%84%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基于UI的元素定位方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    测试报告
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%94%AE%E9%BC%A0%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    键鼠操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    日志系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    静态代码扫描
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%B1%E8%B4%A5%E5%BD%95%E5%B1%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    失败录屏
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%87%8D%E5%90%AF%E7%B1%BB%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启类场景
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PMS%E6%95%B0%E6%8D%AE%E5%9B%9E%E5%A1%AB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PMS数据回填
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wayland%E9%80%82%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wayland适配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常见问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    框架设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            框架设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1v1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自动化测试架构设计规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 基础框架设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E5%BA%94%E7%94%A8%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 应用库设计方案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    操作规范&指引
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作规范&指引
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 开发规范
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 经验总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E7%94%A8%E4%BE%8B%E7%AD%9B%E9%80%89%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 用例筛选指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AT%E6%89%A7%E8%A1%8C%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AT 执行器使用指北
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    其他
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%99%BA%E8%83%BD%E5%8C%96%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化功能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%99%BA%E8%83%BD%E5%8C%96%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    智能化性能测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://mikigo.github.io/funny-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客文章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://youqu-dev.uniontech.com/tool" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    定级工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    版本更新
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            版本更新
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RELEASE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    版本更新记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    图像识别
+  </a>
+  
+    <nav class="md-nav" aria-label="图像识别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 常规识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 气泡识别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-opencv" class="md-nav__link">
+    3. 不依赖 OpenCV 的图像识别方案
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 不依赖 OpenCV 的图像识别方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1. 自研图像识别技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rpc" class="md-nav__link">
+    3.2、基于 RPC 服务实现图像识别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 右键菜单前后对比图像识别
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 右键菜单前后对比图像识别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1. 右键菜单定位的方案及问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2、最新的右键菜单终极解决方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 动态图像识别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/linuxdeepin/deepin-autotest-framework/edit/master/docs/框架功能介绍/图像识别.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/linuxdeepin/deepin-autotest-framework/raw/master/docs/框架功能介绍/图像识别.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>图像识别</h1>
+
+<h2 id="_1">图像识别<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>图像识别在 <code>UI</code> 自动化中是不可缺少的，市面上甚至有完全基于图像识别的自动化测试框架，比如 <code>Airtest</code>、<code>Sikuli</code> 等，在游戏等特定领域也有不错的效果，这些工具实际上也是用的 <code>OpenCV</code> 进行了封装，<code>YouQu</code> 框架基于 <code>OpenCV</code> 开发了自己的图像识别功能，它可以方便的用于界面元素的定位和断言；</p>
+<p><code>YouQu</code> 的图像识别功能几乎满足了你的所有要求，我们在长时间的思考和摸索中，针对常规场景及一些特殊场景探索除了一些实用且有效的方案，且听我慢慢道来。</p>
+<h3 id="1">1. 常规识别<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>【背景】</p>
+<p>常规识别很好理解，一句话讲就是，要获取到目标元素在屏幕中的位置。</p>
+<p>【原理实现】</p>
+<p>在测试过程中需要获取的坐标是相对于整个屏幕的坐标，我们可以截取到整个屏幕的图片（screen）；</p>
+<p>在元素识别的过程中，我们需要截取某个元素的小图进行识别，比如截取播放按钮：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c8661c6c8e54ff4c33.png" /></p>
+<p>那么实际上，元素定位的问题就转换为，将截图的小图（<code>play_btn</code>）拿到整个屏幕的大图（<code>screen</code>）中去做匹配，如果匹配成功，返回小图在大图中的坐标（ x,  y ）即可。</p>
+<p>为了方便描述，以下我将整个屏幕的截图称为：大图，某个元素图片的截图称为：小图。</p>
+<p>基于 <code>OpenCV</code> 的模板匹配 <code>cv.matchTemplate()</code> 功能，我们实现了图像定位的功能，框架提供了一个图像识别的底层接口（一般不对上层提供调用）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">_match_image_by_opencv</span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">multiple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">picture_abspath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">screen_bbox</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">):</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">     图像识别，匹配小图在屏幕中的坐标 x, y</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    :param image_path: 图像识别目标文件的存放路径</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    :param rate: 匹配度</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    :param multiple: 是否返回匹配到的多个目标</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">    :param picture_abspath: 大图，默认大图是截取屏幕，否则使用传入的图片；</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="sd">    :param screen_bbox: 截取屏幕上指定区域图片（仅支持X11下使用）；</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="sd">        [x, y, w, h]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">        x: 左上角横坐标；y: 左上角纵坐标；w: 宽度；h: 高度；根据匹配度返回坐标</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="c1"># 详细代码太长不贴了，感兴趣请查看源码</span>
+</code></pre></div>
+<p>【参数介绍】</p>
+<p><strong>（1）image_path</strong></p>
+<p><code>image_path</code> 是小图的绝对路径;</p>
+<ul>
+<li>
+<p>通常在 AT 工程里面，我们约定将用于元素定位的图片资源放到 <code>widget/pic_res</code> 目录下，图片的名称以实际的元素名称命名，如：<code>play_btn.png</code> ；</p>
+</li>
+<li>
+<p>用于用例断言的图片资源放到 <code>case/assert_res</code> 目录下，图片的名称以用例的名称命名，如：<code>music_001.png</code> ；</p>
+</li>
+</ul>
+<p>这样是为了方便管理和维护。</p>
+<p><strong>（2）rate</strong></p>
+<p>图像识别的的匹配度或者说相似度，框架默认的配置为 <code>0.9</code>，也就是说小图在大图中存在一个相似度 90% 的图标即返回其在大图中的坐标；</p>
+<p>如果你在用例中需要调整识别度，你可以在调用函数的时候，传入不同的识别度的值。</p>
+<p><strong>（3）multiple</strong></p>
+<p>默认情况下 <code>multiple=False</code>，表示只返回识别到的第一个，如果 <code>multiple=True</code> 返回匹配到的多个目标，因为大图中可能存在多个相同的小图，在某些场景下你可能需要全部获取到所有匹配到的坐标。</p>
+<p><strong>（4）picture_abspath</strong></p>
+<p>默认情况下 <code>picture_abspath=None</code> 表示大图为截取的屏幕截图，如果你不希望大图是屏幕的截图，而是你自定义传入的某个图片，你只需要将你的图片路径传递给这个参数就行，比如： <code>picture_abspath="~/Desktop/big.png"</code> ；</p>
+<p><strong>（5）screen_bbox</strong></p>
+<p>大图默认情况下是截取整个屏幕，<code>screen_bbox = [x, y, w, h]</code> 可以指定截取屏幕中的固定区域，某些场景下，可以排除部分区域对识别结果的影响。</p>
+<p>【隐式等待】</p>
+<p>用例执行过程中进行图像识别时，有时候页面跳转有延时，有可能存在识别的那一刻页面也没有跳转出来，或者或者识别的那一刻；</p>
+<p>因此我们需要一种等待机制，即在一定的时间内，如果识别不到，重复去识别：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">find_image</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="bp">cls</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="o">*</span><span class="n">widget</span><span class="p">,</span> <span class="n">rate</span><span class="p">:</span> <span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">multiple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">match_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="n">picture_abspath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">screen_bbox</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">):</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">     在屏幕中区寻找小图，返回坐标，</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sd">     如果找不到，根据配置重试次数，每次间隔1秒</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">    :param widget: 模板图片路径</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">    :param rate: 相似度</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">    :param multiple: 是否返回匹配到的多个目标</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="sd">    :param match_number: 图像识别重试次数</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="sd">    :return: 坐标元组</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="k">if</span> <span class="n">rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="n">rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">GlobalConfig</span><span class="o">.</span><span class="n">IMAGE_RATE</span><span class="p">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">widget</span><span class="p">:</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="n">match_number</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">GlobalConfig</span><span class="o">.</span><span class="n">IMAGE_MATCH_NUMBER</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                <span class="n">locate</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_match_image_by_opencv</span><span class="p">(</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                    <span class="n">element</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                    <span class="n">rate</span><span class="p">,</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                    <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                    <span class="n">picture_abspath</span><span class="o">=</span><span class="n">picture_abspath</span><span class="p">,</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                    <span class="n">screen_bbox</span><span class="o">=</span><span class="n">screen_bbox</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                <span class="p">)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">locate</span><span class="p">:</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>                    <span class="n">sleep</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">GlobalConfig</span><span class="o">.</span><span class="n">IMAGE_MATCH_WAIT_TIME</span><span class="p">))</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>                    <span class="k">return</span> <span class="n">locate</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="k">raise</span> <span class="n">TemplateElementNotFound</span><span class="p">(</span><span class="o">*</span><span class="n">widget</span><span class="p">)</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        <span class="k">raise</span> <span class="n">e</span>
+</code></pre></div>
+<p>参数 <code>match_number</code> 用于控制重复识别的次数，默认不传参，取全局配置 <code>setting/globalconfig.ini</code> 里面的 <code>IMAGE_MATCH_NUMBER</code> 配置项的值，默认<code>IMAGE_MATCH_NUMBER = 1</code>，即重试 1 次；</p>
+<p><code>find_image</code> 是框架提供的常规图像识别函数接口，这个函数提供了隐式等待的功能，且包含上面介绍的 <code>_match_image_by_opencv</code> 函数的所有功能。</p>
+<h3 id="2">2. 气泡识别<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>【背景】</p>
+<p>气泡识别指的是，某些场景下要定位的元素是一些会消失的小弹窗，这类场景在用例执行过程中进行图像识别时就可能存在不稳定性，有可能图像识别的时候气泡已经消失了，也有可能气泡出现的时间太短了，不容易捕捉到，就像气泡一样，出现一下就消失，因此我们形象的称之为 “气泡识别”；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c8661c6c8e54ff4cde.png" /></p>
+<p>【原理实现】</p>
+<p>为了能稳定的识别气泡类场景，我们采用的方案是：</p>
+<p>在一段时间内（包含气泡从出现到消失），不停的截取这段时间内的大图，以此确保在截取的一堆图片中，肯定有至少一张图片能捕捉到气泡，最后再对这一堆图片逐个进行图像识别；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c8661c6c8e54ff4ca5.png" /></p>
+<p>代码示例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">get_during</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        <span class="bp">cls</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">screen_time</span><span class="p">:</span> <span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">pause</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">max_range</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">):</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="sd">    在一段时间内截图多张图片进行识别，其中有一张图片识别成功即返回结果;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="sd">    适用于气泡类的断言，比如气泡在1秒内消失，如果用常规的图像识别则有可能无法识别到；</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="sd">    :param image_path: 要识别的模板图片；</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">    :param screen_time: 截取屏幕图片的时间，单位秒；</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="sd">    :param rate: 识别率；</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="sd">    :param pause: 截取屏幕图片的间隔时间，默认不间隔；</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="sd">    :param max_range: 截图的最大次数，这是一个预设值，一般情况下不涉及修改；</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>【参数介绍】</p>
+<p>（1）screen_time</p>
+<p>截取屏幕图片的时间，在此时间内会不断的进行截图操作，就像录制视频一样；</p>
+<p>（2）pause</p>
+<p>每次截取图片的间隔时间，默认情况下是一刻不停的截图，如果你想每次截图存在一些间隔时间传入对应的时间间隔即可，单位是秒，比如：pause = 0.03，表示 30 ms，相当于帧率为 30 帧；</p>
+<h3 id="3-opencv">3. 不依赖 OpenCV 的图像识别方案<a class="headerlink" href="#3-opencv" title="Permanent link">&para;</a></h3>
+<h4 id="31">3.1. 自研图像识别技术<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>【原理】</p>
+<p>为了实现识别图像的目的，我们可以通过将图片的每个像素的RGB值，与整个屏幕中的RGB进行对比，如果小图上的RGB值与对应大图位置的RGB都相等，则匹配成功，即可返回小图在大图中的中心坐标点。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c9661c6c8e54ff4d85.png" /></p>
+<p><strong>读取小图和大图的RGB值</strong></p>
+<p>（1）小图的RGB值</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">small_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>small_pic.load<span class="o">()</span><span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># load()会将图片的RGB值获取到，数据格式为一个二维列表，赋值给一个变量small_data。</span>
+</code></pre></div>
+<p>（2）大图的RGB值</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">big_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>big_pic.load<span class="o">()</span>
+</code></pre></div>
+<p><strong>将小图与大图的RGB值进行匹配</strong></p>
+<p>（1）匹配从大图的坐标（0，0）开始匹配，匹配小图里面所有的坐标点（0，0）—（small_pic.width，small_pic.height）；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054ca661c6c8e54ff4f3f.png" /></p>
+<p>（2）如果在大图的（0，0）对应的所有小图的RGB值不相等，则移动到下一个坐标点（1，0），同样匹配小图里面所有的坐标点（0，0）—（small_pic.width，small_pic.height）；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c9661c6c8e54ff4daa.png" /></p>
+<p>（3）按照这样的规律将这一行每移动一个坐标点，都将小图所有的RGB与对应大图的值进行匹配；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c5661c6c8e54ff49a0.png" /></p>
+<p>（4）如果在大图的其中一个坐标点上匹配到了小图的所有RGB值，则此时返回小图在大图中的坐标点；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c2661c6c8e54ff4799.png" /></p>
+<p>（5）如果匹配了大图所有的坐标点，都没有匹配到，则说明大图中不存在小图，匹配失败；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c4661c6c8e54ff4915.png" /></p>
+<p>【代码实现】</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">ImageRgb</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nd">@staticmethod</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">def</span> <span class="nf">_check_match</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">small</span><span class="p">,</span> <span class="n">bdata</span><span class="p">,</span> <span class="n">sdata</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">        Matching degree of small graph and large graph matching</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="nd">@staticmethod</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">def</span> <span class="nf">_pre_random_point</span><span class="p">(</span><span class="n">small</span><span class="p">):</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="sd">        Pre matching, take 10-20 points at random each time,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="sd">        and take coordinates randomly in the small graph</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="nd">@staticmethod</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="k">def</span> <span class="nf">_pre_random_match</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">point_list</span><span class="p">,</span> <span class="n">bdata</span><span class="p">,</span> <span class="n">sdata</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="sd">        In the small graph, several points are randomly</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="sd">        selected for matching, and the matching degree is</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="sd">        also set for the random points</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="nd">@classmethod</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="k">def</span> <span class="nf">match_image_by_rgb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="sd">        By comparing the RGB values of the small image with the large</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="sd">        image on the screen, the coordinates of the small image on</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="sd">        the screen are returned.</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="sd">        &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>通过 <code>match_image_by_rgb()</code> 这个函数，传入目标小图的文件名称，即可返回在当前屏幕中的中心坐标。</p>
+<p>有同学要问了，有 <code>OpenCV</code>干嘛不用，有必要自己实现一个图像识别的功能吗，你们是不是闲的啊？</p>
+<p>这么问的话，小了，格局小了；我们自己实现主要有几方面原因：</p>
+<ul>
+<li>减少环境依赖，不用安装 <code>OpenCV</code> 我们也能实现其功能，环境依赖这块后面会单独详细讲，减少环境依赖对于任何软件工程都非常重要；</li>
+<li><code>OpenCV</code> 在其他国产 CPU 架构上安装并不能保证100%成功，甚至有没有可能在一些架构上压根儿就不能安装使用 <code>OpenCV</code> ？</li>
+<li>有没有可能有一天国内无法使用 <code>OpenCV</code> ？就像有没有可能有一天国内无法使用 Windows 呢？这些问题值得思考。</li>
+</ul>
+<p>当然，我们承认这套方案，虽然识别准确率没问题，但在识别效率上还没有达到 <code>OpenCV</code> 模板匹配的效果，我们的方案每次识别在 <code>1.5s</code> 左右，而 <code>OpenCV</code>在 <code>1s</code> 左右；</p>
+<p>整体识别效果来讲，我认为还是可以接受的，也希望有志之士能一起优化此方案，一起技术报国。</p>
+<h4 id="32-rpc">3.2、基于 RPC 服务实现图像识别<a class="headerlink" href="#32-rpc" title="Permanent link">&para;</a></h4>
+<p>在远程服务器上部署 OpenCV 的环境，并将其部署为 RPC 服务，测试机上不用安装 OpenCV 依赖，而是通过请求 RPC 服务的方式进行图像识别；</p>
+<p>【原理】</p>
+<p>测试机截取当前屏幕图片以及模板图片，发送给 RPC 服务端，服务端拿到两张图片进行图像识别，最后将识别结果返回给测试机；</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c3661c6c8e54ff47b5.png" /></p>
+<p>要特殊说明的是： RPC 是一种协议，许多语言都是支持的，比如说服务端也可以用 C++ 来实现，客户端使用 Python 也是可以调用的。</p>
+<p>【代码实现】</p>
+<p>服务端代码示意（Service）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">socketserver</span> <span class="kn">import</span> <span class="n">ThreadingMixIn</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span> <span class="nn">xmlrpc.server</span> <span class="kn">import</span> <span class="n">SimpleXMLRPCServer</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">class</span> <span class="nc">ThreadXMLRPCServer</span><span class="p">(</span><span class="n">ThreadingMixIn</span><span class="p">,</span> <span class="n">SimpleXMLRPCServer</span><span class="p">):</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">pass</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">CURRENT_DIR</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">def</span> <span class="nf">image_put</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;上传图片&quot;&quot;&quot;</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">def</span> <span class="nf">_match_image_by_opencv</span><span class="p">(</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">multiple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">picture_abspath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    <span class="n">screen_bbox</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">):</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="sd">     图像识别，匹配小图在屏幕中的坐标 x, y</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="sd">    :param image_path: 图像识别目标文件的存放路径</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="sd">    :param rate: 匹配度</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="sd">    :param multiple: 是否返回匹配到的多个目标</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="sd">    :param picture_abspath: 大图，默认大图是截取屏幕，否则使用传入的图片；</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="sd">    :param screen_bbox: 截取屏幕上指定区域图片（仅支持X11下使用）；</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="sd">        [x, y, w, h]</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="sd">        x: 左上角横坐标；y: 左上角纵坐标；w: 宽度；h: 高度；根据匹配度返回坐标</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">ThreadXMLRPCServer</span><span class="p">((</span><span class="s2">&quot;x.x.x.x&quot;</span><span class="p">,</span> <span class="mi">8889</span><span class="p">),</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>    <span class="n">server</span><span class="o">.</span><span class="n">register_function</span><span class="p">(</span><span class="n">image_put</span><span class="p">,</span> <span class="s2">&quot;image_put&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="n">server</span><span class="o">.</span><span class="n">register_function</span><span class="p">(</span><span class="n">match_image_by_opencv</span><span class="p">,</span> <span class="s2">&quot;match_image_by_opencv&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>    <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</code></pre></div>
+<p>这样，我们基于 Python 标准库 xmlrpc 搭建了一个 RPC 服务器，注册了 <code>image_put</code> 和 <code>match_image_by_opencv</code> 两个功能接口，在测试机上可以通过 IP 和端口进行 RPC 请求；</p>
+<p>客户端代码示意（Client）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">xmlrpc.client</span> <span class="kn">import</span> <span class="n">Binary</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span> <span class="nn">xmlrpc.client</span> <span class="kn">import</span> <span class="n">ServerProxy</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">server</span> <span class="o">=</span> <span class="n">ServerProxy</span><span class="p">(</span><span class="n">GlobalConfig</span><span class="o">.</span><span class="n">OPENCV_SERVER_HOST</span><span class="p">,</span> <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">screen_rb</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">template_rb</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">template_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">screen_path</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">image_put</span><span class="p">(</span><span class="n">Binary</span><span class="p">(</span><span class="n">screen_rb</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">screen_rb</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">tpl_path</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">image_put</span><span class="p">(</span><span class="n">Binary</span><span class="p">(</span><span class="n">template_rb</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">template_rb</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="k">return</span> <span class="n">server</span><span class="o">.</span><span class="n">match_image_by_opencv</span><span class="p">(</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="n">tpl_path</span><span class="p">,</span> <span class="n">screen_path</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">multiple</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="sa">f</span><span class="s2">&quot;RPC服务器链接失败. </span><span class="si">{</span><span class="n">GlobalConfig</span><span class="o">.</span><span class="n">OPENCV_SERVER_HOST</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+</code></pre></div>
+<p>通过返回 <code>server.match_image_by_opencv</code> 就获取了在服务端图像识别的结果。</p>
+<h3 id="4">4. 右键菜单前后对比图像识别<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<h4 id="41">4.1. 右键菜单定位的方案及问题<a class="headerlink" href="#41" title="Permanent link">&para;</a></h4>
+<p>右键菜单的元素定位是一个难点，过去我们调研和使用过的元素定位操作方法有 4 种：</p>
+<p><strong>第一种：步长操作法</strong></p>
+<p>在右键菜单呼出来之后，通过键盘的 <code>up</code>、<code>down</code> 按键，进行选择菜单选择，选中目标之后 <code>enter</code> 即可；比如：在桌面点击右键菜单之后，按 1 次 <code>down</code> ，会出现下图：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c5661c6c8e54ff49b4.png" /></p>
+<p>继续再按 2 次 <code>down</code>，会出现这样：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c5661c6c8e54ff49e5.png" /></p>
+<p>再按 <code>enter</code>，会出现这样：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c5661c6c8e54ff4a06.png" /></p>
+<p>如此，“排序方式”的步长为 3；通过使用键盘上下键，就实现了对右键菜单的操作；</p>
+<p>但是，这种方式有个很烦人的问题，就是右键菜单的选项位置不可能一直不变，在需求迭代的过程中，菜单选项的变化是很大的，甚至有些应用支持自定义菜单，比如文管右键菜单可以自定义；</p>
+<p>也就是说你得经常去维护菜单选项的步长，一个选项现在的步长是 3，下个迭代可能就是 4 或者 5。</p>
+<p><strong>第二种：常规图像识别法</strong></p>
+<p>把每个菜单选项单独截图保存，图片中仅包含一个菜单选项，如下图所示：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c5661c6c8e54ff4aa9.png" /></p>
+<p>这样，每个菜单选项就可以通过图像识别的方式进行元素定位；</p>
+<p>这种方式不用担心菜单选项的顺序或位置，但是需要保存大量的图片，且容易受到字体 UI 变更类需求的影响，比如：字体大小、字体间距等等需求变更都会影响，每次变更之后就需要进行大量图片资源的重新截图替换，是个比较麻烦的事情；</p>
+<p><strong>第三种：相对位移法</strong></p>
+<p>鼠标点击右键的时候，鼠标的当前坐标是可以获取到的，菜单选项的宽（ w ）一般是固定的，变化的是菜单的长度（ h ），可以通过某个选项相对于鼠标的距离在确定菜单选项的坐标，如下图所示：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c6661c6c8e54ff4af1.png" /></p>
+<p>通过维护菜单选项（相对位置）相对于鼠标位置的距离，即可轻松计算出菜单选项在屏幕中的坐标。</p>
+<p>从理论上此方案是可行的，但是这里仍然存在两个严重的问题：</p>
+<ul>
+<li>菜单顺序改变，导致相对距离改变，而且距离是通过像素（px）来表示的，不想步长那么只管，每次需要去量一下，维护起来有点麻烦；</li>
+<li>鼠标在桌面不同位置点击右键，右键菜单出现的位置是不同的，上图的菜单是在鼠标的左下方，如果你移动鼠标到屏幕四边，你会发现，右键菜单可能出现在鼠标的四个方向，也就是说你需要根据鼠标的不同位置来判断右键菜单出现的方向，而不同的方向上计算方法是不同的，比如：右键菜单在鼠标的左上，菜单选项的坐标计算方法为（x - w / 2， y - h），这样维护起来可以说非常复杂；</li>
+</ul>
+<p>基于以上两个原因，我们并不推荐这种操作方案。</p>
+<p><strong>第四种：属性定位</strong></p>
+<p>有同学说干嘛不通过属性定位呢，其实，我们最开始想到的方案就是通过属性定位，但是在属性的 DOM 树里怎么也找不到，无法定位到，我们也联合研发同学一起解决此问题，但最终还是没能解决，非常遗憾；</p>
+<h4 id="42">4.2、最新的右键菜单终极解决方案<a class="headerlink" href="#42" title="Permanent link">&para;</a></h4>
+<p>由于右键菜单选项几乎都是文本，那么通过 OCR 识别，几乎是最优的方案：</p>
+<ul>
+<li>不用保存大量的图片；</li>
+<li>不会受到菜单选项顺序改变的影响；</li>
+<li>不会受到字体 UI 变化的影响；</li>
+</ul>
+<p>关于 OCR 识别我们在后面会详细讲到，本章节主要讲基于 OCR 识别，我们在右键菜单识别上的突破和创新；</p>
+<p>使用 OCR 识别右键菜单虽然已经很完美了，但是在一些情况下仍然存在一点问题，就是屏幕中出现多个和菜单选项文字相同的文字时，比如下面这种情况：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c6661c6c8e54ff4b0c.png" /></p>
+<p>屏幕恰好出现了两个“复制”，此时要定位到菜单中的 “复制”，就需要进一步做数据处理，比如：OCR 返回 2 个“复制”的坐标，用例里面来判断用哪个，从业务上将处理起来比较麻烦，因为你得明确知道菜单在左边还是右边，然后这本身就是不确定的；</p>
+<p>怎么解决这个问题呢，这就要说道本章的主题：<strong>前后对比图像识别</strong>。</p>
+<p>【原理】</p>
+<p>在点击右键菜单之前截一张图，点击右键菜单之后再截取一张图，两张图唯一变化的就是右键菜单，将其他相同的地方都屏蔽掉，只留下菜单界面，如此即可消除干扰，如下图所示：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c7661c6c8e54ff4b48.png" /></p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c7661c6c8e54ff4b93.png" /></p>
+<p>将两种图做前后对比提取可以得到这样的图：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c7661c6c8e54ff4bbd.png" /></p>
+<p>你看，通过前后图片的对比，将相同的部分给消除掉，再进行 OCR 识别，这样就不会有干扰了；</p>
+<p>代码实现请查看 <code>src/filter_image.py</code> ；</p>
+<p>代码示例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span> <span class="nf">filter_image</span><span class="p">(</span><span class="n">action</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">    对比动作前后两张图片，提取不同的部分生成一张新的图片，并返回新图片的路径</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">    :param action: 动作函数的函数对象</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="sd">    :return: 新图片的路径</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p><code>action</code> 是鼠标事件，因为此类场景不仅仅在右键存在，单击、双击等等，只要操作前后后变化的都可以：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">src.mouse_key</span> <span class="kn">import</span> <span class="n">MouseKey</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">action</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">MouseKey</span><span class="o">.</span><span class="n">click</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">MouseKey</span><span class="o">.</span><span class="n">right_click</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">MouseKey</span><span class="o">.</span><span class="n">double_click</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">MouseKey</span><span class="o">.</span><span class="n">move_to</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="5">5. 动态图像识别<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>【背景】</p>
+<p>在桌面壁纸切换，或看图、相册切换图片类的测试场景，由于你的测试资源是不固定的（不同版本的系统壁纸不同、壁纸顺序不同，看图相册在图片资源不一定固定），那么在测试切换壁纸或者切换图片的场景时就会存在一个问题，就是你不知道预期是啥，用例操作动态的，也是极不稳定。</p>
+<p>【原理】</p>
+<p>在切换图片之前截图保存并返回图片的路径，切换图片之后再次识别这张图片，如果不存在，说明图片已经切换了；</p>
+<p>示意图：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c3661c6c8e54ff486e.png" /></p>
+<p>这样，我们截取了当前图片中比较有代表性的位置（一只鸟），在切换图片之后再用这张小图在当前屏幕中进行图像识别：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c4661c6c8e54ff48ba.png" /></p>
+<p>我们再拿着这张小图在当前屏幕中进行图像识别，这样在当前图片中，就不能找到这只鸟了，图像识别的结果是 False，那么也就可以判断图片切换是成功的。</p>
+<p>代码示意：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span> <span class="nf">save_temporary_picture</span><span class="p">(</span><span class="n">_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="sd">     截取屏幕上指定区域图片，保存临时图片，并返回图片路径</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="sd">    :param x: 左上角横坐标</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="sd">    :param y: 左上角纵坐标</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="sd">    :param width: 宽度</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="sd">    :param height: 高度</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="sd">    :return: 图片路径</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>此函数用于在操作之前截图一张临时图片，返回图片路径，最后在断言的时候再将图片路径作为参数传入断言语句即可；</p>
+<p>代码示例：</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/64f054c4661c6c8e54ff48d1.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../%E6%A0%87%E7%AD%BE%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 标签自动同步" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                标签自动同步
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%BD%8D/" class="md-footer__link md-footer__link--next" aria-label="下一页: 属性定位" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                属性定位
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2023 UnionTech Software Technology Co., Ltd. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+    
+  </body>
+</html>
