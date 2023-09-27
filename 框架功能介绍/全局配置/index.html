@@ -1630,22 +1630,27 @@
 <a id="__codelineno-2-203" name="__codelineno-2-203" href="#__codelineno-2-203"></a><span class="c1">;导出 case_list.csv 文件时配置的字段名，用例名称默认存在第一列，无需添加</span>
 <a id="__codelineno-2-204" name="__codelineno-2-204" href="#__codelineno-2-204"></a><span class="na">EXPORT_CSV_HEARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">用例级别,用例类型,测试级别,是否跳过</span>
 <a id="__codelineno-2-205" name="__codelineno-2-205" href="#__codelineno-2-205"></a>
-<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a>
-<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a><span class="k">[log_cli]</span>
-<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a><span class="c1">;日志相关配置（不打印构造函数和魔法函数的功能说明）</span>
-<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a><span class="c1">;批量执行时，终端输出的日志级别 DEBUG/INFO/ERROR</span>
-<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a><span class="na">LOG_LEVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DEBUG</span>
+<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a><span class="c1">;需要同步到pms的csv文件名称,不加.csv后缀</span>
+<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a><span class="c1">;如果要做反向同步此参数必传；</span>
+<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a><span class="c1">;如果不传此参数可以扫描所有的csv文件，但是此操作太危险，暂时不考虑；</span>
+<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a><span class="na">CSV_NAME_TO_PMS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a>
 <a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a>
-<a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a><span class="c1"># ============= 自动输出日志的配置 ================</span>
-<a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a><span class="c1">;支持类名以 xxx 开头的，自动将函数说明打印为日志, 多个参数以逗号隔开</span>
-<a id="__codelineno-2-214" name="__codelineno-2-214" href="#__codelineno-2-214"></a><span class="na">CLASS_NAME_STARTSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Assert</span>
-<a id="__codelineno-2-215" name="__codelineno-2-215" href="#__codelineno-2-215"></a>
-<a id="__codelineno-2-216" name="__codelineno-2-216" href="#__codelineno-2-216"></a><span class="c1">;支持类名以 xxx 结尾的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
-<a id="__codelineno-2-217" name="__codelineno-2-217" href="#__codelineno-2-217"></a><span class="na">CLASS_NAME_ENDSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Widget</span>
-<a id="__codelineno-2-218" name="__codelineno-2-218" href="#__codelineno-2-218"></a>
-<a id="__codelineno-2-219" name="__codelineno-2-219" href="#__codelineno-2-219"></a><span class="c1">;支持类名包含 xxx 的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
-<a id="__codelineno-2-220" name="__codelineno-2-220" href="#__codelineno-2-220"></a><span class="na">CLASS_NAME_CONTAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ShortCut</span>
-<a id="__codelineno-2-221" name="__codelineno-2-221" href="#__codelineno-2-221"></a><span class="c1"># ==============================================</span>
+<a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a><span class="k">[log_cli]</span>
+<a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a><span class="c1">;日志相关配置（不打印构造函数和魔法函数的功能说明）</span>
+<a id="__codelineno-2-214" name="__codelineno-2-214" href="#__codelineno-2-214"></a><span class="c1">;批量执行时，终端输出的日志级别 DEBUG/INFO/ERROR</span>
+<a id="__codelineno-2-215" name="__codelineno-2-215" href="#__codelineno-2-215"></a><span class="na">LOG_LEVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DEBUG</span>
+<a id="__codelineno-2-216" name="__codelineno-2-216" href="#__codelineno-2-216"></a>
+<a id="__codelineno-2-217" name="__codelineno-2-217" href="#__codelineno-2-217"></a><span class="c1"># ============= 自动输出日志的配置 ================</span>
+<a id="__codelineno-2-218" name="__codelineno-2-218" href="#__codelineno-2-218"></a><span class="c1">;支持类名以 xxx 开头的，自动将函数说明打印为日志, 多个参数以逗号隔开</span>
+<a id="__codelineno-2-219" name="__codelineno-2-219" href="#__codelineno-2-219"></a><span class="na">CLASS_NAME_STARTSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Assert</span>
+<a id="__codelineno-2-220" name="__codelineno-2-220" href="#__codelineno-2-220"></a>
+<a id="__codelineno-2-221" name="__codelineno-2-221" href="#__codelineno-2-221"></a><span class="c1">;支持类名以 xxx 结尾的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
+<a id="__codelineno-2-222" name="__codelineno-2-222" href="#__codelineno-2-222"></a><span class="na">CLASS_NAME_ENDSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Widget</span>
+<a id="__codelineno-2-223" name="__codelineno-2-223" href="#__codelineno-2-223"></a>
+<a id="__codelineno-2-224" name="__codelineno-2-224" href="#__codelineno-2-224"></a><span class="c1">;支持类名包含 xxx 的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
+<a id="__codelineno-2-225" name="__codelineno-2-225" href="#__codelineno-2-225"></a><span class="na">CLASS_NAME_CONTAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ShortCut</span>
+<a id="__codelineno-2-226" name="__codelineno-2-226" href="#__codelineno-2-226"></a><span class="c1"># ==============================================</span>
 </code></pre></div>
 <p>除了上面这种导入方式，还可以这样导入：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">setting.globalconfig</span> <span class="kn">import</span> <span class="n">GlobalConfig</span>

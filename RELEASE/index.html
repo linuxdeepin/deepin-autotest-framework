@@ -1713,7 +1713,12 @@
 <h2 id="224unreleased">2.2.4（unreleased）<a class="headerlink" href="#224unreleased" title="Permanent link">&para;</a></h2>
 <p>new</p>
 <ul>
-<li>解除子项目的工程名称以 <code>autotest_</code> 开头的限制，子项目工程名称可以为任意名称；</li>
+<li>
+<p>支持标签反向同步：将 <code>csv</code> 中的标签同步到 <code>pms</code> ； </p>
+</li>
+<li>
+<p>解除子项目的工程名称以 <code>autotest_</code> 开头的限制，子项目工程名称可以为任意名称；</p>
+</li>
 </ul>
 <p>配置文件 <code>globalconfig.ini</code> 中的 <code>APP_NAME</code> 和命令行参数 <code>-a/--app</code> 仅支持传入工程名称的全称：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music
@@ -1721,7 +1726,7 @@
 <p>或</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
 </code></pre></div>
-<p>从 <code>apps</code> 开头可以获得命令行补全，使用更加便捷。</p>
+<p>输入以 <code>apps</code> 开头可以获得命令行补全，使用更加便捷。</p>
 <ul>
 <li>新增导入全局配置对象：</li>
 </ul>
@@ -1738,6 +1743,10 @@
 <li>
 <p>增加了在线文档的显示宽度；</p>
 </li>
+</ul>
+<p>fix</p>
+<ul>
+<li>修复从 <code>pms</code> 标签【设备类型】为 <code>null</code> 时，同步到 <code>csv</code> 文件写入为 <code>null</code>；</li>
 </ul>
 <h2 id="2232023915">2.2.3（2023/9/15）<a class="headerlink" href="#2232023915" title="Permanent link">&para;</a></h2>
 <p>new</p>
@@ -2239,7 +2248,7 @@
 
 <div class="md-source-date">
     <small>
-        作者: <span class='git-page-authors git-authors'><a href='mailto:huangmingqiang@uniontech.com'>mikigo</a></span>
+        作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:huangmingqiang@uniontech.com'>mikigo</a></span>
     </small>
 </div>
 
