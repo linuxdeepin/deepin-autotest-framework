@@ -440,22 +440,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 虚拟化部署
+  <a href="#3-env_devsh" class="md-nav__link">
+    3. 开发环境部署-env_dev.sh
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4. 激活虚拟环境
+    4. 虚拟环境解释器
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    5. 原则
+    5. 激活虚拟环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 原则
   </a>
   
 </li>
@@ -1484,22 +1491,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 虚拟化部署
+  <a href="#3-env_devsh" class="md-nav__link">
+    3. 开发环境部署-env_dev.sh
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4. 激活虚拟环境
+    4. 虚拟环境解释器
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    5. 原则
+    5. 激活虚拟环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 原则
   </a>
   
 </li>
@@ -1549,7 +1563,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash env.sh
 </code></pre></div>
 <blockquote>
-<p>注意，如果你的测试机密码不是 1 ，那你需要在全局配置文件 <code>globalconfig.ini</code> 里面将 <code>PASSWORD</code> 配置项修改为当前测试机的密码。</p>
+<p>注意，如果你的测试机密码不是 1 ，那需要在全局配置文件 <code>globalconfig.ini</code> 里面将 <code>PASSWORD</code> 配置项修改为当前测试机的密码。</p>
 </blockquote>
 <h3 id="2">2. 定制依赖<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <h4 id="21">2.1. 新增依赖<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
@@ -1560,9 +1574,10 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
 </code></pre></div>
 <p>里面写入需要安装的三方依赖，比如像这样：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># requirement.txt</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">PyYAML</span><span class="o">==</span><span class="m">6</span>.0<span class="w">  </span><span class="c1"># 指定安装某个版本</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>requests<span class="w">  </span><span class="c1"># 未指定版本则安装最新版</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># requirement.txt
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>PyYAML==6.0  # 指定安装某个版本
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>requests  # 未指定版本则安装最新版
 </code></pre></div>
 <p>在执行 <code>bash env.sh</code> 时会一并将其安装。</p>
 <p>如果多个应用库都存在 <code>requirement.txt</code> 文件，执行 <code>env.sh</code> 时会将多个 <code>requirement.txt</code> 文件一并加载；那么一定要注意多个 <code>requirement.txt</code> 文件可能存在相同的依赖被指定安装不同版本等等兼容性问题。</p>
@@ -1574,30 +1589,26 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
 </code></pre></div>
-<p>基础依赖仅安装以下几个包：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pytest<span class="w"> </span><span class="c1"># pytest</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pytest-rerunfailures<span class="w"> </span><span class="c1"># 失败重跑插件</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pytest-timeout<span class="w"> </span><span class="c1"># 用例超时插件</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>allure-pytest<span class="w"> </span><span class="c1"># 生成原始报告文件插件</span>
-</code></pre></div>
+<p>基础依赖仅安装最基础的几个包；</p>
 <p><code>裁剪依赖</code> 和 <code>新增依赖</code> 是不冲突的，可以同时使用。</p>
-<p>此方案默认为虚拟环境部署，如果你想直接部署在本机上：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bash<span class="w"> </span>env_dev.sh
+<h3 id="3-env_devsh">3. 开发环境部署-env_dev.sh<a class="headerlink" href="#3-env_devsh" title="Permanent link">&para;</a></h3>
+<p>在开发过程中，如果你想直接部署在本机上：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bash<span class="w"> </span>env_dev.sh
 </code></pre></div>
 <p>这种方式安装的环境不会有 <code>youqu</code> 这个命令，用例执行都使用 <code>python3</code> 驱动即可，比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
-<h3 id="3">3. 虚拟化部署<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>YouQu 默认采用虚拟化部分，虚拟化环境实际安装的位置是在 <code>$HOME/.local/share/virtualenvs/youqu-oHTM7l7G</code> 目录下</p>
+<h3 id="4">4. 虚拟环境解释器<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>YouQu 默认采用虚拟化部署，虚拟环境实际安装的位置是在 <code>$HOME/.local/share/virtualenvs/youqu-oHTM7l7G</code> 目录下；其中，</p>
 <p><code>youqu-oHTM7l7G</code> 此目录名称前面部分是你的代码根目录的名称，后面部分是生成的随机字符串，同学们在部署的时候随机字符串肯定和我这里的例子不一样；</p>
-<p>同学们在远程机器上定位问题的时候，如果使用 Pycharm 调试，就将解释器指定到这个目录的就行了；</p>
-<h3 id="4">4. 激活虚拟环境<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>在远程机器上定位问题的时候，如果使用 Pycharm 调试执行，就将解释器指定到这个目录的就行了；</p>
+<h3 id="5">5. 激活虚拟环境<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <p>在开发过程中有可能需要在终端激活虚拟环境，以便进行一些开发调试；</p>
-<p>在框架根目录输入：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>youqu-shell
+<p>在框架根目录下命令行输入：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu-shell
 </code></pre></div>
 <p>即可在终端激活当前虚拟环境。</p>
-<h3 id="5">5. 原则<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<h3 id="6">6. 原则<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p><code>YouQu</code> 的环境依赖一直坚持 2 个原则：</p>
 <ul>
 <li><strong>最小环境依赖原则</strong></li>
@@ -1620,7 +1631,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年9月26日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月7日</span>
       
     
   </small>
@@ -1640,7 +1651,9 @@
 </div>
 
 <div>
-    <span id="busuanzi_container_site_pv" style="color:#707070">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span id="busuanzi_container_site_pv" style="color:#707070;font-size: small">
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
 </div>
 
               </article>

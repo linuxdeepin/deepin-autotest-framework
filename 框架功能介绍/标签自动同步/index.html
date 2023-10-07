@@ -1517,7 +1517,6 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">APP_NAME</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="c1"># 这个参数可填可不填，但是填了可以提高用例的执行速度，因为在用例收集阶段可以指定到具体的应用库。（下同）</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">PMS_USER</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="c1"># PMS的用户名</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">PMS_PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="c1"># PMS的密码</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">CSV_NAME_TO_PMS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 </code></pre></div>
 <p>在 <code>[pmsctl-pms_link_csv]</code> 节点下指定 <code>CSV</code> 文件名与 <code>PMS</code> 用例模块的对应关系，比如：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[pmsctl-pms_link_csv]</span>
@@ -1562,13 +1561,18 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>pmsctl<span class="w"> </span>-c2p<span class="w"> </span>-a<span class="w"> </span>apps/autotest_com_deepin_lianliankan/<span class="w"> </span>-c<span class="w"> </span>lianliankan<span class="w"> </span>-u<span class="w"> </span>my_user<span class="w"> </span>-p<span class="w"> </span>my_pwd
 </code></pre></div>
 <h2 id="csv">导出CSV文件<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h2>
+<p><strong>【使用方法一】</strong></p>
 <p>框架提供导出指定标签用例的功能：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>csvctl<span class="w"> </span>-a<span class="w"> </span>deepin-album<span class="w"> </span>-t<span class="w"> </span>CICD<span class="w"> </span>-ec<span class="w"> </span>case_list.csv
 </code></pre></div>
 <p>表示导出 <code>deepin-album</code> 的用例中标记了 <code>CICD</code> 标签的用例，导出 <code>CSV</code> 文件的字段格式已经适配了 <code>CICD</code> 的要求。</p>
+<p><strong>【使用方法二】</strong></p>
 <p>也可以使用配置文件选项：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">;导出的csv文件名称，比如：case_list.csv</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">EXPORT_CSV_FILE</span><span class="w"> </span><span class="o">=</span>
+</code></pre></div>
+<p>命令行执行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>csvctl<span class="w"> </span>-a<span class="w"> </span>deepin-album<span class="w"> </span>-t<span class="w"> </span>CICD
 </code></pre></div>
 
   <hr>
@@ -1576,7 +1580,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年9月27日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年9月28日</span>
       
     
   </small>
@@ -1596,7 +1600,9 @@
 </div>
 
 <div>
-    <span id="busuanzi_container_site_pv" style="color:#707070">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span id="busuanzi_container_site_pv" style="color:#707070;font-size: small">
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    </span>
 </div>
 
               </article>
