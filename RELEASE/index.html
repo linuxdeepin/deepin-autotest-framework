@@ -831,6 +831,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#225unreleased" class="md-nav__link">
+    2.2.5（unreleased）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#22420231016" class="md-nav__link">
     2.2.4（2023/10/16）
   </a>
@@ -1562,6 +1569,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#225unreleased" class="md-nav__link">
+    2.2.5（unreleased）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#22420231016" class="md-nav__link">
     2.2.4（2023/10/16）
   </a>
@@ -1776,8 +1790,15 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="225unreleased">2.2.5（unreleased）<a class="headerlink" href="#225unreleased" title="Permanent link">&para;</a></h2>
+<p><strong>Fix</strong></p>
+<ul>
+<li>修复 <code>youqu</code> 命令无法接受带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
+<li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能的问题，暂时先回滚到 <code>V3</code> ；</li>
+</ul>
+<hr />
 <h2 id="22420231016">2.2.4（2023/10/16）<a class="headerlink" href="#22420231016" title="Permanent link">&para;</a></h2>
-<p>new</p>
+<p><strong>New</strong></p>
 <ul>
 <li>
 <p><code>OCR</code> 检测模型升级到 <code>V4</code> ，中英文场景检测模型准确率提升 4.9%，识别模型准确率提升 2%；</p>
@@ -1788,24 +1809,21 @@
 <li>
 <p>解除子项目的工程名称以 <code>autotest_</code> 开头的限制，子项目工程名称可以为任意名称；</p>
 </li>
-</ul>
+<li>
 <p>配置文件 <code>globalconfig.ini</code> 中的 <code>APP_NAME</code> 和命令行参数 <code>-a/--app</code> 仅支持传入工程名称的全称：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># 或</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music
 </code></pre></div>
-<p>或</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
+</li>
+<li>
+<p>新增导入全局配置对象：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">setting</span> <span class="kn">import</span> <span class="n">conf</span>
 </code></pre></div>
-<p>输入以 <code>apps</code> 开头可以获得命令行补全，使用更加便捷。</p>
-<ul>
-<li>新增导入全局配置对象：</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">setting</span> <span class="kn">import</span> <span class="n">conf</span>
+<p>这种写法和之前的写法效果是一样的；</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">setting.globalconfig</span> <span class="kn">import</span> <span class="n">GlobalConfig</span>
 </code></pre></div>
-<p>这种写法和之前的写法效果是一样的：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">setting.globalconfig</span> <span class="kn">import</span> <span class="n">GlobalConfig</span>
-</code></pre></div>
-<p>主要为了简化代码。</p>
-<ul>
+</li>
 <li>
 <p>继续尝试将一些功能模块拆分为独立构件；</p>
 </li>
@@ -1816,7 +1834,7 @@
 <p>增加执行前显示执行的Python文件数量</p>
 </li>
 </ul>
-<p>fix</p>
+<p><strong>Fix</strong></p>
 <ul>
 <li>修复从 <code>pms</code> 标签【设备类型】为 <code>null</code> 时，同步到 <code>csv</code> 文件写入为 <code>null</code>；</li>
 <li>修复无法导出 <code>csv</code> 文件的问题；</li>
@@ -1824,16 +1842,18 @@
 <li>修复了 <code>sniff</code> 命令报错无法找到 <code>src</code> 模块的问题；</li>
 <li>修复 <code>assert_ocr_not_exist</code> 传入多个识别目标逻辑判断错误的问题；</li>
 </ul>
+<hr />
 <h2 id="2232023915">2.2.3（2023/9/15）<a class="headerlink" href="#2232023915" title="Permanent link">&para;</a></h2>
-<p>new</p>
+<p><strong>New</strong></p>
 <ul>
 <li>尝试将一些功能模块拆分为独立构件；</li>
 </ul>
-<p>fix</p>
+<p><strong>Fix</strong></p>
 <ul>
 <li>修复了远程执行传入 <code>app_name</code> 无法收集到用例的问题； </li>
 <li>优化了 <code>docs</code> 文档内容及排版；</li>
 </ul>
+<hr />
 <h2 id="2212023913">2.2.1（2023/9/13）<a class="headerlink" href="#2212023913" title="Permanent link">&para;</a></h2>
 <p>new</p>
 <ul>
@@ -1845,6 +1865,7 @@
 <li>修复了 <code>letmego</code> 在开发调试时也会记录执行过程的问题；</li>
 <li>优化了在线文档内容和排版；</li>
 </ul>
+<hr />
 <h2 id="220202395">2.2.0（2023/9/5）<a class="headerlink" href="#220202395" title="Permanent link">&para;</a></h2>
 <p>new</p>
 <ul>
@@ -1892,54 +1913,58 @@
 </li>
 <li>
 <p>修复子项目 cv 导入报错的问题；</p>
-</li>
-</ul>
 <p>原因为：youqu 的图像识别功能兼容两种情况，一种是面向服务，就是本地测试机不需要安装 <code>OpenCV</code>，用例中的图像识别会通过远程服务接口进行图像识别和结果获取；第二种是原生，就是本地直接安装 <code>OpenCV</code> 直接用。两个情况的优先级是优先判断本地存在，否则走服务。</p>
 <p>前面我们已经把 OCR 功能做了服务化，基于 1 年多以来的观察，用起来很稳定，再一个就是 <code>OpenCV</code> 安装包是比较臃肿的，粗略数了下依赖有 <code>30+</code> 个，而且在各架构上依赖包还不尽相同，装载到虚拟环境方案中不太好处理，所以本次 2.0 版本我们大胆的将图像识别的默认功能修改为面向服务的方式，前期测试一切看起来都很和谐。</p>
 <p>但是没注意到之前给海燕姐那边项目单独定制做了个图像识别接口（为了能简单平滑的迁移到 youqu），此接口底层没有兼容服务化，所以她那边的项目调用此定制接口会报 cv 导入的问题。</p>
 <p>由于将这个定制图像识别接口进行服务化兼容改造需要一定时间，改完还需要测试，但本次时间比较紧，因此先把 <code>OpenCV</code> 装进虚拟环境，后续版本再考虑针对此接口做修改。</p>
+</li>
+</ul>
 <h2 id="2002023816">2.0.0（2023/8/16）<a class="headerlink" href="#2002023816" title="Permanent link">&para;</a></h2>
 <p><code>YouQu</code>（自动化测试基础框架）开源了，同时推出了 2.0 版本。</p>
 <p>感谢<strong>王波总、架构师徐小东、研发经理郑幼戈、刘郑</strong>等研发同事的大力支持。</p>
 <p>new</p>
 <p><strong>1、新的基础框架代码获取方式及新的初始化工程命令</strong></p>
 <p><code>YouQu</code> 后续均通过 <code>PyPI</code> 进行包的发布，也就是说后续可以使用 pip 进行安装：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">youqu</span><span class="o">==</span><span class="m">2</span>.0.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">youqu</span><span class="o">==</span><span class="m">2</span>.0.0
 </code></pre></div>
 <p>这里有 2 个小点要注意：</p>
 <ul>
-<li>推荐使用 <code>sudo pip3</code> （加 sudo）进行安装；</li>
-</ul>
+<li>
+<p>推荐使用 <code>sudo pip3</code> （加 sudo）进行安装；</p>
 <p>如果不加 sudo 有些机器可能 <code>$HOME/.local/bin</code> 不在系统 PATH 环境目录下，在不添加环境变量的情况下，会出现 <code>YouQu</code> 的初始化工程命令（youqu-startproject）无法使用的问题；</p>
 <p>当然，将上述路径添加到环境变量之后也是可以用的，所以我这里是推荐加 sudo，不加 sudo 也是可以的，只是需要关注下环境变量的问题。</p>
-<ul>
-<li>推荐指定版本号（<code>youqu==2.0.0</code>）安装，如果不指定版本号默认是安装最新发布的 YouQu 版本，你可以在 <a href="https://pypi.org/project/youqu/">PyPI</a> 上的 Release history 里面查看有哪些版本。</li>
-</ul>
+</li>
+<li>
+<p>推荐指定版本号（<code>youqu==2.0.0</code>）安装，如果不指定版本号默认是安装最新发布的 YouQu 版本，你可以在 <a href="https://pypi.org/project/youqu/">PyPI</a> 上的 Release history 里面查看有哪些版本。</p>
 <p>安装之后会自动生成一个系统命令 youqu-startproject，使用它可以初始化工程，这里以音乐举例；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>youqu-startproject<span class="w"> </span>autotest_deepin_music
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>youqu-startproject<span class="w"> </span>autotest_deepin_music
 </code></pre></div>
 <p>这样就会在当前目录下生成一个 <code>autotest_deepin_music</code> 目录，里面包含了基础框架所有的代码；</p>
 <p>之后，还是在 <code>apps</code> 目录下，放入子项目的AT代码即可，使用方法和过去一样，这里就不多介绍。</p>
 <p>另外，除了通过 pip 获取以外，仍然可以通过源码获取（直接 git clone）。</p>
 <p>值得一提的是，使用 pip 安装 <code>YouQu</code> 时，<code>YouQu</code> 包的大小才 <code>600+</code> k，安装速度起飞。</p>
+</li>
+</ul>
 <p><strong>2、新的AT虚拟化环境部署方案</strong></p>
 <p>为了解决以下问题：</p>
 <ul>
 <li>过去一段时间咱们经常出现的，不同的AT项目在同一台机器上部署环境时依赖版本冲突的问题，新方案不同的项目会动态生成自己的虚拟环境，相互之间不影响；</li>
-<li>业内为了解决版本冲突问题一般都会使用 <code>Python</code> 虚拟环境的工具，但是都有个问题，无法管理 deb 包形式发布的 Python 包，本次我们解决了这个问题，能够完全管理常规的 <code>Python</code> 包，也能管理到 deb 包形式发布的 Python 三方包；</li>
-</ul>
+<li>
+<p>业内为了解决版本冲突问题一般都会使用 <code>Python</code> 虚拟环境的工具，但是都有个问题，无法管理 deb 包形式发布的 Python 包，本次我们解决了这个问题，能够完全管理常规的 <code>Python</code> 包，也能管理到 deb 包形式发布的 Python 三方包；</p>
 <p>虚拟化环境部署使用方法：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bash<span class="w"> </span>env.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bash<span class="w"> </span>env.sh
 </code></pre></div>
 <p>可以看出来和原来使用方法没有变化，也就是说从使用的角度是完全没有区别的，只是内部做了不同的事情。</p>
 <p>值得一提的是，本机部署的功能仍然保留 <code>env_dev.sh</code>，可以作为开发时的环境部署。</p>
+</li>
+</ul>
 <p><strong>3、新的驱动命令</strong></p>
 <p>过去咱们都是使用这样的命令来驱动执行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
 <p>由于默认基于虚拟化环境部署方案，因此我们增加了一个系统命令 <code>youqu</code>；</p>
 <p><strong>新的驱动方式：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
 <p>只需要把 python3 替换成 youqu 就可以了，看起来很和谐~</p>
 <p><strong>4、新的文档地址</strong></p>
@@ -1947,24 +1972,24 @@
 <p>公网文档使用的是 github pages（白嫖怪一顿狂喜~~），但可能会出现文档速度慢的问题（代理下就好了），不过没关系，咱们【<a href="http://youqu-dev.uniontech.com/">内网文档</a>】仍然保留，文档内容一样，访问速度更快。</p>
 <p><strong>5、其他一些小小功能更新：</strong></p>
 <p>（1）新增关闭分辨率检测的参数值；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--resolution<span class="w"> </span>no
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--resolution<span class="w"> </span>no
 </code></pre></div>
 <p>或者修改 <code>setting/globalconfig.ini</code> 里面的配置：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">;检查测试机分辨率, 比如：1920x1080</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">;no: 表示不做分辨率校验</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">RESOLUTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1920x1080</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">;检查测试机分辨率, 比如：1920x1080</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">;no: 表示不做分辨率校验</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">RESOLUTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1920x1080</span>
 </code></pre></div>
 <p><code>resolution</code> 这个参数一直都有的，只不过之前是用于指定分辨率大小，比如 <code>--resolution 1920x1080</code>，但有些接口的项目不需要这个检查，可以给它个 no 就好了，当然 CICD 上关闭，需要流水线上把这个参数加上；</p>
 <p>（2）新增失败录屏从第几次失败开始录制视频的命令行参数</p>
 <p>之前这个配置项只能在 <code>setting/globalconfig.ini</code> 里面的配置：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">;失败录屏从第几次失败开始录制视频。</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">;比如 RECORD_FAILED_CASE = 1 ，表示用例第 1 次执行失败之后开始录屏，RERUN &gt;= RECORD_FAILED_CASE。</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">;1.关闭录屏：RECORD_FAILED_CASE &gt; RERUN</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">;2.每条用例都录屏：RECORD_FAILED_CASE = 0</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="na">RECORD_FAILED_CASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">;失败录屏从第几次失败开始录制视频。</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">;比如 RECORD_FAILED_CASE = 1 ，表示用例第 1 次执行失败之后开始录屏，RERUN &gt;= RECORD_FAILED_CASE。</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">;1.关闭录屏：RECORD_FAILED_CASE &gt; RERUN</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">;2.每条用例都录屏：RECORD_FAILED_CASE = 0</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="na">RECORD_FAILED_CASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
 </code></pre></div>
 <p>现在将开发到命令行参数。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--record_failed_case<span class="w"> </span><span class="m">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--record_failed_case<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>fix</p>
 <ul>
@@ -2000,9 +2025,9 @@
 <ul>
 <li><code>env.sh</code> 中安装 <code>Python</code> 包未指定版本时，日志输出安装的版本；</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pdocr-rpc<span class="w">                       </span><span class="m">2</span>.0.1
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>allure-custom<span class="w">                   </span><span class="m">1</span>.2.1
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>funnylog<span class="w">                        </span><span class="m">1</span>.1.3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pdocr-rpc<span class="w">                       </span><span class="m">2</span>.0.1
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>allure-custom<span class="w">                   </span><span class="m">1</span>.2.1
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>funnylog<span class="w">                        </span><span class="m">1</span>.1.3
 </code></pre></div>
 <ul>
 <li>修复 <code>-f</code> 测试套件执行报错的的问题；</li>
@@ -2020,16 +2045,16 @@
 <ul>
 <li><code>--app</code> 参数后面新增支持 <code>autotest_xxx</code> 和 <code>apps/autotest_xxx</code> 两种写法，目前支持三种参数传入方式：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>~$:<span class="w"> </span>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
 </code></pre></div>
 <p>​       后两种入参方式可以很方便在输入命令的过程中使用补全。</p>
 <ul>
 <li>remote 远程执行新增从命令行传入测试机信息，远程机器的<code>user@ip:password</code>,多个机器用'/'连接,如果 <code>password</code> 不传入,默认取 <code>setting/remote.ini</code> 中 <code>CLIENT_PASSWORD</code> 的值,比如：<code>uos@10.8.13.xx:1</code> 或 <code>uos@10.8.13.xx</code> ；</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx:1/uos@10.8.13.xx:2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx:1/uos@10.8.13.xx:2
 </code></pre></div>
 <p>fix</p>
 <ul>
@@ -2080,7 +2105,7 @@
 <ul>
 <li>支持使用系统命令 <code>youqu</code> 执行用例；可将<code>python3 manage.py</code> 替换为 <code>youqu</code> ：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music<span class="w"> </span>-k<span class="w"> </span><span class="m">001</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>youqu<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music<span class="w"> </span>-k<span class="w"> </span><span class="m">001</span>
 </code></pre></div>
 <ul>
 <li><code>RPC</code> 服务 <code>IP</code> 地址修改为域名：http://youqu-dev.uniontech.com，指定不同的端口；</li>
@@ -2121,11 +2146,11 @@
 <p>增加开始执行时打印一些执行参数，如：</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>用例收集数量:<span class="w">   </span><span class="m">99</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>失败重跑次数:<span class="w">   </span><span class="m">1</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>最大失败次数:<span class="w">   </span><span class="m">49</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>用例超时时间:<span class="w">   </span><span class="m">200</span>.0s<span class="w"> </span><span class="o">(</span>03分20秒<span class="o">)</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>会话超时时间:<span class="w">   </span>11880s<span class="w"> </span><span class="o">(</span>3小时18分0秒<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>用例收集数量:<span class="w">   </span><span class="m">99</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>失败重跑次数:<span class="w">   </span><span class="m">1</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>最大失败次数:<span class="w">   </span><span class="m">49</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>用例超时时间:<span class="w">   </span><span class="m">200</span>.0s<span class="w"> </span><span class="o">(</span>03分20秒<span class="o">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>会话超时时间:<span class="w">   </span>11880s<span class="w"> </span><span class="o">(</span>3小时18分0秒<span class="o">)</span>
 </code></pre></div>
 <ul>
 <li>
@@ -2135,16 +2160,16 @@
 <p><code>manage.py</code> 执行开始时打印 logo 和当前版本：</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w"> </span>██╗<span class="w">   </span>██╗<span class="w">  </span>██████╗<span class="w">  </span>██╗<span class="w">   </span>██╗<span class="w">  </span>██████╗<span class="w">  </span>██╗<span class="w">   </span>██╗<span class="w"> </span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w"> </span>╚██╗<span class="w"> </span>██╔╝<span class="w"> </span>██╔═══██╗<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██╔═══██╗<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>╚████╔╝<span class="w">  </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">   </span>╚██╔╝<span class="w">   </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║▄▄<span class="w"> </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span>██║<span class="w">    </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span>╚═╝<span class="w">     </span>╚═════╝<span class="w">   </span>╚═════╝<span class="w">   </span>╚══▀▀═╝<span class="w">   </span>╚═════╝<span class="w">  </span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w"> </span>▄█<span class="w">   </span>▄█<span class="w">   </span>█<span class="w"> </span>█<span class="w"> </span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span>█<span class="w"> </span>▄<span class="w">  </span>█<span class="w"> </span>▄<span class="w"> </span>▀▀█<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w"> </span>██╗<span class="w">   </span>██╗<span class="w">  </span>██████╗<span class="w">  </span>██╗<span class="w">   </span>██╗<span class="w">  </span>██████╗<span class="w">  </span>██╗<span class="w">   </span>██╗<span class="w"> </span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w"> </span>╚██╗<span class="w"> </span>██╔╝<span class="w"> </span>██╔═══██╗<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██╔═══██╗<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>╚████╔╝<span class="w">  </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">   </span>╚██╔╝<span class="w">   </span>██║<span class="w">   </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>██║▄▄<span class="w"> </span>██║<span class="w"> </span>██║<span class="w">   </span>██║<span class="w"> </span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span>██║<span class="w">    </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>╚██████╔╝<span class="w"> </span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span>╚═╝<span class="w">     </span>╚═════╝<span class="w">   </span>╚═════╝<span class="w">   </span>╚══▀▀═╝<span class="w">   </span>╚═════╝<span class="w">  </span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w"> </span>▄█<span class="w">   </span>▄█<span class="w">   </span>█<span class="w"> </span>█<span class="w"> </span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span>█<span class="w"> </span>▄<span class="w">  </span>█<span class="w"> </span>▄<span class="w"> </span>▀▀█<span class="w"> </span>
 </code></pre></div>
 <ul>
 <li>
@@ -2152,14 +2177,14 @@
 </li>
 <li>
 <p>装饰器方法指定次数；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">():</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="k">pass</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">():</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="k">pass</span>
 </code></pre></div>
 </li>
 <li>
 <p>命令行参数指定次数；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music<span class="w"> </span>-k<span class="w"> </span><span class="m">001</span><span class="w"> </span>--count<span class="w"> </span><span class="m">2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>deepin-music<span class="w"> </span>-k<span class="w"> </span><span class="m">001</span><span class="w"> </span>--count<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 </li>
 <li>
@@ -2309,7 +2334,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月16日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月18日</span>
       
     
   </small>
