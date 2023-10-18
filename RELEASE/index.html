@@ -1794,7 +1794,7 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li>修复 <code>youqu</code> 命令无法接受带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
-<li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能的问题，暂时先回滚到 <code>V3</code> ；</li>
+<li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能识别的问题，暂时先回滚到 <code>V3</code> ；</li>
 </ul>
 <hr />
 <h2 id="22420231016">2.2.4（2023/10/16）<a class="headerlink" href="#22420231016" title="Permanent link">&para;</a></h2>
@@ -1808,8 +1808,6 @@
 </li>
 <li>
 <p>解除子项目的工程名称以 <code>autotest_</code> 开头的限制，子项目工程名称可以为任意名称；</p>
-</li>
-<li>
 <p>配置文件 <code>globalconfig.ini</code> 中的 <code>APP_NAME</code> 和命令行参数 <code>-a/--app</code> 仅支持传入工程名称的全称：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># 或</span>
