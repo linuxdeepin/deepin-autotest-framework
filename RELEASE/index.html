@@ -1791,10 +1791,16 @@
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="225unreleased">2.2.5（unreleased）<a class="headerlink" href="#225unreleased" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li>增加了 <code>YouQu</code> 最新版本的检查，如果本地执行版本不是最新的，会打印更新提示信息；</li>
+<li><code>public</code> 独立发布，基础框架移除此模块，在环境部署阶段进行 <code>public</code> 模块的初始化；</li>
+</ul>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修复 <code>youqu</code> 命令无法接受带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
+<li>修复 <code>youqu</code> 命令无法接收带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
 <li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能识别的问题，暂时先回滚到 <code>V3</code> ；</li>
+<li>修复了不同的 <code>case</code> 目录下 <code>py</code> 文件的名称一样，导出（<code>manage.py csvctl -p2c</code>）数据错误的问题；感谢 <strong>@赵有志</strong>；</li>
 </ul>
 <hr />
 <h2 id="22420231016">2.2.4（2023/10/16）<a class="headerlink" href="#22420231016" title="Permanent link">&para;</a></h2>
@@ -2332,7 +2338,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月18日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月23日</span>
       
     
   </small>
