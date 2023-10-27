@@ -1675,32 +1675,32 @@
 <a id="__codelineno-2-182" name="__codelineno-2-182" href="#__codelineno-2-182"></a><span class="c1">;testcase: 产品库用例</span>
 <a id="__codelineno-2-183" name="__codelineno-2-183" href="#__codelineno-2-183"></a><span class="na">CASE_FROM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">caselib</span>
 <a id="__codelineno-2-184" name="__codelineno-2-184" href="#__codelineno-2-184"></a>
-<a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a><span class="k">[pmsctl-pms_link_csv]</span>
-<a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a><span class="c1">;同步PMS数据到本地CSV文件，必须要配置的配置项</span>
-<a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a><span class="c1">;key是本地CSV文件的文件名称;</span>
-<a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a><span class="c1">;value是对应PMS上的模块ID;</span>
-<a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a><span class="c1">;比如要同步音乐的数据, 首先需要将配置 APP_NAME = deepin-music，</span>
-<a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a><span class="c1">;CSV文件名称为music.csv，其在PMS上的音乐用例库的URL为: https://pms.uniontech.com/caselib-browse-81.html</span>
-<a id="__codelineno-2-191" name="__codelineno-2-191" href="#__codelineno-2-191"></a><span class="c1">;因此应该配置为: music = 81</span>
-<a id="__codelineno-2-192" name="__codelineno-2-192" href="#__codelineno-2-192"></a><span class="c1">;这样才能将PMS与本地CSV文件建立联系。</span>
-<a id="__codelineno-2-193" name="__codelineno-2-193" href="#__codelineno-2-193"></a><span class="c1">;如果你的应用分了很多模块,只需要将对应的信息依次配置好就行了。</span>
-<a id="__codelineno-2-194" name="__codelineno-2-194" href="#__codelineno-2-194"></a><span class="na">music</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-2-195" name="__codelineno-2-195" href="#__codelineno-2-195"></a>
-<a id="__codelineno-2-196" name="__codelineno-2-196" href="#__codelineno-2-196"></a><span class="k">[csvctl]</span>
-<a id="__codelineno-2-197" name="__codelineno-2-197" href="#__codelineno-2-197"></a><span class="c1">;将py文件的case id同步到csv文件</span>
-<a id="__codelineno-2-198" name="__codelineno-2-198" href="#__codelineno-2-198"></a><span class="c1">;yes, 开启同步</span>
-<a id="__codelineno-2-199" name="__codelineno-2-199" href="#__codelineno-2-199"></a><span class="na">PY_ID_TO_CSV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
+<a id="__codelineno-2-185" name="__codelineno-2-185" href="#__codelineno-2-185"></a><span class="c1">;需要同步到pms的csv文件名称,不加.csv后缀</span>
+<a id="__codelineno-2-186" name="__codelineno-2-186" href="#__codelineno-2-186"></a><span class="c1">;如果要做反向同步此参数必传；</span>
+<a id="__codelineno-2-187" name="__codelineno-2-187" href="#__codelineno-2-187"></a><span class="c1">;如果不传此参数可以扫描所有的csv文件，但是此操作太危险，暂时不考虑；</span>
+<a id="__codelineno-2-188" name="__codelineno-2-188" href="#__codelineno-2-188"></a><span class="na">CSV_NAME_TO_PMS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-2-189" name="__codelineno-2-189" href="#__codelineno-2-189"></a>
+<a id="__codelineno-2-190" name="__codelineno-2-190" href="#__codelineno-2-190"></a><span class="k">[pmsctl-pms_link_csv]</span>
+<a id="__codelineno-2-191" name="__codelineno-2-191" href="#__codelineno-2-191"></a><span class="c1">;同步PMS数据到本地CSV文件，必须要配置的配置项</span>
+<a id="__codelineno-2-192" name="__codelineno-2-192" href="#__codelineno-2-192"></a><span class="c1">;key是本地CSV文件的文件名称;</span>
+<a id="__codelineno-2-193" name="__codelineno-2-193" href="#__codelineno-2-193"></a><span class="c1">;value是对应PMS上的模块ID;</span>
+<a id="__codelineno-2-194" name="__codelineno-2-194" href="#__codelineno-2-194"></a><span class="c1">;比如要同步音乐的数据, 首先需要将配置 APP_NAME = deepin-music，</span>
+<a id="__codelineno-2-195" name="__codelineno-2-195" href="#__codelineno-2-195"></a><span class="c1">;CSV文件名称为music.csv，其在PMS上的音乐用例库的URL为: https://pms.uniontech.com/caselib-browse-81.html</span>
+<a id="__codelineno-2-196" name="__codelineno-2-196" href="#__codelineno-2-196"></a><span class="c1">;因此应该配置为: music = 81</span>
+<a id="__codelineno-2-197" name="__codelineno-2-197" href="#__codelineno-2-197"></a><span class="c1">;这样才能将PMS与本地CSV文件建立联系。</span>
+<a id="__codelineno-2-198" name="__codelineno-2-198" href="#__codelineno-2-198"></a><span class="c1">;如果你的应用分了很多模块,只需要将对应的信息依次配置好就行了。</span>
+<a id="__codelineno-2-199" name="__codelineno-2-199" href="#__codelineno-2-199"></a><span class="na">music</span><span class="w"> </span><span class="o">=</span>
 <a id="__codelineno-2-200" name="__codelineno-2-200" href="#__codelineno-2-200"></a>
-<a id="__codelineno-2-201" name="__codelineno-2-201" href="#__codelineno-2-201"></a><span class="c1">;导出的csv文件名称，比如：case_list.csv</span>
-<a id="__codelineno-2-202" name="__codelineno-2-202" href="#__codelineno-2-202"></a><span class="na">EXPORT_CSV_FILE</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-2-203" name="__codelineno-2-203" href="#__codelineno-2-203"></a>
-<a id="__codelineno-2-204" name="__codelineno-2-204" href="#__codelineno-2-204"></a><span class="c1">;导出 case_list.csv 文件时配置的字段名，用例名称默认存在第一列，无需添加</span>
-<a id="__codelineno-2-205" name="__codelineno-2-205" href="#__codelineno-2-205"></a><span class="na">EXPORT_CSV_HEARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">用例级别,用例类型,测试级别,是否跳过</span>
-<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a>
-<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a><span class="c1">;需要同步到pms的csv文件名称,不加.csv后缀</span>
-<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a><span class="c1">;如果要做反向同步此参数必传；</span>
-<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a><span class="c1">;如果不传此参数可以扫描所有的csv文件，但是此操作太危险，暂时不考虑；</span>
-<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a><span class="na">CSV_NAME_TO_PMS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-2-201" name="__codelineno-2-201" href="#__codelineno-2-201"></a><span class="k">[csvctl]</span>
+<a id="__codelineno-2-202" name="__codelineno-2-202" href="#__codelineno-2-202"></a><span class="c1">;将py文件的case id同步到csv文件</span>
+<a id="__codelineno-2-203" name="__codelineno-2-203" href="#__codelineno-2-203"></a><span class="c1">;yes, 开启同步</span>
+<a id="__codelineno-2-204" name="__codelineno-2-204" href="#__codelineno-2-204"></a><span class="na">PY_ID_TO_CSV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
+<a id="__codelineno-2-205" name="__codelineno-2-205" href="#__codelineno-2-205"></a>
+<a id="__codelineno-2-206" name="__codelineno-2-206" href="#__codelineno-2-206"></a><span class="c1">;导出的csv文件名称，比如：case_list.csv</span>
+<a id="__codelineno-2-207" name="__codelineno-2-207" href="#__codelineno-2-207"></a><span class="na">EXPORT_CSV_FILE</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a>
+<a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a><span class="c1">;导出 case_list.csv 文件时配置的字段名，用例名称默认存在第一列，无需添加</span>
+<a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a><span class="na">EXPORT_CSV_HEARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">用例级别,用例类型,测试级别,是否跳过</span>
 <a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a>
 <a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a>
 <a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a><span class="k">[log_cli]</span>
