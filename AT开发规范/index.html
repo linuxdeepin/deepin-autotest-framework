@@ -1459,9 +1459,8 @@
 <h1 id="_2">三、仓库权限管理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <h2 id="1_1">1. 基础框架<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>自动化测试基础框架仓库：https://gerrit.uniontech.com/admin/repos/autotest-basic-frame</li>
+<li>自动化测试基础框架仓库：https://github.com/linuxdeepin/deepin-autotest-framework</li>
 </ul>
-<p>基础框架不允许匿名访问，如果你登录 <code>gerrit</code> 之后仍然无法访问以上链接，则需要申请访问权限；</p>
 <h2 id="2_1">2. 应用仓库<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>自动化应用仓库：  <code>https://gerrit.uniontech.com/admin/repos/autotest_ +  app_name</code></li>
@@ -1545,17 +1544,19 @@
 <p>一个类里面可以有多个用例函数，这取决这条用例有多少个测试点：</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;任务栏启动音乐&quot;&quot;&quot;</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span> <span class="nf">test_music_679537_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;启动器启动音乐&quot;&quot;&quot;</span>    
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">def</span> <span class="nf">test_music_679537_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;桌面启动音乐&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># test_music_679537.py</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="k">def</span> <span class="nf">test_music_679537_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;任务栏启动音乐&quot;&quot;&quot;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">def</span> <span class="nf">test_music_679537_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;启动器启动音乐&quot;&quot;&quot;</span>    
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="k">def</span> <span class="nf">test_music_679537_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;桌面启动音乐&quot;&quot;&quot;</span>
 </code></pre></div>
 <h2 id="2_3">2. 用例函数规范<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1574,36 +1575,40 @@
 <p>举例，<code>PMS</code> 用例：</p>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f054c8661c6c8e54ff4c71.png" /></p>
 <p>直接选中用例内容，复制下来，然后粘贴到自动化用例脚本中：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="c1"># 1</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="c1"># 切换为平铺视图</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="c1"># 2</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="c1"># 双击任意演唱者封面</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="c1"># 进入演唱者详情页面</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># test_music_679537.py</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="c1"># 1</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="c1"># 切换为平铺视图</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="c1"># 2</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="c1"># 双击任意演唱者封面</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        <span class="c1"># 进入演唱者详情页面</span>
 </code></pre></div>
 <p>上例中井号注释部分就是直接从 <code>PMS</code> 上复制过来的，在此基础上写用例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        <span class="c1"># 1</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_icon_mode_in_music_by_ui</span><span class="p">()</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        <span class="c1"># 切换为平铺视图</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        <span class="c1"># 2</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="c1"># 双击任意演唱者封面</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="n">music</span><span class="o">.</span><span class="n">double_click_first_singer_in_singer_icon_view_by_ui</span><span class="p">()</span>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="c1"># 进入演唱者详情页面</span>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_xxx</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># test_music_679537.py</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">class</span> <span class="nc">TestMusic</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;音乐用例&quot;&quot;&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">def</span> <span class="nf">test_music_679537</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;演唱者-平铺视图下进入演唱者详情页&quot;&quot;&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        <span class="n">music</span> <span class="o">=</span> <span class="n">DeepinMusicWidget</span><span class="p">()</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_singer_btn_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="c1"># 1</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        <span class="c1"># 点击右上角的【平铺视图】按钮</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        <span class="n">music</span><span class="o">.</span><span class="n">click_icon_mode_in_music_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="c1"># 切换为平铺视图</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="c1"># 2</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="c1"># 双击任意演唱者封面</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="n">music</span><span class="o">.</span><span class="n">double_click_first_singer_in_singer_icon_view_by_ui</span><span class="p">()</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>        <span class="c1"># 进入演唱者详情页面</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assert_xxx</span>
 </code></pre></div>
 <p>你看，非常清楚每一步在做什么，重点是省去了写注释的时间，真的炒鸡方便。</p>
 <ul>
@@ -1816,7 +1821,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年9月13日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月31日</span>
       
     
   </small>
