@@ -503,7 +503,7 @@
         
           <li class="md-nav__item">
   <a href="#3-csvpms" class="md-nav__link">
-    3. 从CSV文件同步标签到PMS
+    ~~3. 从CSV文件同步标签到PMS~~
   </a>
   
 </li>
@@ -1431,7 +1431,7 @@
         
           <li class="md-nav__item">
   <a href="#3-csvpms" class="md-nav__link">
-    3. 从CSV文件同步标签到PMS
+    ~~3. 从CSV文件同步标签到PMS~~
   </a>
   
 </li>
@@ -1525,10 +1525,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu manage.py pmsctl -p2c -u ut00xxxx -p you_password -plc music:81
 </code></pre></div>
 <p>每次操作会将 <code>CSV</code> 文件先备份到 <code>report/pms2csv_back</code> 目录下；</p>
-<h3 id="3-csvpms">3. 从CSV文件同步标签到PMS<a class="headerlink" href="#3-csvpms" title="Permanent link">&para;</a></h3>
-<p>用于将 <code>CSV</code> 文件中的标签同步到 <code>PMS</code> 用例库用例中；</p>
-<p><strong>【使用方法一】</strong></p>
-<p>配置文件方式，通过以下几个配置来控制：</p>
+<h3 id="3-csvpms">~~3. 从CSV文件同步标签到PMS~~<a class="headerlink" href="#3-csvpms" title="Permanent link">&para;</a></h3>
+<p>~~用于将 <code>CSV</code> 文件中的标签同步到 <code>PMS</code> 用例库用例中；~~</p>
+<p>~~<strong>【使用方法一】</strong>~~</p>
+<p>~~配置文件方式，通过以下几个配置来控制：~~</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">APP_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># PMS的用户名</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="na">PMS_USER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
@@ -1539,11 +1539,11 @@
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">;如果不传此参数可以扫描所有的csv文件，但是此操作太危险，暂时不考虑；</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="na">CSV_NAME_TO_PMS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 </code></pre></div>
-<p>配置好后，在命令行执行：</p>
+<p>~~配置好后，在命令行执行：~~</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>pmsctl<span class="w"> </span>-c2p
 </code></pre></div>
-<p><strong>【使用方法二】</strong></p>
-<p>完全通过命令行参数传入：</p>
+<p>~~<strong>【使用方法二】</strong>~~</p>
+<p>~~完全通过命令行参数传入：~~</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>pmsctl<span class="w"> </span>-c2p<span class="w"> </span>-a<span class="w"> </span>apps/autotest_com_deepin_lianliankan/<span class="w"> </span>-c<span class="w"> </span>lianliankan<span class="w"> </span>-u<span class="w"> </span>my_user<span class="w"> </span>-p<span class="w"> </span>my_pwd
 </code></pre></div>
 
@@ -1552,7 +1552,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月9日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年11月10日</span>
       
     
   </small>
