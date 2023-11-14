@@ -831,8 +831,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#232unreleased" class="md-nav__link">
-    2.3.2（unreleased）
+  <a href="#232dev" class="md-nav__link">
+    2.3.2（dev）
   </a>
   
 </li>
@@ -1583,8 +1583,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#232unreleased" class="md-nav__link">
-    2.3.2（unreleased）
+  <a href="#232dev" class="md-nav__link">
+    2.3.2（dev）
   </a>
   
 </li>
@@ -1818,7 +1818,7 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="232unreleased">2.3.2（unreleased）<a class="headerlink" href="#232unreleased" title="Permanent link">&para;</a></h2>
+<h2 id="232dev">2.3.2（dev）<a class="headerlink" href="#232dev" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
 <li>由于 <code>PMS</code> 用例管理系统存在缺陷，框架移除从 <code>CSV</code> 反向同步标签到 <code>PMS</code> 功能；</li>
@@ -1826,6 +1826,7 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li>优化数据回填逻辑，修复同一个用例 <code>py</code> 包含多个用例，数据回填时，中间的失败结果被后续用例更新为的问题；</li>
+<li>修复某些机型下（<code>华为W525</code>）失败录屏进程阻塞的问题，是由于特殊机型下 <code>FFmpeg</code> 的 Bug 导致，但 <code>FFmpeg</code> 修复更新太耗时，框架先做异常处理；</li>
 </ul>
 <h2 id="2312023118">2.3.1（2023/11/8）<a class="headerlink" href="#2312023118" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2385,7 +2386,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年11月10日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年11月13日</span>
       
     
   </small>
