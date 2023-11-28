@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
@@ -831,8 +831,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#233dev" class="md-nav__link">
-    2.3.3（dev）
+  <a href="#234dev" class="md-nav__link">
+    2.3.4（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23320231122" class="md-nav__link">
+    2.3.3（2023/11/22）
   </a>
   
 </li>
@@ -1590,8 +1597,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#233dev" class="md-nav__link">
-    2.3.3（dev）
+  <a href="#234dev" class="md-nav__link">
+    2.3.4（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23320231122" class="md-nav__link">
+    2.3.3（2023/11/22）
   </a>
   
 </li>
@@ -1832,10 +1846,20 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="233dev">2.3.3（dev）<a class="headerlink" href="#233dev" title="Permanent link">&para;</a></h2>
+<h2 id="234dev">2.3.4（dev）<a class="headerlink" href="#234dev" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li>用例执行过程中输出执行进度百分比；</li>
+</ul>
+<p><strong>Fix</strong></p>
+<ul>
+<li><code>env.sh</code> 增加清理 <code>pip</code> 缓存；</li>
+</ul>
+<h2 id="23320231122">2.3.3（2023/11/22）<a class="headerlink" href="#23320231122" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
 <ul>
 <li>使用 <code>Xdotool</code> 检索窗口 ID 时，如果有多个窗口，则输出以“\n”结尾。在原始代码中，使用 <code>split(“\n”)</code> 直接拆分字符串可能会导致结果列表的最后一个元素为空字符串。在迭代窗口 ID 并将其转换为 <code>int</code> 类型时，这种情况会导致错误。感谢 <a href="https://github.com/zhao-george">@zhao-george</a></li>
+<li>图像识别（<code>image-center</code>）发布了新版本 <code>2023.11.22</code>  <a href="https://github.com/zhao-george">@zhao-george</a>，OCR（<code>pdocr-rpc</code>）发布了新版本 <code>2023.11.17</code>，增加了识别的总耗时、每次识别间隔时间；</li>
 </ul>
 <h2 id="23220231114">2.3.2（2023/11/14）<a class="headerlink" href="#23220231114" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2537,7 +2561,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       
