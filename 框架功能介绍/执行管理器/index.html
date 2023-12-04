@@ -1745,134 +1745,156 @@
 <a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="c1">;系统主题</span>
 <a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="na">SYS_THEME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">deepin</span>
 <a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a>
-<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="c1">;OCR服务端地址（不可随意修改）</span>
-<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="na">OCR_SERVER_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">youqu-dev.uniontech.com</span>
-<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="na">OCR_PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8890</span>
-<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a><span class="na">OCR_NETWORK_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="na">OCR_PAUSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="na">OCR_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
-<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a><span class="na">OCR_MAX_MATCH_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100</span>
-<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a>
-<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="c1">;OpenCV服务端地址</span>
-<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a><span class="na">OPENCV_SERVER_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">youqu-dev.uniontech.com</span>
-<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="na">OPENCV_PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8889</span>
-<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="na">OPENCV_NETWORK_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a><span class="na">OPENCV_PAUSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="na">OPENCV_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
-<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="na">OPENCV_MAX_MATCH_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100</span>
+<a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a><span class="c1">;=============================== OCR CONFIG ===================================</span>
+<a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="c1">;OCR服务端地址</span>
+<a id="__codelineno-5-112" name="__codelineno-5-112" href="#__codelineno-5-112"></a><span class="na">OCR_SERVER_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">youqu-dev.uniontech.com</span>
+<a id="__codelineno-5-113" name="__codelineno-5-113" href="#__codelineno-5-113"></a>
+<a id="__codelineno-5-114" name="__codelineno-5-114" href="#__codelineno-5-114"></a><span class="c1">;OCR端口</span>
+<a id="__codelineno-5-115" name="__codelineno-5-115" href="#__codelineno-5-115"></a><span class="na">OCR_PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8890</span>
+<a id="__codelineno-5-116" name="__codelineno-5-116" href="#__codelineno-5-116"></a>
+<a id="__codelineno-5-117" name="__codelineno-5-117" href="#__codelineno-5-117"></a><span class="c1">;网络重试次数</span>
+<a id="__codelineno-5-118" name="__codelineno-5-118" href="#__codelineno-5-118"></a><span class="na">OCR_NETWORK_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<a id="__codelineno-5-119" name="__codelineno-5-119" href="#__codelineno-5-119"></a>
+<a id="__codelineno-5-120" name="__codelineno-5-120" href="#__codelineno-5-120"></a><span class="c1">;OCR_TIMEOUT时间内重试间隔</span>
+<a id="__codelineno-5-121" name="__codelineno-5-121" href="#__codelineno-5-121"></a><span class="na">OCR_PAUSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<a id="__codelineno-5-122" name="__codelineno-5-122" href="#__codelineno-5-122"></a>
+<a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a><span class="c1">;OCR识别的总超时</span>
+<a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="na">OCR_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
 <a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a>
-<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="c1">;=============================== REPORT CONFIG ===================================</span>
-<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="k">[report]</span>
-<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="c1">;测试报告的title</span>
-<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="na">REPORT_TITLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">YouQu Report</span>
-<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a>
-<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="c1">;测试报告的name</span>
-<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a><span class="na">REPORT_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">YouQu Report</span>
-<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a>
-<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="c1">;测试报告的默认语言</span>
-<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a><span class="c1">;en:English</span>
-<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="c1">;ru:Русский</span>
-<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="c1">;zh:中文</span>
-<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a><span class="c1">;de:Deutsch</span>
-<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="c1">;nl:Nederlands</span>
-<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="c1">;he:Hebrew</span>
-<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a><span class="c1">;br:Brazil</span>
-<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="c1">;pl:Polski</span>
-<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="c1">;ja:日本語</span>
-<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a><span class="c1">;es:Español</span>
-<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="c1">;kr:한국어</span>
-<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="c1">;fr:Français</span>
-<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a><span class="c1">;az:Azərbaycanca</span>
-<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="na">REPORT_LANGUAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">zh</span>
-<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a>
-<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="c1">;用例执行完后生成的测试报告格式</span>
-<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="c1">;目前支持 allure, xml, json （支持同时生成）</span>
-<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a><span class="na">REPORT_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">allure, xml, json</span>
-<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a>
-<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="c1">;指定报告生成的路径（相对项目根目录下）</span>
-<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a><span class="na">ALLURE_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
-<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="na">XML_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
-<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="na">JSON_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
-<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a>
-<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="c1">;=============================== PMS CONFIG ===================================</span>
-<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="c1">;PMS相关配置，包含以下几个方面：</span>
-<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="c1">;1.PMS测试套执行</span>
-<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="c1">;2.自动从PMS爬取数据并同步本地CSV文件</span>
-<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="c1">;3.PMS数据回填</span>
-<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="k">[pmsctl]</span>
-<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="c1">;PMS的用户名,如: ut001234</span>
-<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="na">PMS_USER</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a>
-<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="c1">;PMS的密码</span>
-<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="na">PMS_PASSWORD</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a>
-<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a><span class="c1">;PMS测试套的ID</span>
-<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="c1">;在PMS上查看用例“套件”链接: https://pms.uniontech.com/testsuite-view-495.html</span>
-<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="c1">;测试套ID为: 495</span>
-<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="na">SUITE_ID</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="c1">;OCR识别的最大次数</span>
+<a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a><span class="na">OCR_MAX_MATCH_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="c1">;=============================== IMAGE CONFIG ===================================</span>
+<a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a><span class="c1">;OpenCV服务端地址</span>
+<a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="na">OPENCV_SERVER_HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">youqu-dev.uniontech.com</span>
+<a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a>
+<a id="__codelineno-5-133" name="__codelineno-5-133" href="#__codelineno-5-133"></a><span class="c1">;图像识别端口</span>
+<a id="__codelineno-5-134" name="__codelineno-5-134" href="#__codelineno-5-134"></a><span class="na">OPENCV_PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8889</span>
+<a id="__codelineno-5-135" name="__codelineno-5-135" href="#__codelineno-5-135"></a>
+<a id="__codelineno-5-136" name="__codelineno-5-136" href="#__codelineno-5-136"></a><span class="c1">;网络重试次数</span>
+<a id="__codelineno-5-137" name="__codelineno-5-137" href="#__codelineno-5-137"></a><span class="na">OPENCV_NETWORK_RETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<a id="__codelineno-5-138" name="__codelineno-5-138" href="#__codelineno-5-138"></a>
+<a id="__codelineno-5-139" name="__codelineno-5-139" href="#__codelineno-5-139"></a><span class="c1">;OPENCV_TIMEOUT</span>
+<a id="__codelineno-5-140" name="__codelineno-5-140" href="#__codelineno-5-140"></a><span class="na">OPENCV_PAUSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<a id="__codelineno-5-141" name="__codelineno-5-141" href="#__codelineno-5-141"></a>
+<a id="__codelineno-5-142" name="__codelineno-5-142" href="#__codelineno-5-142"></a><span class="c1">;图像识别的总超时</span>
+<a id="__codelineno-5-143" name="__codelineno-5-143" href="#__codelineno-5-143"></a><span class="na">OPENCV_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
+<a id="__codelineno-5-144" name="__codelineno-5-144" href="#__codelineno-5-144"></a>
+<a id="__codelineno-5-145" name="__codelineno-5-145" href="#__codelineno-5-145"></a><span class="c1">;图像识别的最大次数</span>
+<a id="__codelineno-5-146" name="__codelineno-5-146" href="#__codelineno-5-146"></a><span class="na">OPENCV_MAX_MATCH_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100</span>
+<a id="__codelineno-5-147" name="__codelineno-5-147" href="#__codelineno-5-147"></a>
+<a id="__codelineno-5-148" name="__codelineno-5-148" href="#__codelineno-5-148"></a><span class="c1">;=============================== REPORT CONFIG ===================================</span>
+<a id="__codelineno-5-149" name="__codelineno-5-149" href="#__codelineno-5-149"></a><span class="k">[report]</span>
+<a id="__codelineno-5-150" name="__codelineno-5-150" href="#__codelineno-5-150"></a><span class="c1">;测试报告的title</span>
+<a id="__codelineno-5-151" name="__codelineno-5-151" href="#__codelineno-5-151"></a><span class="na">REPORT_TITLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">YouQu Report</span>
+<a id="__codelineno-5-152" name="__codelineno-5-152" href="#__codelineno-5-152"></a>
+<a id="__codelineno-5-153" name="__codelineno-5-153" href="#__codelineno-5-153"></a><span class="c1">;测试报告的name</span>
+<a id="__codelineno-5-154" name="__codelineno-5-154" href="#__codelineno-5-154"></a><span class="na">REPORT_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">YouQu Report</span>
+<a id="__codelineno-5-155" name="__codelineno-5-155" href="#__codelineno-5-155"></a>
+<a id="__codelineno-5-156" name="__codelineno-5-156" href="#__codelineno-5-156"></a><span class="c1">;测试报告的默认语言</span>
+<a id="__codelineno-5-157" name="__codelineno-5-157" href="#__codelineno-5-157"></a><span class="c1">;en:English</span>
+<a id="__codelineno-5-158" name="__codelineno-5-158" href="#__codelineno-5-158"></a><span class="c1">;ru:Русский</span>
+<a id="__codelineno-5-159" name="__codelineno-5-159" href="#__codelineno-5-159"></a><span class="c1">;zh:中文</span>
+<a id="__codelineno-5-160" name="__codelineno-5-160" href="#__codelineno-5-160"></a><span class="c1">;de:Deutsch</span>
+<a id="__codelineno-5-161" name="__codelineno-5-161" href="#__codelineno-5-161"></a><span class="c1">;nl:Nederlands</span>
+<a id="__codelineno-5-162" name="__codelineno-5-162" href="#__codelineno-5-162"></a><span class="c1">;he:Hebrew</span>
+<a id="__codelineno-5-163" name="__codelineno-5-163" href="#__codelineno-5-163"></a><span class="c1">;br:Brazil</span>
+<a id="__codelineno-5-164" name="__codelineno-5-164" href="#__codelineno-5-164"></a><span class="c1">;pl:Polski</span>
+<a id="__codelineno-5-165" name="__codelineno-5-165" href="#__codelineno-5-165"></a><span class="c1">;ja:日本語</span>
+<a id="__codelineno-5-166" name="__codelineno-5-166" href="#__codelineno-5-166"></a><span class="c1">;es:Español</span>
+<a id="__codelineno-5-167" name="__codelineno-5-167" href="#__codelineno-5-167"></a><span class="c1">;kr:한국어</span>
+<a id="__codelineno-5-168" name="__codelineno-5-168" href="#__codelineno-5-168"></a><span class="c1">;fr:Français</span>
+<a id="__codelineno-5-169" name="__codelineno-5-169" href="#__codelineno-5-169"></a><span class="c1">;az:Azərbaycanca</span>
+<a id="__codelineno-5-170" name="__codelineno-5-170" href="#__codelineno-5-170"></a><span class="na">REPORT_LANGUAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">zh</span>
+<a id="__codelineno-5-171" name="__codelineno-5-171" href="#__codelineno-5-171"></a>
+<a id="__codelineno-5-172" name="__codelineno-5-172" href="#__codelineno-5-172"></a><span class="c1">;用例执行完后生成的测试报告格式</span>
+<a id="__codelineno-5-173" name="__codelineno-5-173" href="#__codelineno-5-173"></a><span class="c1">;目前支持 allure, xml, json （支持同时生成）</span>
+<a id="__codelineno-5-174" name="__codelineno-5-174" href="#__codelineno-5-174"></a><span class="na">REPORT_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">allure, xml, json</span>
 <a id="__codelineno-5-175" name="__codelineno-5-175" href="#__codelineno-5-175"></a>
-<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="c1">;数据回填必须关联PMS测试单</span>
-<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="c1">;在PMS上查看测试单链接: https://pms.uniontech.com/testtask-cases-20747.html</span>
-<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="c1">;测试单ID为: 20747</span>
-<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="na">TASK_ID</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-176" name="__codelineno-5-176" href="#__codelineno-5-176"></a><span class="c1">;指定报告生成的路径（相对项目根目录下）</span>
+<a id="__codelineno-5-177" name="__codelineno-5-177" href="#__codelineno-5-177"></a><span class="na">ALLURE_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
+<a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="na">XML_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
+<a id="__codelineno-5-179" name="__codelineno-5-179" href="#__codelineno-5-179"></a><span class="na">JSON_REPORT_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">report/</span>
 <a id="__codelineno-5-180" name="__codelineno-5-180" href="#__codelineno-5-180"></a>
-<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="c1">;将测试结果数据回填到PMS</span>
-<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="c1">;为空: 表示不回填,不会在每条用例执行完之后生成json结果文件;</span>
-<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="c1">;async: 表示逐条异步回填,后面一条执行开始时通过子线程对前一条用例的执行结果进行回填，如此实现时间效率最大化;</span>
-<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="c1">;finish: 表示所有用例执行完成之后逐个回填;</span>
-<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="na">SEND_PMS</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a>
-<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="c1">;数据回填的触发者</span>
-<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="c1">;auto: 框架自动回填,配合SEND_PMS配置使用,你可以选择在不同的阶段进行数据回填;</span>
-<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a><span class="c1">;hand: 手动回填,每条用例仍然会生成json文件,但框架不会进行数据回填,需要你可以在你想要发送的时间点手动触发回填;</span>
-<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="na">TRIGGER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
-<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a>
-<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a><span class="c1">;PMS回填的重试次数</span>
-<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="c1">;如果接口请求失败,会进行重试</span>
-<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="na">SEND_PMS_RETRY_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2</span>
-<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a>
-<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="c1">;caselib: 用例库</span>
-<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a><span class="c1">;testcase: 产品库用例</span>
-<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="na">CASE_FROM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">caselib</span>
-<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a>
-<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="k">[pmsctl-pms_link_csv]</span>
-<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="c1">;同步PMS数据到本地CSV文件，必须要配置的配置项</span>
-<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a><span class="c1">;key是本地CSV文件的文件名称;</span>
-<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="c1">;value是对应PMS上的模块ID;</span>
-<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="c1">;比如要同步音乐的数据, 首先需要将配置 APP_NAME = deepin-music，</span>
-<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="c1">;CSV文件名称为music.csv，其在PMS上的音乐用例库的URL为: https://pms.uniontech.com/caselib-browse-81.html</span>
-<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="c1">;因此应该配置为: music = 81</span>
-<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="c1">;这样才能将PMS与本地CSV文件建立联系。</span>
-<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a><span class="c1">;如果你的应用分了很多模块,只需要将对应的信息依次配置好就行了。</span>
-<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="na">music</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a>
-<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="k">[csvctl]</span>
-<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="c1">;将py文件的case id同步到csv文件</span>
-<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a><span class="c1">;yes, 开启同步</span>
-<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="na">PY_ID_TO_CSV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
-<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a>
-<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="c1">;导出的csv文件名称，比如：case_list.csv</span>
-<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a><span class="na">EXPORT_CSV_FILE</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a>
-<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a><span class="c1">;导出 case_list.csv 文件时配置的字段名，用例名称默认存在第一列，无需添加</span>
-<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a><span class="na">EXPORT_CSV_HEARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">用例级别,用例类型,测试级别,下线CD</span>
+<a id="__codelineno-5-181" name="__codelineno-5-181" href="#__codelineno-5-181"></a><span class="c1">;=============================== PMS CONFIG ===================================</span>
+<a id="__codelineno-5-182" name="__codelineno-5-182" href="#__codelineno-5-182"></a><span class="c1">;PMS相关配置，包含以下几个方面：</span>
+<a id="__codelineno-5-183" name="__codelineno-5-183" href="#__codelineno-5-183"></a><span class="c1">;1.PMS测试套执行</span>
+<a id="__codelineno-5-184" name="__codelineno-5-184" href="#__codelineno-5-184"></a><span class="c1">;2.自动从PMS爬取数据并同步本地CSV文件</span>
+<a id="__codelineno-5-185" name="__codelineno-5-185" href="#__codelineno-5-185"></a><span class="c1">;3.PMS数据回填</span>
+<a id="__codelineno-5-186" name="__codelineno-5-186" href="#__codelineno-5-186"></a><span class="k">[pmsctl]</span>
+<a id="__codelineno-5-187" name="__codelineno-5-187" href="#__codelineno-5-187"></a><span class="c1">;PMS的用户名,如: ut001234</span>
+<a id="__codelineno-5-188" name="__codelineno-5-188" href="#__codelineno-5-188"></a><span class="na">PMS_USER</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-189" name="__codelineno-5-189" href="#__codelineno-5-189"></a>
+<a id="__codelineno-5-190" name="__codelineno-5-190" href="#__codelineno-5-190"></a><span class="c1">;PMS的密码</span>
+<a id="__codelineno-5-191" name="__codelineno-5-191" href="#__codelineno-5-191"></a><span class="na">PMS_PASSWORD</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-192" name="__codelineno-5-192" href="#__codelineno-5-192"></a>
+<a id="__codelineno-5-193" name="__codelineno-5-193" href="#__codelineno-5-193"></a><span class="c1">;PMS测试套的ID</span>
+<a id="__codelineno-5-194" name="__codelineno-5-194" href="#__codelineno-5-194"></a><span class="c1">;在PMS上查看用例“套件”链接: https://pms.uniontech.com/testsuite-view-495.html</span>
+<a id="__codelineno-5-195" name="__codelineno-5-195" href="#__codelineno-5-195"></a><span class="c1">;测试套ID为: 495</span>
+<a id="__codelineno-5-196" name="__codelineno-5-196" href="#__codelineno-5-196"></a><span class="na">SUITE_ID</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-197" name="__codelineno-5-197" href="#__codelineno-5-197"></a>
+<a id="__codelineno-5-198" name="__codelineno-5-198" href="#__codelineno-5-198"></a><span class="c1">;数据回填必须关联PMS测试单</span>
+<a id="__codelineno-5-199" name="__codelineno-5-199" href="#__codelineno-5-199"></a><span class="c1">;在PMS上查看测试单链接: https://pms.uniontech.com/testtask-cases-20747.html</span>
+<a id="__codelineno-5-200" name="__codelineno-5-200" href="#__codelineno-5-200"></a><span class="c1">;测试单ID为: 20747</span>
+<a id="__codelineno-5-201" name="__codelineno-5-201" href="#__codelineno-5-201"></a><span class="na">TASK_ID</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-202" name="__codelineno-5-202" href="#__codelineno-5-202"></a>
+<a id="__codelineno-5-203" name="__codelineno-5-203" href="#__codelineno-5-203"></a><span class="c1">;将测试结果数据回填到PMS</span>
+<a id="__codelineno-5-204" name="__codelineno-5-204" href="#__codelineno-5-204"></a><span class="c1">;为空: 表示不回填,不会在每条用例执行完之后生成json结果文件;</span>
+<a id="__codelineno-5-205" name="__codelineno-5-205" href="#__codelineno-5-205"></a><span class="c1">;async: 表示逐条异步回填,后面一条执行开始时通过子线程对前一条用例的执行结果进行回填，如此实现时间效率最大化;</span>
+<a id="__codelineno-5-206" name="__codelineno-5-206" href="#__codelineno-5-206"></a><span class="c1">;finish: 表示所有用例执行完成之后逐个回填;</span>
+<a id="__codelineno-5-207" name="__codelineno-5-207" href="#__codelineno-5-207"></a><span class="na">SEND_PMS</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-208" name="__codelineno-5-208" href="#__codelineno-5-208"></a>
+<a id="__codelineno-5-209" name="__codelineno-5-209" href="#__codelineno-5-209"></a><span class="c1">;数据回填的触发者</span>
+<a id="__codelineno-5-210" name="__codelineno-5-210" href="#__codelineno-5-210"></a><span class="c1">;auto: 框架自动回填,配合SEND_PMS配置使用,你可以选择在不同的阶段进行数据回填;</span>
+<a id="__codelineno-5-211" name="__codelineno-5-211" href="#__codelineno-5-211"></a><span class="c1">;hand: 手动回填,每条用例仍然会生成json文件,但框架不会进行数据回填,需要你可以在你想要发送的时间点手动触发回填;</span>
+<a id="__codelineno-5-212" name="__codelineno-5-212" href="#__codelineno-5-212"></a><span class="na">TRIGGER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<a id="__codelineno-5-213" name="__codelineno-5-213" href="#__codelineno-5-213"></a>
+<a id="__codelineno-5-214" name="__codelineno-5-214" href="#__codelineno-5-214"></a><span class="c1">;PMS回填的重试次数</span>
+<a id="__codelineno-5-215" name="__codelineno-5-215" href="#__codelineno-5-215"></a><span class="c1">;如果接口请求失败,会进行重试</span>
+<a id="__codelineno-5-216" name="__codelineno-5-216" href="#__codelineno-5-216"></a><span class="na">SEND_PMS_RETRY_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2</span>
+<a id="__codelineno-5-217" name="__codelineno-5-217" href="#__codelineno-5-217"></a>
+<a id="__codelineno-5-218" name="__codelineno-5-218" href="#__codelineno-5-218"></a><span class="c1">;caselib: 用例库</span>
+<a id="__codelineno-5-219" name="__codelineno-5-219" href="#__codelineno-5-219"></a><span class="c1">;testcase: 产品库用例</span>
+<a id="__codelineno-5-220" name="__codelineno-5-220" href="#__codelineno-5-220"></a><span class="na">CASE_FROM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">caselib</span>
 <a id="__codelineno-5-221" name="__codelineno-5-221" href="#__codelineno-5-221"></a>
-<a id="__codelineno-5-222" name="__codelineno-5-222" href="#__codelineno-5-222"></a>
-<a id="__codelineno-5-223" name="__codelineno-5-223" href="#__codelineno-5-223"></a><span class="k">[log_cli]</span>
-<a id="__codelineno-5-224" name="__codelineno-5-224" href="#__codelineno-5-224"></a><span class="c1">;日志相关配置（不打印构造函数和魔法函数的功能说明）</span>
-<a id="__codelineno-5-225" name="__codelineno-5-225" href="#__codelineno-5-225"></a><span class="c1">;批量执行时，终端输出的日志级别 DEBUG/INFO/ERROR</span>
-<a id="__codelineno-5-226" name="__codelineno-5-226" href="#__codelineno-5-226"></a><span class="na">LOG_LEVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DEBUG</span>
-<a id="__codelineno-5-227" name="__codelineno-5-227" href="#__codelineno-5-227"></a>
-<a id="__codelineno-5-228" name="__codelineno-5-228" href="#__codelineno-5-228"></a><span class="c1"># ============= 自动输出日志的配置 ================</span>
-<a id="__codelineno-5-229" name="__codelineno-5-229" href="#__codelineno-5-229"></a><span class="c1">;支持类名以 xxx 开头的，自动将函数说明打印为日志, 多个参数以逗号隔开</span>
-<a id="__codelineno-5-230" name="__codelineno-5-230" href="#__codelineno-5-230"></a><span class="na">CLASS_NAME_STARTSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Assert</span>
-<a id="__codelineno-5-231" name="__codelineno-5-231" href="#__codelineno-5-231"></a>
-<a id="__codelineno-5-232" name="__codelineno-5-232" href="#__codelineno-5-232"></a><span class="c1">;支持类名以 xxx 结尾的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
-<a id="__codelineno-5-233" name="__codelineno-5-233" href="#__codelineno-5-233"></a><span class="na">CLASS_NAME_ENDSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Widget</span>
-<a id="__codelineno-5-234" name="__codelineno-5-234" href="#__codelineno-5-234"></a>
-<a id="__codelineno-5-235" name="__codelineno-5-235" href="#__codelineno-5-235"></a><span class="c1">;支持类名包含 xxx 的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
-<a id="__codelineno-5-236" name="__codelineno-5-236" href="#__codelineno-5-236"></a><span class="na">CLASS_NAME_CONTAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ShortCut</span>
-<a id="__codelineno-5-237" name="__codelineno-5-237" href="#__codelineno-5-237"></a><span class="c1"># ==============================================</span>
+<a id="__codelineno-5-222" name="__codelineno-5-222" href="#__codelineno-5-222"></a><span class="k">[pmsctl-pms_link_csv]</span>
+<a id="__codelineno-5-223" name="__codelineno-5-223" href="#__codelineno-5-223"></a><span class="c1">;同步PMS数据到本地CSV文件，必须要配置的配置项</span>
+<a id="__codelineno-5-224" name="__codelineno-5-224" href="#__codelineno-5-224"></a><span class="c1">;key是本地CSV文件的文件名称;</span>
+<a id="__codelineno-5-225" name="__codelineno-5-225" href="#__codelineno-5-225"></a><span class="c1">;value是对应PMS上的模块ID;</span>
+<a id="__codelineno-5-226" name="__codelineno-5-226" href="#__codelineno-5-226"></a><span class="c1">;比如要同步音乐的数据, 首先需要将配置 APP_NAME = deepin-music，</span>
+<a id="__codelineno-5-227" name="__codelineno-5-227" href="#__codelineno-5-227"></a><span class="c1">;CSV文件名称为music.csv，其在PMS上的音乐用例库的URL为: https://pms.uniontech.com/caselib-browse-81.html</span>
+<a id="__codelineno-5-228" name="__codelineno-5-228" href="#__codelineno-5-228"></a><span class="c1">;因此应该配置为: music = 81</span>
+<a id="__codelineno-5-229" name="__codelineno-5-229" href="#__codelineno-5-229"></a><span class="c1">;这样才能将PMS与本地CSV文件建立联系。</span>
+<a id="__codelineno-5-230" name="__codelineno-5-230" href="#__codelineno-5-230"></a><span class="c1">;如果你的应用分了很多模块,只需要将对应的信息依次配置好就行了。</span>
+<a id="__codelineno-5-231" name="__codelineno-5-231" href="#__codelineno-5-231"></a><span class="na">music</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-232" name="__codelineno-5-232" href="#__codelineno-5-232"></a>
+<a id="__codelineno-5-233" name="__codelineno-5-233" href="#__codelineno-5-233"></a><span class="k">[csvctl]</span>
+<a id="__codelineno-5-234" name="__codelineno-5-234" href="#__codelineno-5-234"></a><span class="c1">;将py文件的case id同步到csv文件</span>
+<a id="__codelineno-5-235" name="__codelineno-5-235" href="#__codelineno-5-235"></a><span class="c1">;yes, 开启同步</span>
+<a id="__codelineno-5-236" name="__codelineno-5-236" href="#__codelineno-5-236"></a><span class="na">PY_ID_TO_CSV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span>
+<a id="__codelineno-5-237" name="__codelineno-5-237" href="#__codelineno-5-237"></a>
+<a id="__codelineno-5-238" name="__codelineno-5-238" href="#__codelineno-5-238"></a><span class="c1">;导出的csv文件名称，比如：case_list.csv</span>
+<a id="__codelineno-5-239" name="__codelineno-5-239" href="#__codelineno-5-239"></a><span class="na">EXPORT_CSV_FILE</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-240" name="__codelineno-5-240" href="#__codelineno-5-240"></a>
+<a id="__codelineno-5-241" name="__codelineno-5-241" href="#__codelineno-5-241"></a><span class="c1">;导出 case_list.csv 文件时配置的字段名，用例名称默认存在第一列，无需添加</span>
+<a id="__codelineno-5-242" name="__codelineno-5-242" href="#__codelineno-5-242"></a><span class="na">EXPORT_CSV_HEARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">用例级别,用例类型,测试级别,下线CD</span>
+<a id="__codelineno-5-243" name="__codelineno-5-243" href="#__codelineno-5-243"></a>
+<a id="__codelineno-5-244" name="__codelineno-5-244" href="#__codelineno-5-244"></a>
+<a id="__codelineno-5-245" name="__codelineno-5-245" href="#__codelineno-5-245"></a><span class="k">[log_cli]</span>
+<a id="__codelineno-5-246" name="__codelineno-5-246" href="#__codelineno-5-246"></a><span class="c1">;日志相关配置（不打印构造函数和魔法函数的功能说明）</span>
+<a id="__codelineno-5-247" name="__codelineno-5-247" href="#__codelineno-5-247"></a><span class="c1">;批量执行时，终端输出的日志级别 DEBUG/INFO/ERROR</span>
+<a id="__codelineno-5-248" name="__codelineno-5-248" href="#__codelineno-5-248"></a><span class="na">LOG_LEVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DEBUG</span>
+<a id="__codelineno-5-249" name="__codelineno-5-249" href="#__codelineno-5-249"></a>
+<a id="__codelineno-5-250" name="__codelineno-5-250" href="#__codelineno-5-250"></a><span class="c1"># ============= 自动输出日志的配置 ================</span>
+<a id="__codelineno-5-251" name="__codelineno-5-251" href="#__codelineno-5-251"></a><span class="c1">;支持类名以 xxx 开头的，自动将函数说明打印为日志, 多个参数以逗号隔开</span>
+<a id="__codelineno-5-252" name="__codelineno-5-252" href="#__codelineno-5-252"></a><span class="na">CLASS_NAME_STARTSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Assert</span>
+<a id="__codelineno-5-253" name="__codelineno-5-253" href="#__codelineno-5-253"></a>
+<a id="__codelineno-5-254" name="__codelineno-5-254" href="#__codelineno-5-254"></a><span class="c1">;支持类名以 xxx 结尾的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
+<a id="__codelineno-5-255" name="__codelineno-5-255" href="#__codelineno-5-255"></a><span class="na">CLASS_NAME_ENDSWITH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Widget</span>
+<a id="__codelineno-5-256" name="__codelineno-5-256" href="#__codelineno-5-256"></a>
+<a id="__codelineno-5-257" name="__codelineno-5-257" href="#__codelineno-5-257"></a><span class="c1">;支持类名包含 xxx 的，自动将函数说明打印为日志，多个参数以逗号隔开</span>
+<a id="__codelineno-5-258" name="__codelineno-5-258" href="#__codelineno-5-258"></a><span class="na">CLASS_NAME_CONTAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ShortCut</span>
+<a id="__codelineno-5-259" name="__codelineno-5-259" href="#__codelineno-5-259"></a><span class="c1"># ==============================================</span>
 </code></pre></div>
 <p>配置完成之后，直接在命令行执行 <code>manage.py</code> 就好了。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
