@@ -1875,6 +1875,10 @@
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="236dev">2.3.6（dev）<a class="headerlink" href="#236dev" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li>标签化管理支持判断系统版本跳过用例；</li>
+</ul>
 <p><strong>Fix</strong></p>
 <ul>
 <li>修改 <code>public</code> 目录权限；</li>
@@ -1892,13 +1896,13 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li><code>env.sh</code> 增加清理 <code>pip</code> 缓存；</li>
-<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本过高与 <code>libkf5waylandclient5</code> 版本不匹配，根据获取 <code>libkf5waylandclient5</code> 版本指定 <code>libkf5wayland-dev</code> 版；感谢 <strong>@程玉婷</strong>；</li>
+<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本过高与 <code>libkf5waylandclient5</code> 版本不匹配，根据获取 <code>libkf5waylandclient5</code> 版本指定 <code>libkf5wayland-dev</code> 版；感谢 <strong><a href="https://github.com/momiji33">@程玉婷</a></strong>；</li>
 </ul>
 <h2 id="23320231122">2.3.3（2023/11/22）<a class="headerlink" href="#23320231122" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
 <ul>
-<li>使用 <code>Xdotool</code> 检索窗口 ID 时，如果有多个窗口，则输出以 <code>\n</code> 结尾。在原始代码中，使用 <code>split("\n")</code> 直接拆分字符串可能会导致结果列表的最后一个元素为空字符串。在迭代窗口 ID 并将其转换为 <code>int</code> 类型时，这种情况会导致错误。感谢 <a href="https://github.com/zhao-george">@zhao-george</a></li>
-<li>图像识别（<code>image-center</code>）发布了新版本 <code>2023.11.22</code>  <a href="https://github.com/zhao-george">@zhao-george</a>，OCR（<code>pdocr-rpc</code>）发布了新版本 <code>2023.11.17</code>，增加了识别的总耗时、每次识别间隔时间；</li>
+<li>使用 <code>Xdotool</code> 检索窗口 ID 时，如果有多个窗口，则输出以 <code>\n</code> 结尾。在原始代码中，使用 <code>split("\n")</code> 直接拆分字符串可能会导致结果列表的最后一个元素为空字符串。在迭代窗口 ID 并将其转换为 <code>int</code> 类型时，这种情况会导致错误。感谢 <a href="https://github.com/zhao-george">@赵有志</a></li>
+<li>图像识别（<code>image-center</code>）发布了新版本 <code>2023.11.22</code>  <a href="https://github.com/zhao-george">@赵有志</a>，OCR（<code>pdocr-rpc</code>）发布了新版本 <code>2023.11.17</code>，增加了识别的总耗时、每次识别间隔时间；</li>
 </ul>
 <h2 id="23220231114">2.3.2（2023/11/14）<a class="headerlink" href="#23220231114" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -1930,7 +1934,7 @@
 <ul>
 <li>修复 <code>youqu</code> 命令无法接收带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
 <li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能识别的问题，暂时先回滚到 <code>V3</code> ；</li>
-<li>修复了不同的 <code>case</code> 目录下 <code>py</code> 文件的名称一样，导出（<code>manage.py csvctl -p2c</code>）数据错误的问题；感谢 <strong>@赵有志</strong>；</li>
+<li>修复了不同的 <code>case</code> 目录下 <code>py</code> 文件的名称一样，导出（<code>manage.py csvctl -p2c</code>）数据错误的问题；感谢 <strong><a href="https://github.com/zhao-george">@赵有志</a></strong>；</li>
 </ul>
 <hr />
 <h2 id="22420231016">2.2.4（2023/10/16）<a class="headerlink" href="#22420231016" title="Permanent link">&para;</a></h2>
@@ -2008,7 +2012,7 @@
 <p>fix</p>
 <ul>
 <li>对 <code>docs</code> 里面细化了远程执行章节的描述；</li>
-<li>多 <code>docs</code> 里面优化了标签化管理章节的描述；</li>
+<li>对 <code>docs</code> 里面优化了标签化管理章节的描述；</li>
 </ul>
 <h2 id="21520230831">2.1.5（2023/08/31）<a class="headerlink" href="#21520230831" title="Permanent link">&para;</a></h2>
 <p>new</p>
@@ -2022,10 +2026,10 @@
 </ul>
 <p>fix</p>
 <ul>
-<li>修复了 Wayland 键鼠工具没有鼠标相对移动方法 moveRel 的问题； </li>
-<li>修复了 Wayland 下获取窗口信息功能模块中环境变量的问题；</li>
-<li>优化了 startproject 功能的一些信息输出；</li>
-<li>修复了特殊场景下 env_dev.sh 开发环境部署是可能影响到正式环境 env.sh 的问题；</li>
+<li>修复了 <code>Wayland</code> 键鼠工具没有鼠标相对移动方法 <code>moveRel</code> 的问题； </li>
+<li>修复了<code>Wayland</code> 下获取窗口信息功能模块中环境变量的问题；</li>
+<li>优化了 <code>startproject</code> 功能的一些信息输出；</li>
+<li>修复了特殊场景下 <code>env_dev.sh</code> 开发环境部署是可能影响到正式环境 env.sh 的问题；</li>
 </ul>
 <h2 id="21220230822">2.1.2（2023/08/22）<a class="headerlink" href="#21220230822" title="Permanent link">&para;</a></h2>
 <p>new</p>
