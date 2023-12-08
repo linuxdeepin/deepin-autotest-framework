@@ -1488,19 +1488,19 @@
 </code></pre></div>
 <p>我们<strong>推荐第一种</strong>使用方法，因为你写用例层肯定是会导入方法层出口类的，你不需要有额外的导入代码即可使用到所有的方法。</p>
 <h3 id="2">2. 特殊场景键鼠操作<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>一些特殊场景下，无法使用上述的键鼠工具，比如在开机锁屏界面（没有进入系统），调用上述方法会报错，我们提供了另外一种解决方案：</p>
-<p><code>ydotool</code></p>
+<p>一些特殊场景下，无法使用上述的键鼠工具，比如在注销登录界面（没有进入系统），调用上述方法会报错，我们提供了另外一种解决方案：<code>ydotool</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">src.mouse_key</span> <span class="kn">import</span> <span class="n">MouseKey</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">MouseKey</span><span class="o">.</span><span class="n">press_key</span><span class="p">(</span><span class="s2">&quot;enter&quot;</span><span class="p">,</span> <span class="n">_ydotool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
+<p>此方案用到的场景不多，目前仅对 <code>press_key</code> 方法加入了此功能，如果还需要其他的操作方法，请提 <code>issues</code> 或 <code>PR</code>；</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年11月16日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月8日</span>
       
     
   </small>

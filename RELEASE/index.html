@@ -1877,16 +1877,18 @@
 <h2 id="236dev">2.3.6（dev）<a class="headerlink" href="#236dev" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
-<li>标签化管理支持判断系统版本跳过用例；</li>
+<li>标签化管理支持判断系统版本跳过用例，从 <code>/etc/os-version</code> 里面的 <code>MinorVersion</code> 为判断依据，在 <code>setting/skipif.py</code> 插件中实现了此功能，后续在 <code>CSV</code> 文件中可以使用此方法进行条件跳过；</li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修改 <code>public</code> 目录权限；</li>
+<li>修改 <code>public</code> 目录权限为 <code>umask 022</code>，以解决远程开发时无法同步文件失败的问题；</li>
+<li>修复 <code>Wayland</code> 下系统监视器使用 <code>WaylandWindowINfo.window_info()</code>，获取的窗口名称为空；</li>
+<li>解除 <code>env.sh</code> 中某个 <code>deb</code> 包安装失败后替换源 <code>retry</code> 机制，因为用固定的源替换之后，容易出现某些包安装失败，而不容易关注到首次包安装失败的问题，给定位环境安装失败带来困难；</li>
 </ul>
 <h2 id="23520231204">2.3.5（2023/12/04）<a class="headerlink" href="#23520231204" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本问题；</li>
+<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本问题；上个版本此问题没有完全修复，本次彻底解决；感谢 <strong><a href="https://github.com/momiji33">@程玉婷</a></strong>；</li>
 </ul>
 <h2 id="23420231204">2.3.4（2023/12/04）<a class="headerlink" href="#23420231204" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -1917,7 +1919,7 @@
 <h2 id="23120231108">2.3.1（2023/11/08）<a class="headerlink" href="#23120231108" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
-<li>集成 <code>ydotool</code> 键鼠控制方案，解决锁屏界面控制键鼠的问题；</li>
+<li>集成 <code>ydotool</code> 键鼠控制方案，解决注销登录界面无法控制键鼠的问题；</li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
