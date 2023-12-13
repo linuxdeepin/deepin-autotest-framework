@@ -1569,8 +1569,8 @@
 <h4 id="21">2.1. 新增依赖<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
 <p>如果应用库还需要其他 <code>Python</code> 依赖库，只需要在应用库根目录下保存一个 <code>requirement.txt</code> 文件；</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>autotest_xxx
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├──<span class="w"> </span>requirement.txt
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="hll">├──<span class="w"> </span>requirement.txt
+</span><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
 </code></pre></div>
 <p>里面写入需要安装的三方依赖，比如像这样：</p>
@@ -1585,8 +1585,8 @@
 <p>在某些情况下，可能你只需要安装一些最最基础的依赖，其他的都不需要，比如纯接口自动化的项目，它不需要 <code>UI</code> 自动化相关的依赖。</p>
 <p>你只需要在应用库根目录下，存放一个 <code>BASICENV</code> 的普通文件，里面不需要写任何内容，这样执行 <code>env.sh</code> 时，只会安装最基础的依赖。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>autotest_xxx
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>BASICENV<span class="w">  </span><span class="c1"># 可以使用：touch BASICENV 创建文件</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="hll">├──<span class="w"> </span>BASICENV<span class="w">  </span><span class="c1"># 可以使用：touch BASICENV 创建文件</span>
+</span><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
 </code></pre></div>
 <p>基础依赖仅安装最基础的几个包；</p>
@@ -1631,7 +1631,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月7日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月13日</span>
       
     
   </small>

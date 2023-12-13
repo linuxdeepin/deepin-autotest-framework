@@ -831,8 +831,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#236dev" class="md-nav__link">
-    2.3.6（dev）
+  <a href="#23620231213" class="md-nav__link">
+    2.3.6（2023/12/13）
   </a>
   
 </li>
@@ -1611,8 +1611,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#236dev" class="md-nav__link">
-    2.3.6（dev）
+  <a href="#23620231213" class="md-nav__link">
+    2.3.6（2023/12/13）
   </a>
   
 </li>
@@ -1874,10 +1874,10 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="236dev">2.3.6（dev）<a class="headerlink" href="#236dev" title="Permanent link">&para;</a></h2>
+<h2 id="23620231213">2.3.6（2023/12/13）<a class="headerlink" href="#23620231213" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
-<li>标签化管理支持判断系统版本跳过用例，用 <code>/etc/os-version</code> 里面的 <code>MinorVersion</code> 字段作为判断依据，在 <code>setting/skipif.py</code> 插件中实现了此功能，后续在 <code>CSV</code> 文件中可以使用此方法进行条件跳过；</li>
+<li>标签化管理支持判断系统版本跳过用例，用 <code>/etc/os-version</code> 里面的 <code>MinorVersion</code> 字段作为判断依据，在 <code>setting/skipif.py</code> 插件中实现了此功能，后续在 <code>CSV</code> 文件中可以使用此方法进行条件跳过；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/16"># issues 16</a></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># _*_ coding:utf-8 _*_</span>
@@ -1950,8 +1950,10 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li>修改 <code>public</code> 目录权限为 <code>umask 022</code>，以解决远程开发时无法同步文件的问题；</li>
-<li>修复 <code>Wayland</code> 下系统监视器使用 <code>WaylandWindowINfo.window_info()</code>，获取的窗口名称为空；</li>
-<li>解除 <code>env.sh</code> 中某个 <code>deb</code> 包安装失败后替换源 <code>retry</code> 机制，因为用固定的源替换之后，容易出现某些包安装失败，而不容易关注到首次包安装失败的问题，给定位环境安装失败带来困难；</li>
+<li>修复 <code>Wayland</code> 下系统监视器使用 <code>WaylandWindowINfo.window_info()</code>，获取的窗口名称为空；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20"># issues 18</a></li>
+<li>解除 <code>env.sh</code> 中某个 <code>deb</code> 包安装失败后替换源 <code>retry</code> 机制，因为用固定的源替换之后，容易出现某些包安装失败，而不容易关注到首次包安装失败的问题，给定位环境安装失败带来困难；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/19"># issues 19</a></li>
+<li>修复 <code>env.sh</code> 里面报错 <code>ERROR: unknown command "cache" - maybe you meant "check"</code>；</li>
+<li>修复用例收集数量为 <code>0</code> 时，报错 <code>ci_result.json</code> 文件找不到；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20"># issues 20</a></li>
 </ul>
 <h2 id="23520231204">2.3.5（2023/12/04）<a class="headerlink" href="#23520231204" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
