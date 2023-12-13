@@ -1601,17 +1601,16 @@
 <h3 id="1">1. 标签说明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>根据现有业务需要，用例需要添加的标签有：</p>
 <ul>
-<li>脚本 ID：自动化用例脚本/函数 ID；</li>
-<li><code>PMS用例ID</code>：<code>PMS</code> 上对应的用例 ID（用例库 ID）；默认使用用例库 ID，对于暂时没有使用用例库管理用例的项目，可以使用产品库用例 ID；</li>
-<li>用例级别：对应 <code>PMS</code> 上用例级别，分别用 <code>L1、L2、L3、L4</code> 表示；</li>
-<li>用例类型：<code>FUNC</code>（功能）、<code>PERF</code>（性能）、<code>STR</code>（压力）、<code>SEC</code>（安全）、<code>CTS</code>（兼容性）、<code>API</code>（接口）、<code>BASELINE</code>（基线-预留）</li>
-<li>设备类型：<code>PPL</code>（依赖外设的用例）、<code>COL</code>（依赖主控机的用例）</li>
-<li>一二级bug自动化：<code>BUG</code>（由 <code>Bug</code> 转的用例）</li>
-<li>上线对象：<code>CICD</code>，表示上线到 <code>CICD</code> 流水线的用例，后续可一键生成 <code>case_list.csv</code> 文件，用于导入到明道云 AT 用例列表中控制 <code>CICD</code> 跑测范围；</li>
-<li>测试级别：<code>C1 / C2 / C3 / C4</code>，具体定义参考<a href="https://doc.uniontech.com/docs/9030MdRnyXtDxjqw">流水线使用指导</a>；</li>
-<li>跳过原因：<code>skip-XXX</code>，用于控制用例是否执行；</li>
-<li>确认修复：<code>fixed-XXX</code>，用于标记用例的修复状态（后面详细讲解用法）；</li>
-<li>废弃用例：<code>removed-已废弃</code>，用于标记已经废弃的用例，此用例标签不会被添加，也不会被执行；</li>
+<li><mark>脚本 ID</mark> ：自动化用例脚本/函数 ID；</li>
+<li><mark>PMS用例ID</mark> ：<code>PMS</code> 上对应的用例 ID（用例库 ID）；默认使用用例库 ID，对于暂时没有使用用例库管理用例的项目，可以使用产品库用例 ID；</li>
+<li><mark>用例级别</mark> ：对应 <code>PMS</code> 上用例级别，分别用 <code>L1、L2、L3、L4</code> 表示；</li>
+<li><mark>用例类型</mark> ：<code>FUNC</code>（功能）、<code>PERF</code>（性能）、<code>STR</code>（压力）、<code>SEC</code>（安全）、<code>CTS</code>（兼容性）、<code>API</code>（接口）、<code>BASELINE</code>（基线-预留）</li>
+<li><mark>设备类型</mark> ：<code>PPL</code>（依赖外设的用例）、<code>COL</code>（依赖主控机的用例）</li>
+<li><mark>一二级bug自动化</mark> ：<code>BUG</code>（由 <code>Bug</code> 转的用例）</li>
+<li><mark>上线对象</mark> ：<code>CICD</code>，表示上线到 <code>CICD</code> 流水线的用例，后续可一键生成 <code>case_list.csv</code> 文件，用于导入到明道云 AT 用例列表中控制 <code>CICD</code> 跑测范围；</li>
+<li><mark>跳过原因</mark> ：<code>skip-XXX</code>，用于控制用例是否执行；</li>
+<li><mark>确认修复</mark> ：<code>fixed-XXX</code>，用于标记用例的修复状态（后面详细讲解用法）；</li>
+<li><mark>废弃用例</mark> ：<code>removed-已废弃</code>，用于标记已经废弃的用例，此用例标签不会被添加，也不会被执行；</li>
 </ul>
 <p>示例：</p>
 <table>
@@ -1624,10 +1623,9 @@
 <th style="text-align: center;">设备类型</th>
 <th style="text-align: center;">一二级bug自动化</th>
 <th style="text-align: center;">上线对象</th>
-<th style="text-align: center;">测试级别</th>
 <th style="text-align: center;">跳过原因</th>
 <th style="text-align: center;">确认修复</th>
-<th>废弃用例</th>
+<th style="text-align: center;">废弃用例</th>
 <th>...</th>
 </tr>
 </thead>
@@ -1638,21 +1636,20 @@
 <td style="text-align: center;">L1</td>
 <td style="text-align: center;">FUNC</td>
 <td style="text-align: center;">PPL</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">BUG</td>
 <td style="text-align: center;">CICD</td>
-<td style="text-align: center;">C1</td>
 <td style="text-align: center;">skip-XXX</td>
 <td style="text-align: center;">fixed-XXX</td>
-<td>removed-已废弃</td>
+<td style="text-align: center;">removed-已废弃</td>
 <td>...</td>
 </tr>
 </tbody>
 </table>
 <h3 id="2">2. 操作步骤<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>2.1、在子项目目录下新建 <code>csv</code> 文件，用于保存用例标签，以用例的 <code>py</code> 文件除去首字符串 "test_" 和用例序号后的字符串作为 <code>csv</code> 的文件名。</p>
+<p>2.1、在子项目目录下新建 <code>csv</code> 文件，用于保存用例标签，以 <mark>用例脚本的 py 文件去掉首字符串 "test_" ，去掉用例序号后的字符串，取中间的名称作为 csv 文件的文件名</mark> 。</p>
 <p>例如:</p>
 <ul>
-<li>相册的用例文件为 <code>test_album_xxx.py</code>，xxx 表示用例的ID（也可以是自定义的数字代表用例序号），此时 <code>csv</code> 文件名就应为 <code>album.csv</code>；</li>
+<li><mark>相册的用例文件为 <code>test_album_xxx.py</code>，xxx 表示用例的ID（也可以是自定义的数字代表用例序号），此时 <code>csv</code> 文件名就应为 <code>album.csv</code></mark> ；</li>
 </ul>
 <p>对于用例规模比较大的应用，比如文件管理器，建议分模块，每个模块建立一个 <code>csv</code> 文件，所有 <code>csv</code> 文件建议放在一个 <code>tags</code> 目录下。</p>
 <p>是否分模块维护 <code>csv</code> 取决于应用的用例复杂度，同时我们应该充分考虑后期的可维护性，<code>csv</code> 文件太多了也是一个很糟糕的事情。</p>
@@ -1850,7 +1847,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年9月26日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月13日</span>
       
     
   </small>
