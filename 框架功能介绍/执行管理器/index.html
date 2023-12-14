@@ -48,6 +48,10 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../css/termynal.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1561,12 +1565,22 @@
 <p><strong>【命令行使用】</strong></p>
 <p>所有功能的驱动执行都是通过 <code>manage.py</code> 进行的，它是全局的入口文件，后面提到的一些命令行参数也都默认是在 <code>manage.py</code> 之后添加使用；</p>
 <p>你可以使用 <code>-h</code> 或 <code>--help</code> 查看它的帮助：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>youqu<span class="w"> </span>manage<span class="w"> </span>-h
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage<span class="w"> </span>-h
 </code></pre></div>
+
+</div>
+
 <p>这样可以查看它支持的子命令；</p>
 <p>然后再通过子命令 <code>-h</code> 或 <code>--help</code> 查看子命令的帮助，以子命令 <code>run</code> 举例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>youqu<span class="w"> </span>manage<span class="w"> </span>run<span class="w"> </span>-h
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage<span class="w"> </span>run<span class="w"> </span>-h
 </code></pre></div>
+
+</div>
+
 <p>这样可以查看到子命令支持的各项参数及参数使用说明。</p>
 <p><strong>【配置文件】</strong></p>
 <p>配置文件在 <code>setting</code> 目录下，绝大部分的配置项均在 <code>globalconfig.ini</code> 文件中，为了方便描述后面经常提到的“配置文件”、“配置项”几乎都是指的 <code>setting/globalconfig.ini</code>。</p>
@@ -1579,8 +1593,13 @@
 <p>下面介绍两个常用的用例执行的功能：</p>
 <h3 id="2">2. 本地执行<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>本地执行子命令为：<code>run</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage<span class="w"> </span>run
 </code></pre></div>
+
+</div>
+
 <h4 id="21">2.1. 命令行参数<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
 <p>通过命令行参数配置参数</p>
 <p>以下为 <code>youqu manage.py run</code> 提供的一些常用的参数选项：</p>
@@ -1633,8 +1652,13 @@
 <a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">                        </span><span class="err">重启类场景开启</span><span class="nx">letmego执行方案</span>
 </code></pre></div>
 <p>在一些 <code>CI</code> 环境下使用命令行参数会更加方便：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--app<span class="w"> </span>autotest_deepin_music<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--app<span class="w"> </span>autotest_deepin_music<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
 </code></pre></div>
+
+</div>
+
 <p><code>--app</code> 入参还支持 <code>apps/autotest_xxx</code> 写法，方便在输入命令的过程中使用补全，下面的远程执行功能同样支持。</p>
 <h4 id="22">2.2. 配置文件<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
 <p>通过配置文件配置参数</p>
@@ -1900,13 +1924,23 @@
 <a id="__codelineno-5-259" name="__codelineno-5-259" href="#__codelineno-5-259"></a><span class="c1"># ==============================================</span>
 </code></pre></div>
 <p>配置完成之后，直接在命令行执行 <code>manage.py</code> 就好了。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
+
+</div>
+
 <h3 id="3">3. 远程执行<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>远程执行就是用本地作为服务端控制远程机器执行，远程机器执行的用例相同；</p>
 <p>使用 <code>remote</code> 命令：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
 </code></pre></div>
+
+</div>
+
 <h4 id="31">3.1. 多机器分布式异步执行<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f6d3c0661c6c8e549f8ca5.png" /></p>
 <p>多机器分布式异步执行就是由本地 <code>YouQu</code> 作为服务端，控制远程 N 台机器执行相同的用例，执行完之后所有测试机的测试结果会返回给服务端 report 目录下；</p>
@@ -1970,8 +2004,13 @@
 </code></pre></div>
 <p>有多少台机器就像这样参考上面的格式写就行了。</p>
 <p>然后在命令行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
 </code></pre></div>
+
+</div>
+
 <p>这样运行是从配置文件去读取相关配置。</p>
 <p>如果你不想通过配置文件，你仍然通过命令行参数进行传参，</p>
 <p>以下为 <code>python3 manage.py remote</code> 提供的一些参数选项：</p>
@@ -1990,16 +2029,31 @@
 </code></pre></div>
 <p>除了这些特有参数以外，它同样支持本地执行的所有参数；</p>
 <p>在命令行这样运行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
 </code></pre></div>
+
+</div>
+
 <p>所有用例执行完之后会在 <code>report</code> 目录下回收各个测试机执行的测试报告。</p>
 <p>注意，如果远程机器没有搭建自动化测试环境，记得加上参数 <code>-e</code> ：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-e
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-e
 </code></pre></div>
+
+</div>
+
 <p>执行前确保远程机器已经开启了 ssh 服务，否则会提示无法连接，如果没有开启，请手动开启：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
 </code></pre></div>
+
+</div>
+
 <p>配置文件其他相关配置项详细说明，请查看配置文件中的注释内容。</p>
 <h4 id="32">3.2. 多机器分布式异步负载均衡执行<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
 <p>多机器分布式异步负载均衡执行也是用本地作为服务端控制远程机器执行，但远程机器执行的用例不同，而是所有远程机器执行的用例之和，为你想要执行的用例集；</p>
@@ -2007,15 +2061,19 @@
 <p>服务端想要执行 10 条用例，现在远程机器有 5 台，然后服务端就先拿着第 1 条用例给远程 1 号机执行，拿第 2 条用例给远程 2 号机执行...，如此循环直到所有用例执行完，这就是负载均衡执行。</p>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f6d694661c6c8e54a1025b.png" /></p>
 <p>使用方法和前面一样，只是需要增加一个参数 <code>--parallel</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--parallel<span class="w"> </span>no
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.xx/uos@10.8.13.xx<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--parallel<span class="w"> </span>no
 </code></pre></div>
+
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月13日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月14日</span>
       
     
   </small>
@@ -2150,6 +2208,10 @@
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../js/termynal.js"></script>
+      
+        <script src="../../js/custom.js"></script>
       
     
   </body>

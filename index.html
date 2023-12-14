@@ -46,6 +46,10 @@
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
+      <link rel="stylesheet" href="css/termynal.css">
+    
+      <link rel="stylesheet" href="css/custom.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1684,34 +1688,56 @@
 <p>统信公司内网还可以访问【<a href="http://youqu-dev.uniontech.com/">内网文档</a>】，文档内容一样，访问速度更快哦~~</p>
 <h2 id="_1">安装使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>从 PyPI 安装:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo pip3 install youqu
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>youqu
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
+
+</div>
+
 <p>创建项目:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>youqu-startproject<span class="w"> </span>my_project
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>youqu-startproject<span class="w"> </span>my_project
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">---&gt; 100%</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">The project: [my_project],has been created by youqu-x.x.x</span>
 </code></pre></div>
+
+</div>
+
 <p>如果 <code>youqu-startproject</code> 后面不加参数，默认的项目名称为：<code>youqu</code> ；</p>
 <p>安装依赖:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>my_project
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>bash<span class="w"> </span>env.sh
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">// 如果你的测试机密码不是 `1` ，那你需要在全局配置文件 `globalconfig.ini` 里面将 `PASSWORD` 配置项修改为当前测试机的密码。</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>my_project
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gp">$ </span>bash<span class="w"> </span>env.sh
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
-<details class="warning" open="open">
-<summary>Warning</summary>
-<p>如果你的测试机密码不是 <code>1</code> ，那你需要在全局配置文件 <code>globalconfig.ini</code> 里面将 <code>PASSWORD</code> 配置项修改为当前测试机的密码。</p>
-</details>
+
+</div>
+
 <hr />
 <p><strong>【APP工程】</strong></p>
 <p>如果您已经有一个可用的 <code>APP</code> 工程，将应用库放到基础框架下 <code>apps</code> 目录下，像这样：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>my_project
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>apps
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│<span class="w">   </span>├──<span class="w"> </span>autotest_deepin_music<span class="w">  </span><span class="c1"># 应用库</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="hll">│<span class="w">   </span>├──<span class="w"> </span>autotest_deepin_music<span class="w">  </span><span class="c1"># 应用库</span>
+</span><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
 </code></pre></div>
 <p><code>APP</code> 工程名称应该以 <code>autotest_</code> 开头，请不要随意修改 <code>APP</code> 工程名称；</p>
 <p>如果您还没有 <code>APP</code> 工程，建议使用框架提供的脚手架功能创建一个全新的 <code>APP</code> 工程。</p>
 <h2 id="_2">创建工程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>创建一个 APP 工程：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>autotest_deepin_some<span class="w">  </span>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>autotest_deepin_some
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
+
+</div>
+
 <p>这样在 <code>apps</code> 目录下会创建一个子项目工程 <code>autotest_deepin_some</code>，同时新建好工程模板目录和模板文件：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apps
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>└──<span class="w"> </span>autotest_deepin_some
@@ -1745,15 +1771,31 @@
 <h3 id="1">1. 工作空间<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>在项目根目录下有一个 <code>manage.py</code> ，它是一个执行器入口，提供了本地执行、远程执行等的功能。</p>
 <h3 id="2">2. 本地执行<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
+
+</div>
+
 <h4 id="21">2.1. 命令行参数<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
 <p>通过命令行参数配置参数，使用 <code>-h</code> 或 <code>--help</code> 可以查看所有支持的命令行参数：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-h
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>-h
 </code></pre></div>
+
+</div>
+
 <p>在一些 CI 环境下使用命令行参数会更加方便：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--app<span class="w"> </span>apps/autotest_deepin_music<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>run<span class="w"> </span>--app<span class="w"> </span>apps/autotest_deepin_music<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>--tags<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
+
+</div>
+
 <p>更多参数请查看【<a href="https://linuxdeepin.github.io/deepin-autotest-framework/%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/%E6%89%A7%E8%A1%8C%E7%AE%A1%E7%90%86%E5%99%A8/#21">命令行参数</a>】</p>
 <h4 id="22">2.2. 配置文件<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
 <p>通过配置文件配置参数</p>
@@ -1762,8 +1804,13 @@
 <h3 id="3">3. 远程执行<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>远程执行就是用本地作为服务端控制远程机器执行，远程机器执行的用例相同；</p>
 <p>使用 <code>remote</code> 命令：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
 </code></pre></div>
+
+</div>
+
 <h4 id="31">3.1. 远程多机器分布式异步执行<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f6d3c0661c6c8e549f8ca5.png" /></p>
 <p>多机器分布式异步执行就是由本地 YouQu 作为服务端，控制远程 N 台机器执行相同的用例，执行完之后所有测试机的测试结果会返回给服务端 report 目录下；</p>
@@ -1792,8 +1839,13 @@
 </code></pre></div>
 <p>有多少台机器就像这样参考上面的格式写就行了。</p>
 <p>然后在命令行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote
 </code></pre></div>
+
+</div>
+
 <p>这样运行是从配置文件去读取相关配置。</p>
 <p>如果你不想通过配置文件，你仍然通过命令行参数进行传参，</p>
 <p>以下为 <code>python3 manage.py remote</code> 提供的一些参数选项：</p>
@@ -1810,18 +1862,33 @@
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">                        </span><span class="kc">yes</span><span class="o">:</span><span class="err">表示所有测试机并行跑，执行相同的测试用例</span><span class="p">;</span><span class="kc">no</span><span class="o">:</span><span class="err">表示测试机分布式执行，服务端会根据收集到的测试用例自</span>
 <a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">                        </span><span class="err">动分配给各个测试机执行。</span>
 </code></pre></div>
-<p><strong>除了这些特有参数以外，它同样支持本地执行的所有参数；</strong></p>
+<p><mark>除了这些特有参数以外，它同样支持本地执行的所有参数；</mark></p>
 <p>在命令行这样运行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.x3/uos@10.8.13.x4<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>apps/autotest_deepin_music<span class="w"> </span>-c<span class="w"> </span>uos@10.8.13.x3/uos@10.8.13.x4<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
 </code></pre></div>
+
+</div>
+
 <p>所有用例执行完之后会在 <code>report</code> 目录下回收各个测试机执行的测试报告。</p>
-<p>注意，如果远程机器没有搭建自动化测试环境，记得加上参数 <code>-e</code> ：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>...<span class="w"> </span>-e
+<p>注意：如果远程机器没有搭建自动化测试环境，记得加上参数 <code>-e</code> ：</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>...<span class="w"> </span>-e
 </code></pre></div>
+
+</div>
+
 <p>执行前确保远程机器已经开启了 ssh 服务，否则会提示无法连接，如果没有开启，请手动开启：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
 </code></pre></div>
+
+</div>
+
 <p>配置文件其他相关配置项详细说明，请查看配置文件中的注释内容。</p>
 <h4 id="32">3.2. 远程多机器分布式异步负载均衡执行<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
 <p>多机器分布式异步负载均衡执行也是用本地作为服务端控制远程机器执行，但远程机器执行的用例不同，而是所有远程机器执行的用例之和，为你想要执行的用例集；</p>
@@ -1829,8 +1896,13 @@
 <p>服务端想要执行 10 条用例，现在远程机器有 5 台，然后服务端就先拿着第 1 条用例给远程 1 号机执行，拿第 2 条用例给远程 2 号机执行...，如此循环直到所有用例执行完，这就是负载均衡执行。</p>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f6d694661c6c8e54a1025b.png" /></p>
 <p>使用方法和前面一样，只是需要增加一个参数 <code>--parallel</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>...<span class="w"> </span>--parallel<span class="w"> </span>no
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="gp">$ </span>youqu<span class="w"> </span>manage.py<span class="w"> </span>remote<span class="w"> </span>-a<span class="w"> </span>...<span class="w"> </span>--parallel<span class="w"> </span>no
 </code></pre></div>
+
+</div>
+
 <h2 id="_4">帮助<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://bbs.deepin.org/">官方论坛</a> </li>
@@ -1969,6 +2041,10 @@
       <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="js/termynal.js"></script>
+      
+        <script src="js/custom.js"></script>
       
     
   </body>

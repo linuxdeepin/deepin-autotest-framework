@@ -48,6 +48,10 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../css/termynal.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1560,8 +1564,14 @@
 <h2 id="-envsh">环境部署-env.sh<a class="headerlink" href="#-envsh" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>项目根目录下运行 <code>env.sh</code> 即可。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash env.sh
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>bash<span class="w"> </span>env.sh
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
+
+</div>
+
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>如果你的测试机密码不是 <code>1</code> ，那需要在全局配置文件 <code>globalconfig.ini</code> 里面将  <code>PASSWORD</code> 配置项修改为当前测试机的密码。</p>
@@ -1594,11 +1604,22 @@
 <p><code>裁剪依赖</code> 和 <code>新增依赖</code> 是不冲突的，可以同时使用。</p>
 <h3 id="3-env_devsh">3. 开发环境部署-env_dev.sh<a class="headerlink" href="#3-env_devsh" title="Permanent link">&para;</a></h3>
 <p>在开发过程中，如果你想直接部署在本机上：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bash<span class="w"> </span>env_dev.sh
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>bash<span class="w"> </span>env_dev.sh
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
+
+</div>
+
 <p>这种方式安装的环境不会有 <code>youqu</code> 这个命令，用例执行都使用 <code>python3</code> 驱动即可，比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>python3<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
+
+</div>
+
 <h3 id="4">4. 虚拟环境解释器<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>YouQu 默认采用虚拟化部署，虚拟环境实际安装的位置是在 <code>$HOME/.local/share/virtualenvs/youqu-oHTM7l7G</code> 目录下；其中，</p>
 <p><code>youqu-oHTM7l7G</code> 此目录名称前面部分是你的代码根目录的名称，后面部分是生成的随机字符串，同学们在部署的时候随机字符串肯定和我这里的例子不一样；</p>
@@ -1606,8 +1627,13 @@
 <h3 id="5">5. 激活虚拟环境<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <p>在开发过程中有可能需要在终端激活虚拟环境，以便进行一些开发调试；</p>
 <p>在框架根目录下命令行输入：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>youqu-shell
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>youqu-shell
 </code></pre></div>
+
+</div>
+
 <p>即可在终端激活当前虚拟环境。</p>
 <h3 id="6">6. 原则<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p><code>YouQu</code> 的环境依赖一直坚持 2 个原则：</p>
@@ -1632,7 +1658,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月13日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月14日</span>
       
     
   </small>
@@ -1767,6 +1793,10 @@
       <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../js/termynal.js"></script>
+      
+        <script src="../../js/custom.js"></script>
       
     
   </body>
