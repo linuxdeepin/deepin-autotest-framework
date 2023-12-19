@@ -835,6 +835,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#240dev" class="md-nav__link">
+    2.4.0（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#23720231215" class="md-nav__link">
     2.3.7（2023/12/15）
   </a>
@@ -1622,6 +1629,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#240dev" class="md-nav__link">
+    2.4.0（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#23720231215" class="md-nav__link">
     2.3.7（2023/12/15）
   </a>
@@ -1892,12 +1906,20 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="240dev">2.4.0（dev）<a class="headerlink" href="#240dev" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li>
+<p><code>UOS 1070</code> <code>Wayland</code> 下窗管团队提供了新的接口（<code>GetAllWindowStatesList</code>）用于获取桌面所有窗口的信息，<code>YouQu</code> 进行开发适配并兼容新老接口，至此基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下表现和 <code>X11</code> 下表现一致，堪称完美；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/21"># issues 21</a></p>
+<p>本次功能更新离不开多个部门领导和同事们的协助，这里特别感谢：<strong><a href="https://github.com/king123666">@金佳斌</a></strong> <strong>@孙翠</strong> <strong><a href="https://github.com/Jimijun">@黄泽铭</a></strong> <strong><a href="https://github.com/rb-union">@任斌</a></strong></p>
+</li>
+</ul>
 <h2 id="23720231215">2.3.7（2023/12/15）<a class="headerlink" href="#23720231215" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
 <li><code>src/__init__.py</code> 里面的导入全部设置别名，以便后续各组件重命名之后仍能保持接口一致性和兼容性；</li>
 <li>将 <code>Wayland</code> 下输入的方法区分中英文，中文按现有 <code>input_message</code> 处理，英文数字字符等使用 <code>press_key</code> 处理； <a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/17"># issues 17</a></li>
-<li>有些镜像没有 <code>$HOME.Xauthority</code> 文件（咱也不知道为啥），<code>YouQu</code> 执行会报错，我们只能创建一个空的同名文件，以确保程序能正常运行，但 <code>Xlib.xauth</code> 获取不到有效信息会有一些 <code>warning</code> 日志，看着烦人我都能接受，不能接受的是经常会导致大家在分析用例失败原因的时候将矛头指向它，然后每次我就需要解释这个 <code>warning</code> 提示不是问题，因此在底层将这部分日志输出屏蔽掉；</li>
+<li>有些镜像没有 <code>$HOME/.Xauthority</code> 文件（咱也不知道为啥），<code>YouQu</code> 执行会报错，我们只能创建一个空的同名文件，以确保程序能正常运行，但 <code>Xlib.xauth</code> 获取不到有效信息会有一些 <code>warning</code> 日志，看着烦人我都能接受，不能接受的是经常会导致大家在分析用例失败原因的时候将矛头指向它，然后每次我就需要解释这个 <code>warning</code> 提示不是问题，因此在底层将这部分日志输出屏蔽掉；</li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
