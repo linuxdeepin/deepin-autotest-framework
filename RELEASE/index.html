@@ -835,6 +835,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#241dev" class="md-nav__link">
+    2.4.1（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#24020231222" class="md-nav__link">
     2.4.0（2023/12/22）
   </a>
@@ -1629,6 +1636,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#241dev" class="md-nav__link">
+    2.4.1（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#24020231222" class="md-nav__link">
     2.4.0（2023/12/22）
   </a>
@@ -1906,29 +1920,34 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="241dev">2.4.1（dev）<a class="headerlink" href="#241dev" title="Permanent link">&para;</a></h2>
+<p><strong>Fix</strong></p>
+<ul>
+<li>修复 <code>AssertCommon.assert_image_exist</code> 参数 <code>rate</code> 主动传入，没有用到全局配置 <code>IMAGE_RATE</code>；</li>
+</ul>
 <h2 id="24020231222">2.4.0（2023/12/22）<a class="headerlink" href="#24020231222" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
 <li>
-<p><code>UOS 1070</code> <code>Wayland</code> 下窗管团队提供了新的接口（<code>GetAllWindowStatesList</code>）用于获取桌面所有窗口的信息，<code>YouQu</code> 进行开发适配并兼容新老接口，至此基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下表现和 <code>X11</code> 下表现一致，堪称完美；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/21"># issues 21</a></p>
+<p><code>UOS 1070</code> <code>Wayland</code> 下窗管团队提供了新的接口（<code>GetAllWindowStatesList</code>）用于获取桌面所有窗口的信息，<code>YouQu</code> 进行开发适配并兼容新老接口，至此基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下表现和 <code>X11</code> 下表现一致，堪称完美；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/21">issues #21</a></p>
 <p>本次功能更新离不开多个部门领导和同事们的协助，这里特别感谢：<strong><a href="https://github.com/king123666">@金佳斌</a></strong> <strong><a href="https://gitlabbj.uniontech.com/ut003620">@孙翠</a></strong> <strong><a href="https://github.com/Jimijun">@黄泽铭</a></strong> <strong><a href="https://github.com/rb-union">@任斌</a></strong></p>
 </li>
 <li>
-<p>新增贡献者名单及贡献规则文档；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/23"># issues 23</a></p>
+<p>新增贡献者名单及贡献规则文档；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/23">issues #23</a></p>
 </li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修复 <code>Wayland</code> 下 <code>sniff</code> 命令报错 <code>~/.Xauthorty</code> 文件不存在；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/22"># issues 22</a></li>
-<li>修复远程执行数据回填过程中报 <code>HTTPError</code>；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/24"># issues 24</a></li>
-<li>修复偶现测试报告生成阶段报错；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/25"># issues 25</a></li>
-<li>修复 <code>globalconfig.ini</code> 配置文件中 <code>IMAGE_RATE</code> 配置项不生效；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/26"># issues 26</a></li>
+<li>修复 <code>Wayland</code> 下 <code>sniff</code> 命令报错 <code>~/.Xauthorty</code> 文件不存在；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/22">issues #22</a></li>
+<li>修复远程执行数据回填过程中报 <code>HTTPError</code>；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/24">issues #24</a></li>
+<li>修复偶现测试报告生成阶段报错；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/25">issues #25</a></li>
+<li>修复 <code>globalconfig.ini</code> 配置文件中 <code>IMAGE_RATE</code> 配置项不生效；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/26">issues #26</a></li>
 </ul>
 <h2 id="23720231215">2.3.7（2023/12/15）<a class="headerlink" href="#23720231215" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
 <li><code>src/__init__.py</code> 里面的导入全部设置别名，以便后续各组件重命名之后仍能保持接口一致性和兼容性；</li>
-<li>将 <code>Wayland</code> 下输入的方法区分中英文，中文按现有 <code>input_message</code> 处理，英文数字字符等使用 <code>press_key</code> 处理； <a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/17"># issues 17</a></li>
+<li>将 <code>Wayland</code> 下输入的方法区分中英文，中文按现有 <code>input_message</code> 处理，英文数字字符等使用 <code>press_key</code> 处理； <a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/17">issues #17</a></li>
 <li>有些镜像没有 <code>$HOME/.Xauthority</code> 文件（咱也不知道为啥），<code>YouQu</code> 执行会报错，我们只能创建一个空的同名文件，以确保程序能正常运行，但 <code>Xlib.xauth</code> 获取不到有效信息会有一些 <code>warning</code> 日志，看着烦人我都能接受，不能接受的是经常会导致大家在分析用例失败原因的时候将矛头指向它，然后每次我就需要解释这个 <code>warning</code> 提示不是问题，因此在底层将这部分日志输出屏蔽掉；</li>
 </ul>
 <p><strong>Fix</strong></p>
@@ -1939,7 +1958,7 @@
 <h2 id="23620231213">2.3.6（2023/12/13）<a class="headerlink" href="#23620231213" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
-<li>标签化管理支持判断系统版本跳过用例，用 <code>/etc/os-version</code> 里面的 <code>MinorVersion</code> 字段作为判断依据，在 <code>setting/skipif.py</code> 插件中实现了此功能，后续在 <code>CSV</code> 文件中可以使用此方法进行条件跳过；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/16"># issues 16</a></li>
+<li>标签化管理支持判断系统版本跳过用例，用 <code>/etc/os-version</code> 里面的 <code>MinorVersion</code> 字段作为判断依据，在 <code>setting/skipif.py</code> 插件中实现了此功能，后续在 <code>CSV</code> 文件中可以使用此方法进行条件跳过；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/16">issues #16</a></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># _*_ coding:utf-8 _*_</span>
@@ -2012,10 +2031,10 @@
 </span></code></pre></div>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修复 <code>Wayland</code> 下系统监视器使用 <code>WaylandWindowInfo.window_info()</code>，获取的窗口名称为空；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20"># issues 18</a></li>
-<li>解除 <code>env.sh</code> 中某个 <code>deb</code> 包安装失败后替换源 <code>retry</code> 机制，因为用固定的源替换之后，容易出现某些包安装失败，而不容易关注到首次包安装失败的问题，给定位环境安装失败带来困难；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/19"># issues 19</a></li>
+<li>修复 <code>Wayland</code> 下系统监视器使用 <code>WaylandWindowInfo.window_info()</code>，获取的窗口名称为空；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20">issues #18</a></li>
+<li>解除 <code>env.sh</code> 中某个 <code>deb</code> 包安装失败后替换源 <code>retry</code> 机制，因为用固定的源替换之后，容易出现某些包安装失败，而不容易关注到首次包安装失败的问题，给定位环境安装失败带来困难；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/19">issues #19</a></li>
 <li>修复 <code>env.sh</code> 里面报错 <code>ERROR: unknown command "cache" - maybe you meant "check"</code>；</li>
-<li>修复用例收集数量为 <code>0</code> 时，报错 <code>ci_result.json</code> 文件找不到；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20"># issues 20</a></li>
+<li>修复用例收集数量为 <code>0</code> 时，报错 <code>ci_result.json</code> 文件找不到；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/20">issues #20</a></li>
 </ul>
 <h2 id="23520231204">2.3.5（2023/12/04）<a class="headerlink" href="#23520231204" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
