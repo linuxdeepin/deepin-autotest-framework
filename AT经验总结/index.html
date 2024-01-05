@@ -1415,25 +1415,114 @@
 <blockquote>
 <p>欢迎所有人提交你在自动化测试方面的优秀实践经验，以帮助大家解决可能遇到的问题。</p>
 </blockquote>
-<h1 id="1">1、终结器<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># litaoa@uniontech.com</span>
+<h1 id="_1">六、用例调试技巧<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 日志<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>一定要先看报错，看 error 日志，通常能明确的告诉你具体哪里代码报错；</li>
+<li>结合报错点前面的error、 info 和 debug 日志看否是正常。</li>
+</ul>
+<h2 id="2">2. 断点调试<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>方法报错：</li>
+<li>在方法库中找到对应的方法，单独调用，看是否能正常执行；</li>
+<li>通常单个方法的执行是比较简单的，如果单个方法报错，很快就能排查出问题；在方法内部打断点，使用 <code>Debug</code> 运行，看方法内部数据传递是否存在问题；</li>
+<li>如果单个方法调用没问题，那么在用例中报错的方法前面打断点，使用 <code>Debug</code> 运行，看用例的业务逻辑和数据传递是否存在问题；</li>
+<li>断言报错：</li>
+<li>断言为数据断言，根据表达式进行断言语句进行修改；</li>
+<li>文件生成类断言，查看是否需要加等待时间；</li>
+<li>图像断言，在断言语句处打断点，使用 <code>Debug</code> 运行，用例运行到断言处会停止，查看此时断言的图片与用例执行的现场存在什么差异，此时也可以进行重新截图，从而替换新的图片；</li>
+</ul>
+<h2 id="3">3. 远程执行<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>远程执行指的是编辑器通过指定远程解释器执行自动化代码；</li>
+</ul>
+<p>远程执行的好处是可以很方便的 <code>Debug</code> 运行，不用在测试机上打开编辑器，用例执行速度更快；</p>
+<p>支持远程执行功能的编辑器：</p>
+<ul>
+<li>专业版 <code>Pycharm</code> </li>
+<li>
+<p><code>VScode</code> ，需要使用插件 <code>Remote-SSH</code></p>
+</li>
+<li>
+<p>远程执行配置</p>
+</li>
+</ul>
+<p>以 <code>Pycharm</code> 为例：</p>
+<p><code>File</code> —&gt; <code>Settings</code> —&gt; <code>Project</code> —&gt; <code>Python Interpreter</code> —&gt; <code>右边设置按钮</code> —&gt; <code>Add...</code> —&gt; <code>SSH Interpreter</code> —&gt; <code>New server configuration(填入host和username)</code> —&gt; <code>Next</code> —&gt; <code>password（测试机密码）</code> —&gt;  <code>Interpreter(选择远程解释器)</code> —&gt; <code>Finish</code> </p>
+<h2 id="4">4. 环境清理<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>如果用例里面的 <code>teardown</code> 没有执行，大概率是因为 <code>setup</code> 里面代码报错，这两个是一对的，<code>setup</code> 里面报错，<code>teardown</code> 里面的代码不会执行；</li>
+<li>目前我们已经将各应用的 <code>clean_all</code> 这个 <code>fixture</code> 改成了终结器，确保始终能执行到这步，但是用例里面的 <code>fixture</code>，还是需要我们小心处理；</li>
+<li>要执行 <code>clean_all</code> 需要在编辑器运行参数加 <code>--clean yes</code>，写用例的时候请加上，不然你不确定用例执行之后的环境是否恢复；</li>
+<li><code>setup</code> 可以不要，将 <code>setup</code> 放到用例里面是一种稳妥的做法，<code>teardown</code> 一定要。</li>
+</ul>
+<h2 id="5">5. 元素定位不准（坐标返回不对）<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>基于 <code>UI</code> 定位的方法，可能受到窗口 ID 的变化，导致坐标返回不准，默认取最新的一个窗口用于定位，但如果实际需要定位的不是最新的窗口，那么在用例中需要重新实例化方法类对象，并在类中传入对应的窗口序号；</li>
+<li>基于属性定位的方法，目前遇到的笔记本上，由于屏幕缩放比例为 1.25，导致坐标返回不准，我们默认使用缩放比例为 1；</li>
+<li>基于图像定位的方法，如果当前屏幕中存在多个相同的目标元素，可能出现定位不准；支持通过参数控制，返回多个坐标；</li>
+<li>基于 OCR 定位的方法，如果当前屏幕中存在多个相同的文字元素，可能出现定位不准；同样支持通过参数控制，返回多个坐标；</li>
+</ul>
+<h2 id="6">6. 键鼠操作不准<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>鼠标操作不生效，比如右键、双击无响应；</li>
+<li>键盘操作不生效，或者延迟输入，比如用例需要输入“我是中国人”，实际只输入了“我国人”；</li>
+</ul>
+<p>以上问题排除应用卡顿等问题，大概率是由于工具的问题，目前键鼠操作我们使用三个工具：<code>Dogtail</code> 提供的键鼠工具、<code>PyAutoGUI</code>、<code>Xdotool</code> ；</p>
+<p>有同学可能要说为啥要用三个啊，用一个不就好了，简单讲就是各有优点各有缺点。</p>
+<p>如果你遇到键鼠的问题，可以试试通过不同的工具操作；键盘输入延迟的问题，一般是因为输入速度太快了，系统没反应过来，常见于 <code>ARM</code> 和 <code>MIPS</code> 上，修改参数 delay_time 的值，单位为毫秒；</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># mouse_key.py</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span> <span class="nf">input_message</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">delay_time</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    输入字符串</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">    :param message: 输入的内容</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    :param delay_time: 延迟时间</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    :param interval:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    :return:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>如果不是方法的问题，则需要继续和开发一起排除，是否为应用接受键鼠信号处理的问题，这类情况我们也是遇到过的，具体问题具体分析。</p>
+<p>比如影院就重写了一个右键的方法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># base_widget.py</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span> <span class="nf">right_click</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">_x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    重写底层单击鼠标右键</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    解决影院右键触发release事件的问题（右键主窗口会播放视频）</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">mouse_down</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="bp">cls</span><span class="o">.</span><span class="n">mouse_up</span><span class="p">(</span><span class="n">button</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="_2">七、其他不为人知的细节<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>在一段时间内尽量编写同一个应用或模块的用例，能对该用例已有方法熟悉，避免过多重复业务代码的封装；</li>
+<li>相同的场景下，各架构等待时间不同，建议使用框架提供的 sleep，我们做了不同架构的倍数放大；</li>
+<li>编写用例时，尽量考虑到每一步异常后的环境恢复，需要建议这种意识，随时要考虑到，这步操作有没有可能出错，出错了改怎么办；</li>
+<li>提交代码的时候注意不要把一些临时的测试资源提交进去了，比如测试了一个影片，有些同学习惯使用 <code>git add .</code> ，然后就全部提交到代码仓库了，这样即使后期把大文件删了，<code>.git</code> 文件里面也会很大，造成代码仓库变得十分臃肿。</li>
+</ul>
+<h1 id="1_1">1、终结器<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># litaoa@uniontech.com</span>
 </code></pre></div>
 <p>前置/后置步骤</p>
 <p>pytest 实现前置/后置步骤的方式有两种，yield 和终结函数；</p>
 <p>yield 实现，yield前面为用例的前置步骤，yield 后面为用例的后置步骤。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">def</span> <span class="nf">clean_env</span><span class="p">():</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">yield</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span> <span class="nf">clean_env</span><span class="p">():</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">yield</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>终结函数实现，使用 request.addfinalizer 注册用例的后置步骤</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">def</span> <span class="nf">clean_env</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span> <span class="nf">clean_env</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>yield的优缺点：</p>
 <p>优点：代码简洁，直观，可使用yield在用例中获取前置步骤的返回值</p>
@@ -1443,25 +1532,25 @@
 <p>缺点：代码较为复杂，无法获取前置步骤的返回值（本人目前未实现）</p>
 <p>总结：在前置步骤保证绝对不会出错时，使用yield更佳简便，当前置步骤易出现问题时，推荐使用终结函数。</p>
 <p>场景：保险箱用例，前置步骤中开启保险箱，后置步骤删除保险箱。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span> <span class="nf">vault_fixture</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">DfmWidget</span><span class="o">.</span><span class="n">reset_vault_by_cmd</span><span class="p">()</span>  <span class="c1"># 1、重置保险箱</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span> <span class="c1"># 2、关闭文管</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span> <span class="c1"># 3、开启文管</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">vault</span> <span class="o">=</span> <span class="n">DfmWidget</span><span class="p">()</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">vault</span><span class="o">.</span><span class="n">create_file_vault</span><span class="p">()</span>   <span class="c1"># 4、创建保险箱</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">def</span> <span class="nf">delete_vault</span><span class="p">():</span> <span class="c1"># 8、删除保险箱的后置步骤</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">vault</span> <span class="o">=</span> <span class="n">DfmWidget</span><span class="p">()</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">vault</span><span class="o">.</span><span class="n">delete_file_vault</span><span class="p">()</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">DfmWidget</span><span class="o">.</span><span class="n">reset_vault_by_cmd</span><span class="p">()</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">delete_vault</span><span class="p">)</span>  <span class="c1"># 5、注册后置步骤</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span>   <span class="c1"># 6、关闭文管</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span> <span class="c1"># 7、开启文管</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">def</span> <span class="nf">vault_fixture</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">DfmWidget</span><span class="o">.</span><span class="n">reset_vault_by_cmd</span><span class="p">()</span>  <span class="c1"># 1、重置保险箱</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span> <span class="c1"># 2、关闭文管</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span> <span class="c1"># 3、开启文管</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">vault</span> <span class="o">=</span> <span class="n">DfmWidget</span><span class="p">()</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">vault</span><span class="o">.</span><span class="n">create_file_vault</span><span class="p">()</span>   <span class="c1"># 4、创建保险箱</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">def</span> <span class="nf">delete_vault</span><span class="p">():</span> <span class="c1"># 8、删除保险箱的后置步骤</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">vault</span> <span class="o">=</span> <span class="n">DfmWidget</span><span class="p">()</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="n">vault</span><span class="o">.</span><span class="n">delete_file_vault</span><span class="p">()</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="n">DfmWidget</span><span class="o">.</span><span class="n">reset_vault_by_cmd</span><span class="p">()</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">delete_vault</span><span class="p">)</span>  <span class="c1"># 5、注册后置步骤</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">close_file_manager_by_cmd</span><span class="p">()</span>   <span class="c1"># 6、关闭文管</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">DdeDockPublicWidget</span><span class="p">()</span><span class="o">.</span><span class="n">open_file_manager_in_dock_by_attr</span><span class="p">()</span> <span class="c1"># 7、开启文管</span>
 </code></pre></div>
 <p>代码按注释中的序号执行步骤</p>
 <ul>
@@ -1469,49 +1558,49 @@
 <li>代码在步骤6-7报错，仍会执行步骤7，因为在步骤5中已经将步骤7注册</li>
 </ul>
 <p>可以灵活注册后置步骤，能实现某个前置步骤执行之后，才会执行后置步骤。</p>
-<h1 id="2">2、启动应用的方式<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># huangmingqiang@uniontech.com</span>
+<h1 id="2_1">2、启动应用的方式<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># huangmingqiang@uniontech.com</span>
 </code></pre></div>
 <p>（1）命令行启动</p>
 <p>在 AT 代码中使用命令行启动应用，举例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;deepin-music&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;deepin-music&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>这种方式启动存在一个问题，就是当使用 ssh 远程执行用例时，<code>dogtail</code> 无法获取到元素。</p>
 <p>（2）通过 UI 操作启动</p>
 <p>通过任务栏、启动器、桌面等UI方式启动，比如双击打开、右键打开等，这种操作方式不存在ssh 远程执行用例时<code>dogtail</code> 无法获取到元素的问题，也更加符合用户的操作行为。</p>
-<h1 id="3">3、文件选择框属性定位偶现无法找到<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
+<h1 id="3_1">3、文件选择框属性定位偶现无法找到<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h1>
 <p>文件选择框存在一个问题，在调用文件选择框时，有一定的概率出现，界面已经渲染出来了，但是属性树并没有写入，导致通过属性无法找到元素，目前也没有很好的解决方案，为了用例稳定性，文件选择框的操作建议使用UI或者图片定位的方式，可以通过搜索内容固定文件位置。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># litaoa@uniontech.com</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># litaoa@uniontech.com</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">desk</span> <span class="o">=</span> <span class="n">DdeDesktopPublicWidget</span><span class="p">()</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># 选择视频目录</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_videos_dir_in_desktop_plugs_by_ui</span><span class="p">()</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">desk</span><span class="o">.</span><span class="n">ctrl_f</span><span class="p">()</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">desk</span><span class="o">.</span><span class="n">input_message</span><span class="p">(</span><span class="s2">&quot;元素名称&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">desk</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># 选择第一个文件</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_list_view_btn_in_desktop_plugs_by_ui</span><span class="p">()</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_first_file_in_desktop_plugs_by_ui</span><span class="p">()</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1"># 文管插件中点击打开</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_open_btn_in_desktop_plugs_by_ui</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">desk</span> <span class="o">=</span> <span class="n">DdeDesktopPublicWidget</span><span class="p">()</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># 选择视频目录</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_videos_dir_in_desktop_plugs_by_ui</span><span class="p">()</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">desk</span><span class="o">.</span><span class="n">ctrl_f</span><span class="p">()</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">desk</span><span class="o">.</span><span class="n">input_message</span><span class="p">(</span><span class="s2">&quot;元素名称&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">desk</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># 选择第一个文件</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_list_view_btn_in_desktop_plugs_by_ui</span><span class="p">()</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_first_file_in_desktop_plugs_by_ui</span><span class="p">()</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># 文管插件中点击打开</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">desk</span><span class="o">.</span><span class="n">click_open_btn_in_desktop_plugs_by_ui</span><span class="p">()</span>
 </code></pre></div>
-<h1 id="4">4、应用启动<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># mikigo</span>
+<h1 id="4_1">4、应用启动<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># mikigo</span>
 </code></pre></div>
 <p>在UI自动化测试中，一切操作的都是从应用启动开始的，而在Linux桌面应用自动化测试中，我们启动应用的方法有多种，下面做一个简单的介绍：</p>
 <p><strong>【使用dogtail启动】</strong></p>
 <p>dogtail提供了应用启动的方法，在utils库中，使用run方法启动：</p>
 <p>首先导入方法：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">dogtail.utils</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">dogtail.utils</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div>
 <p>调用run方法</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">run</span><span class="p">(</span><span class="s1">&#39;deepin-music&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">run</span><span class="p">(</span><span class="s1">&#39;deepin-music&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>即可启动音乐
 <img alt="img" src="https://img2020.cnblogs.com/blog/1898113/202012/1898113-20201218162414410-1539488857.png" /></p>
@@ -1539,8 +1628,8 @@
 <p>从实际操作中来看，采用第二种方法的效率会高一点。</p>
 <p><strong>【终端命令启动】</strong></p>
 <p>在python中，使用os.popen()或os.system()或者subprocess.Popen()，实现命令行启动，比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span> <span class="nn">os</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;deepin-music&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;deepin-music&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>这种方式启动是比较简单的，但是在实际项目中，仍然存在远程执行脚本的时候，dogtail无法识别的问题。</p>
 <p><strong>【总结】</strong></p>
@@ -1554,7 +1643,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年8月30日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月5日</span>
       
     
   </small>
