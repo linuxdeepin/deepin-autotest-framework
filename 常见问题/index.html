@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -1427,43 +1427,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    提交代码时提示邮箱或者名称不对
+  <a href="#1" class="md-nav__link">
+    1. 提交代码时提示邮箱或者名称不对
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    怎么回滚到之前的版本
+  <a href="#2" class="md-nav__link">
+    2. 怎么回滚到之前的版本
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-status" class="md-nav__link">
-    解决 git status 中文显示的问题
+  <a href="#3-git-status" class="md-nav__link">
+    3. 解决 git status 中文显示的问题
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apps" class="md-nav__link">
-    apps 目录下颜色有些是黄色的
+  <a href="#4-apps" class="md-nav__link">
+    4. apps 目录下颜色有些是黄色的
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    怎样为单独某一条用例配置执行超时时间
+  <a href="#5-envsh-r" class="md-nav__link">
+    5. 执行 env.sh 报错 $'\r':未找到命令
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#master-detached-head" class="md-nav__link">
-    如何修复子仓库 master 分支游离头（detached head）
+  <a href="#6" class="md-nav__link">
+    6. 怎样为单独某一条用例配置执行超时时间
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-master-detached-head" class="md-nav__link">
+    7. 如何修复子仓库 master 分支游离头（detached head）
   </a>
   
 </li>
@@ -1568,43 +1575,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    提交代码时提示邮箱或者名称不对
+  <a href="#1" class="md-nav__link">
+    1. 提交代码时提示邮箱或者名称不对
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    怎么回滚到之前的版本
+  <a href="#2" class="md-nav__link">
+    2. 怎么回滚到之前的版本
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-status" class="md-nav__link">
-    解决 git status 中文显示的问题
+  <a href="#3-git-status" class="md-nav__link">
+    3. 解决 git status 中文显示的问题
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#apps" class="md-nav__link">
-    apps 目录下颜色有些是黄色的
+  <a href="#4-apps" class="md-nav__link">
+    4. apps 目录下颜色有些是黄色的
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    怎样为单独某一条用例配置执行超时时间
+  <a href="#5-envsh-r" class="md-nav__link">
+    5. 执行 env.sh 报错 $'\r':未找到命令
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#master-detached-head" class="md-nav__link">
-    如何修复子仓库 master 分支游离头（detached head）
+  <a href="#6" class="md-nav__link">
+    6. 怎样为单独某一条用例配置执行超时时间
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-master-detached-head" class="md-nav__link">
+    7. 如何修复子仓库 master 分支游离头（detached head）
   </a>
   
 </li>
@@ -1643,11 +1657,12 @@
 
   <h1>常见问题</h1>
 
-<h2 id="_1">提交代码时提示邮箱或者名称不对<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="1">1. 提交代码时提示邮箱或者名称不对<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>重新配置邮箱或者名称，然后重置生效：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>--reset-author
 </code></pre></div>
-<h2 id="_2">怎么回滚到之前的版本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="2">2. 怎么回滚到之前的版本<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>(1)查询历史提交记录</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>log
 </code></pre></div>
@@ -1661,32 +1676,38 @@
 <p>(3)回滚版本，清除代码，慎用哈</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="si">${</span><span class="nv">hash</span><span class="si">}</span>
 </code></pre></div>
-<h2 id="git-status">解决 git status 中文显示的问题<a class="headerlink" href="#git-status" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="3-git-status">3. 解决 git status 中文显示的问题<a class="headerlink" href="#3-git-status" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.quotePath<span class="w"> </span><span class="nb">false</span>
 </code></pre></div>
-<h2 id="apps"><code>apps</code> 目录下颜色有些是黄色的<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="4-apps">4. <code>apps</code> 目录下颜色有些是黄色的<a class="headerlink" href="#4-apps" title="Permanent link">&para;</a></h2>
 <p>在 <code>Pycharm</code> 中 <code>apps</code> 目录下应用库文件是黄色的，编辑器识别不到代码新增和修改；</p>
 <p>由于社区版 <code>Pycharm</code> 不能动态识别多仓库，需要在 setting 里面手动注册，操作步骤：</p>
 <p><code>File</code> —<code>Settings</code> —<code>Version Control</code> —点 <code>+</code> 号  —<code>Directory</code> 选中应用库工程目录  —<code>VCS</code> 选中 <code>Git</code> —<code>Apply</code></p>
 <p>如此就可以了。</p>
-<p>专业版 <code>Pycharm</code> 不存在这个问题。</p>
-<p>执行 <code>env.sh</code> 报错 <code>$'\r':未找到命令</code>】</p>
+<p>专业版 <code>Pycharm</code> 一般不存在这个问题。</p>
+<hr />
+<h2 id="5-envsh-r">5. 执行 <code>env.sh</code> 报错 <code>$'\r':未找到命令</code><a class="headerlink" href="#5-envsh-r" title="Permanent link">&para;</a></h2>
 <p>出现这个问题你应该是在 windows 上打开或编辑过 <code>env.sh</code> 脚本，windows下的换行是回车符+换行符，也就是<code>\r\n</code>，而 <code>Linxu</code> 下是换行符 <code>\n</code>，<code>Linux</code> 下不识别 <code>\r</code>，因此报错。</p>
 <p>解决方案：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 将 \r 替换为空</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/\r//&#39;</span><span class="w"> </span>env.sh
 </code></pre></div>
-<h2 id="_3">怎样为单独某一条用例配置执行超时时间<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="6">6. 怎样为单独某一条用例配置执行超时时间<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>在用例脚本中添加装饰器，如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span> <span class="c1"># 单位秒</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">def</span> <span class="nf">test_xxx_001</span><span class="p">():</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">pass</span>
 </code></pre></div>
-<h2 id="master-detached-head">如何修复子仓库 master 分支游离头（detached head）<a class="headerlink" href="#master-detached-head" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="7-master-detached-head">7. 如何修复子仓库 master 分支游离头（detached head）<a class="headerlink" href="#7-master-detached-head" title="Permanent link">&para;</a></h2>
 <p>修复所有子仓库默认master 分支游离头</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w">  </span>youqu
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>-q<span class="w"> </span>--recursive<span class="w"> </span><span class="s1">&#39;git checkout $(git config -f $toplevel/.gitmodules submodule.$name.branch || echo master)&#39;</span>
 </code></pre></div>
+<hr />
 
   <hr>
 <div class="md-source-file">
@@ -1710,7 +1731,7 @@
 
 <div class="md-source-date">
     <small>
-        作者: <span class='git-page-authors git-authors'><a href='mailto:huangmingqiang@uniontech.com'>mikigo</a></span>
+        作者: <span class='git-page-authors git-authors'><a href='mailto:not.committed.yet'>Not Committed Yet</a>, <a href='mailto:huangmingqiang@uniontech.com'>mikigo</a></span>
     </small>
 </div>
 
