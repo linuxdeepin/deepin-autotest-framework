@@ -2104,7 +2104,7 @@
 <p><strong>New</strong></p>
 <ul>
 <li>切换 <code>YouQu</code> 的正式域名为：youqu.uniontech.com ；</li>
-<li>文档工程新增<code>工具库</code>和<code>知识库</code>的跳转链接；</li>
+<li>重新构建了文档 UI 布局，对多个文档模块及文档内容进行了修改、调整、优化，增加了留言模块；</li>
 </ul>
 <h2 id="24220231227">2.4.2（2023/12/27）<a class="headerlink" href="#24220231227" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2125,7 +2125,7 @@
 <ul>
 <li>
 <p><code>UOS 1070</code> <code>Wayland</code> 下窗管团队提供了新的接口（<code>GetAllWindowStatesList</code>）用于获取桌面所有窗口的信息，<code>YouQu</code> 进行开发适配并兼容新老接口，至此基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下表现和 <code>X11</code> 下表现一致，堪称完美；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/21">issues #21</a></p>
-<p>本次功能更新离不开多个部门领导和同事们的协助，这里特别感谢：<strong><a href="https://github.com/king123666">@金佳斌</a></strong> <strong><a href="https://gitlabbj.uniontech.com/ut003620">@孙翠</a></strong> <strong><a href="https://github.com/Jimijun">@黄泽铭</a></strong> <strong><a href="https://github.com/rb-union">@任斌</a></strong></p>
+<p>本次功能更新离不开多个部门领导和同事们的协助，这里特别感谢：<strong><a href="https://github.com/king123666">@佳斌</a></strong> <strong><a href="https://gitlabbj.uniontech.com/ut003620">@孙翠</a></strong> <strong><a href="https://github.com/Jimijun">@泽铭</a></strong> <strong><a href="https://github.com/rb-union">@任斌</a></strong></p>
 </li>
 <li>
 <p>新增贡献者名单及贡献规则文档；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/23">issues #23</a></p>
@@ -2148,7 +2148,7 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li>修改 <code>public</code> 目录权限，以解决远程开发时无法同步文件的问题；</li>
-<li>修复通过标签批量执行时，传入的标签超过 <code>1000</code> 个，报错超过 <code>Python</code> 默认最大递归深度的问题；感谢 <strong><a href="https://github.com/zhao-george">@赵有志</a></strong></li>
+<li>修复通过标签批量执行时，传入的标签超过 <code>1000</code> 个，报错超过 <code>Python</code> 默认最大递归深度的问题；感谢 <strong><a href="https://github.com/zhao-george">@有志</a></strong></li>
 </ul>
 <h2 id="23620231213">2.3.6（2023/12/13）<a class="headerlink" href="#23620231213" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2176,7 +2176,7 @@
 <h2 id="23520231204">2.3.5（2023/12/04）<a class="headerlink" href="#23520231204" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
 <ul>
-<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本问题；上个版本此问题没有完全修复，本次彻底解决；感谢 <strong><a href="https://github.com/momiji33">@程玉婷</a></strong>；</li>
+<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本问题；上个版本此问题没有完全修复，本次彻底解决；感谢 <strong><a href="https://github.com/momiji33">@玉婷</a></strong>；</li>
 </ul>
 <h2 id="23420231204">2.3.4（2023/12/04）<a class="headerlink" href="#23420231204" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2186,13 +2186,13 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li><code>env.sh</code> 增加清理 <code>pip</code> 缓存；</li>
-<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本过高与 <code>libkf5waylandclient5</code> 版本不匹配，根据获取 <code>libkf5waylandclient5</code> 版本指定 <code>libkf5wayland-dev</code> 版；感谢 <strong><a href="https://github.com/momiji33">@程玉婷</a></strong>；</li>
+<li>修复在低版本系统上安装的 <code>libkf5wayland-dev</code> 版本过高与 <code>libkf5waylandclient5</code> 版本不匹配，根据获取 <code>libkf5waylandclient5</code> 版本指定 <code>libkf5wayland-dev</code> 版；感谢 <strong><a href="https://github.com/momiji33">@玉婷</a></strong>；</li>
 </ul>
 <h2 id="23320231122">2.3.3（2023/11/22）<a class="headerlink" href="#23320231122" title="Permanent link">&para;</a></h2>
 <p><strong>Fix</strong></p>
 <ul>
-<li>使用 <code>Xdotool</code> 检索窗口 ID 时，如果有多个窗口，则输出以 <code>\n</code> 结尾。在原始代码中，使用 <code>split("\n")</code> 直接拆分字符串可能会导致结果列表的最后一个元素为空字符串。在迭代窗口 ID 并将其转换为 <code>int</code> 类型时，这种情况会导致错误。感谢 <strong><a href="https://github.com/zhao-george">@赵有志</a></strong></li>
-<li>图像识别（<code>image-center</code>）发布了新版本 <code>2023.11.22</code>  <strong><a href="https://github.com/zhao-george">@赵有志</a></strong>，OCR（<code>pdocr-rpc</code>）发布了新版本 <code>2023.11.17</code>，增加了识别的总耗时、每次识别间隔时间；</li>
+<li>使用 <code>Xdotool</code> 检索窗口 ID 时，如果有多个窗口，则输出以 <code>\n</code> 结尾。在原始代码中，使用 <code>split("\n")</code> 直接拆分字符串可能会导致结果列表的最后一个元素为空字符串。在迭代窗口 ID 并将其转换为 <code>int</code> 类型时，这种情况会导致错误。感谢 <strong><a href="https://github.com/zhao-george">@有志</a></strong></li>
+<li>图像识别（<code>image-center</code>）发布了新版本 <code>2023.11.22</code>  <strong><a href="https://github.com/zhao-george">@有志</a></strong>，OCR（<code>pdocr-rpc</code>）发布了新版本 <code>2023.11.17</code>，增加了识别的总耗时、每次识别间隔时间；</li>
 </ul>
 <h2 id="23220231114">2.3.2（2023/11/14）<a class="headerlink" href="#23220231114" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2224,7 +2224,7 @@
 <ul>
 <li>修复 <code>youqu</code> 命令无法接收带空格的参数的问题；感谢 <strong><a href="https://github.com/lu-xianseng">@禄烨</a></strong> ；</li>
 <li><code>OCR</code> 检测模型升级到 <code>V4</code> 之后，在识别某些文本情况下出现不能识别的问题，暂时先回滚到 <code>V3</code> ；</li>
-<li>修复了不同的 <code>case</code> 目录下 <code>py</code> 文件的名称一样，导出（<code>manage.py csvctl -p2c</code>）数据错误的问题；感谢 <strong><a href="https://github.com/zhao-george">@赵有志</a></strong>；</li>
+<li>修复了不同的 <code>case</code> 目录下 <code>py</code> 文件的名称一样，导出（<code>manage.py csvctl -p2c</code>）数据错误的问题；感谢 <strong><a href="https://github.com/zhao-george">@有志</a></strong>；</li>
 </ul>
 <hr />
 <h2 id="22420231016">2.2.4（2023/10/16）<a class="headerlink" href="#22420231016" title="Permanent link">&para;</a></h2>
@@ -2325,7 +2325,7 @@
 <p>new</p>
 <ul>
 <li>增加 <code>OCR</code> 识别自动重试机制，默认重试 2 次，支持动态传入重试次数；</li>
-<li>使用窗管最新提供的二进制接口，优化基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下获取窗口信息的方法；感谢桌面测试部 <strong>@何权 @孙翠</strong> 、窗管研发 <strong>@黄泽铭</strong> 的大力支持。</li>
+<li>使用窗管最新提供的二进制接口，优化基于 <code>UI</code> 的元素定位方案在 <code>Wayland</code> 下获取窗口信息的方法；感谢桌面测试部 <strong>@何权 @孙翠</strong> 、窗管研发 <strong>@泽铭</strong> 的大力支持。</li>
 <li>扩充 <code>skipif</code> 条件跳过的功能函数：</li>
 <li><code>skipif_xdg_type</code> 支持 <code>x11</code> 或 <code>wayland</code> 上跳过；</li>
 <li><code>skipif_cpu_name</code> 支持不同 <code>cpu</code> 上跳过，比如：<code>skipif_cpu_name-KLVVW5821</code>；</li>
