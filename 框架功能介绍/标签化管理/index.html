@@ -1854,7 +1854,6 @@
 <li>某些用例会因为不同的环境判断用例是否执行，常见的场景为在不同架构上判断是否执行，跳过的原因标签为 “<code>skipif_platform-</code>” 加架构名，多个架构之间使用 “<code>&amp;</code>” 拼接；</li>
 <li>以上例子为用例执行时，判断当前架构是否为 <code>arrch64</code> 或者 <code>mips64</code>，若是，则跳过用例不执行，若否则执行用例；</li>
 </ul>
-<p>目前框架默认仅支持架构的条件判断，但条件判断跳过逻辑支持自定义添加。</p>
 <p>在项目目录路径下存在文件 <code>setting/skipif.py</code>，所有条件判断跳过的函数写在此文件中。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># _*_ coding:utf-8 _*_</span>
@@ -1932,7 +1931,15 @@
 <li>方法只能有一个入参；</li>
 </ul>
 <p>在 <code>csv</code> 文件跳过原因一栏中填写为 “<code>{函数名}-{参数}</code>”，例如：<code>skipif_platform-aarch64</code>；在用例收集阶段会以第一个 “<code>-</code>” 进行分割，截取的左侧字符串作为函数名，在 <code>skipif.py</code> 文件中查找是否有同名函数，并将截取的右侧作为参数传递给该函数，通过获取该函数返回的布尔值，返回 <code>True</code>，则用例不执行，返回 <code>False</code>，则执行该用例。</p>
-<p>若函数需要多个参数，可自定义多个参数之间的连接符，连接符号不可使用下划线和逗号，推荐统一使用 <code>&amp;</code> 符号。</p>
+<p>【重要】</p>
+<ul>
+<li>
+<p>若函数需要多个参数，可自定义多个参数之间的连接符，连接符号不可使用下划线和逗号，推荐统一使用 <code>&amp;</code> 符号；</p>
+</li>
+<li>
+<p>若需要多个 skipif 条件判断组合，使用 <code>&amp;&amp;</code> 符号将两个方法分开，比如：skipif_platform-aarch64&amp;&amp;skipif_xdg_type-wayland ；</p>
+</li>
+</ul>
 <h4 id="32">3.2. 确认修复<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
 <p>针对于某些用例修复后，但不能立即删除跳过原因（<code>skip-XXX</code>）的用例，新增一列标签名为 “<code>确认修复</code>”，作为标记该用例是否已经修复，固定填入字段为 “<code>fixed-已修复</code>”。这样这条用例即使同时标记了 <code>skip-XXX</code> 也会正常执行。</p>
 <p>示例：</p>
@@ -1999,7 +2006,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年12月13日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月18日</span>
       
     
   </small>
