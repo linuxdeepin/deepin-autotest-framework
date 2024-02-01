@@ -1997,7 +1997,7 @@
 </li>
 <li>
 <p>用例里面直接继承，方便在用例里面使用 self 进行断言，更符合断言的使用习惯，用例逻辑上更清楚。</p>
-<div class="highlight"><span class="filename">case/base_case.py</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="hll"><span class="kn">from</span> <span class="nn">public.assert</span> <span class="kn">import</span> <span class="n">Assert</span>
+<div class="highlight"><span class="filename">case/base_case.py</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="hll"><span class="kn">from</span> <span class="nn">apps.autotest_dde_file_manager.dfm_assert</span> <span class="kn">import</span> <span class="n">DfmAssert</span>
 </span><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="hll"><span class="k">class</span> <span class="nc">BaseCase</span><span class="p">(</span><span class="n">DfmAssert</span><span class="p">):</span>
 </span><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">pass</span>
@@ -2101,7 +2101,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月8日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月31日</span>
       
     
   </small>
