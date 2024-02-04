@@ -1769,20 +1769,28 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
 </code></pre></div>
 <p>里面写入需要安装的三方依赖，比如像这样：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># requirement.txt
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>PyYAML==6.0  # 指定安装某个版本
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>requests  # 未指定版本则安装最新版
+<div class="highlight"><span class="filename">requirement.txt</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PyYAML==6.0  # 指定安装某个版本
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>requests  # 未指定版本则安装最新版
 </code></pre></div>
 <p>在执行 <code>bash env.sh</code> 时会一并将其安装。</p>
 <p>如果多个应用库都存在 <code>requirement.txt</code> 文件，执行 <code>env.sh</code> 时会将多个 <code>requirement.txt</code> 文件一并加载；那么一定要注意多个 <code>requirement.txt</code> 文件可能存在相同的依赖被指定安装不同版本等等兼容性问题。</p>
+<p><strong>【deb 形式 Python 包】</strong></p>
+<p>在应用库根目录下保存一个 <code>requirement_deb.txt</code> 文件；</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>autotest_xxx
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="hll">├──<span class="w"> </span>requirement_deb.txt
+</span><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
+</code></pre></div>
+<p>里面写入需要安装的三方依赖，比如像这样：</p>
+<div class="highlight"><span class="filename">requirement_deb.txt</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3-pyaudio
+</code></pre></div>
 <h4 id="22">2.2. 裁剪依赖<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
 <p>在某些情况下，可能你只需要安装一些最最基础的依赖，其他的都不需要，比如纯接口自动化的项目，它不需要 <code>UI</code> 自动化相关的依赖。</p>
 <p>你只需要在应用库根目录下，存放一个 <code>BASICENV</code> 的普通文件，里面不需要写任何内容，这样执行 <code>env.sh</code> 时，只会安装最基础的依赖。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>autotest_xxx
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="hll">├──<span class="w"> </span>BASICENV<span class="w">  </span><span class="c1"># 可以使用：touch BASICENV 创建文件</span>
-</span><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>autotest_xxx
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="hll">├──<span class="w"> </span>BASICENV<span class="w">  </span><span class="c1"># 可以使用：touch BASICENV 创建文件</span>
+</span><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├──<span class="w"> </span><span class="k">case</span><span class="w">    </span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>...
 </code></pre></div>
 <p>基础依赖仅安装最基础的几个包；</p>
 <p><code>裁剪依赖</code> 和 <code>新增依赖</code> 是不冲突的，可以同时使用。</p>
@@ -1790,8 +1798,8 @@
 <p>在开发过程中，如果你想直接部署在本机上：</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>bash<span class="w"> </span>env_dev.sh
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">---&gt; 100%</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>bash<span class="w"> </span>env_dev.sh
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">---&gt; 100%</span>
 </code></pre></div>
 
 </div>
@@ -1799,7 +1807,7 @@
 <p>这种方式安装的环境不会有 <code>youqu</code> 这个命令，用例执行都使用 <code>python3</code> 驱动即可，比如：</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>python3<span class="w"> </span>manage.py<span class="w"> </span>run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>python3<span class="w"> </span>manage.py<span class="w"> </span>run
 </code></pre></div>
 
 </div>
@@ -1813,7 +1821,7 @@
 <p>在框架根目录下命令行输入：</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>youqu-shell
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>youqu-shell
 </code></pre></div>
 
 </div>
@@ -1842,7 +1850,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月8日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年2月4日</span>
       
     
   </small>
