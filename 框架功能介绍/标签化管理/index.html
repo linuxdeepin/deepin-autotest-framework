@@ -2040,7 +2040,7 @@
 </table>
 <p><img alt="" src="https://pic.imgdb.cn/item/64f054ca661c6c8e54ff4f70.png" /></p>
 <h3 id="4">4. 设计思路<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<p>上面介绍 <code>Pytest</code> 框架提供的标签功能 mark，使用时需要为每一个用例添加标签装饰器，则操作复杂，可维护性差，其根本问题就是标签分散在每一条用例的装饰器上，难以集中维护；于是乎将所有标签使用 <code>csv</code> 文件进行集中管理，并通过 <code>Pytest</code> 的钩子函数，读取 <code>csv</code> 文件，动态添加标签到用中。</p>
+<p>上面介绍 <code>Pytest</code> 框架提供的标签功能 mark，使用时需要为每一个用例添加标签装饰器，则操作复杂，可维护性差，其根本问题就是标签分散在每一条用例的装饰器上，难以集中维护；于是乎将所有标签使用 <code>csv</code> 文件进行集中管理，并通过 <code>Pytest</code> 的钩子函数，读取 <code>csv</code> 文件，动态添加标签到用例中。</p>
 <h3 id="5-csv">5. CSV文件格式<a class="headerlink" href="#5-csv" title="Permanent link">&para;</a></h3>
 <p>此配置文件需要维护大量的标签数据，且要方便能使用 <code>Excel</code> 打开进行编辑查看，更重要的是我们不想引入三方依赖，<code>CSV</code> 文件几乎是唯一能满足所有的要求的文件格式。</p>
 
@@ -2049,7 +2049,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月18日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年3月4日</span>
       
     
   </small>
@@ -2064,7 +2064,7 @@
 
 <div class="md-source-date">
     <small>
-        作者: <span class='git-page-authors git-authors'><a href='mailto:huangmingqiang@uniontech.com'>mikigo</a></span>
+        作者: <span class='git-page-authors git-authors'><a href='mailto:huangmingqiang@uniontech.com'>mikigo</a>, <a href='mailto:waltermitty121906@gmail.com'>waltermitty</a></span>
     </small>
 </div>
 
