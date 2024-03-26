@@ -2207,6 +2207,11 @@
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="252dev">2.5.2（dev）<a class="headerlink" href="#252dev" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li><code>env.sh</code> 增加 <code>-p</code> 选项用于传递系统密码；<a href="https://github.com/mikigo">@mikigo</a></li>
+<li>自动输入 <code>log</code> 增加以 <code>Page</code> 结尾的 <code>class</code> 名称；<a href="https://github.com/mikigo">@mikigo</a></li>
+</ul>
 <p><strong>Fix</strong></p>
 <ul>
 <li>修复统计用例和方法数量功能在子项目为 <code>gitlab</code> 时，无法获取到 <code>commit</code> 详细记录的问题；<a href="https://github.com/mikigo">@mikigo</a></li>
@@ -2216,14 +2221,14 @@
 <p><strong>New</strong></p>
 <ul>
 <li><code>startapp</code> 初始化应用新增 2 条示例用例和一个方法；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/46">issues #46</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
-<li>新增子命令 <code>youqu manage.py git</code> 可用于拉取 git 仓库代码到 apps 目录下，支持统计分析仓库新增修复的用例或方法数量；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/40">issues #40</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
+<li>新增子命令 <code>youqu manage.py git</code> 可用于拉取 <code>git</code> 仓库代码到 <code>apps</code> 目录下，支持统计分析仓库新增修复的用例或方法数量；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/40">issues #40</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
 <li>更新<a href="https://linuxdeepin.github.io/deepin-autotest-framework/#_4">贡献者名单</a>；</li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
 <li>修复 <code>env.sh</code> 中 Python 虚拟环境的解释器版本没有动态获取系统中的 Python 版本的问题；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/pull/51">PR #51</a> by <a href="https://github.com/saifeiLee">@saifeiLee</a></li>
-<li>修复wayland环境下XAUTHORITY环境变量缺失问题；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/pull/55">PR #55</a> by <a href="https://github.com/DarkLii">@DarkLii</a></li>
-<li>assert_ocr_exist新增any匹配模式，即任意一个匹配成功则通过；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/pull/55">PR #55</a> by <a href="https://github.com/DarkLii">@DarkLii</a></li>
+<li>修复 <code>wayland</code> 环境下 <code>XAUTHORITY</code> 环境变量缺失问题；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/pull/55">PR #55</a> by <a href="https://github.com/DarkLii">@DarkLii</a></li>
+<li><code>assert_ocr_exist</code> 新增 <code>any</code> 匹配模式，即任意一个匹配成功则通过；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/pull/55">PR #55</a> by <a href="https://github.com/DarkLii">@DarkLii</a></li>
 </ul>
 <h2 id="25020240304">2.5.0（2024/03/04）<a class="headerlink" href="#25020240304" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
@@ -2233,15 +2238,15 @@
 <p><strong>Fix</strong></p>
 <ul>
 <li>修复 <code>startapp</code> 初始化工程中的错误；<a href="https://github.com/mikigo">@mikigo</a></li>
-<li>修复 skip 用例在收集阶段报错；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/44">issues #44</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
+<li>修复 <code>skip</code> 用例在收集阶段报错；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/44">issues #44</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
 </ul>
 <h2 id="24620240226">2.4.6（2024/02/26）<a class="headerlink" href="#24620240226" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
 <li>计算收集用例数量剔除 <code>skip</code> 和 <code>skipif</code> 的用例数量；<a href="https://github.com/mikigo">@mikigo</a></li>
 <li>报告新增显示当前目录；<a href="https://github.com/mikigo">@mikigo</a></li>
-<li>启用 Ruff 代码检查；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/38">issues #38</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
-<li>新增定制依赖功能支持应用库定义 deb 形式 Python 包；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/37">issues #37</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
+<li>启用 <code>Ruff</code> 代码检查；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/38">issues #38</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
+<li>新增定制依赖功能支持应用库定义 <code>deb</code> 形式 <code>Python</code> 包；<a href="https://github.com/linuxdeepin/deepin-autotest-framework/issues/37">issues #37</a> by <a href="https://github.com/mikigo">@mikigo</a></li>
 </ul>
 <p><strong>Fix</strong></p>
 <ul>
