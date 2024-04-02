@@ -1444,6 +1444,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#253dev" class="md-nav__link">
+    2.5.3（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#25220240327" class="md-nav__link">
     2.5.2（2024/03/27）
   </a>
@@ -1873,6 +1880,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#253dev" class="md-nav__link">
+    2.5.3（dev）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#25220240327" class="md-nav__link">
     2.5.2（2024/03/27）
   </a>
@@ -2206,6 +2220,22 @@
 
 
 <h1 id="_1">版本更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="253dev">2.5.3（dev）<a class="headerlink" href="#253dev" title="Permanent link">&para;</a></h2>
+<p><strong>New</strong></p>
+<ul>
+<li>
+<p>新增尝鲜版 <code>Web UI</code> 自动化测试功能：<a href="https://github.com/mikigo">@mikigo</a></p>
+<ul>
+<li>框架为 <code>Web UI</code>自动化测试提供一个 <code>fixture</code> 对象：<code>page</code>，它默认使用系统自带的浏览器进行测试，如果需要指定其他第三方的浏览器，提供配置项可以指定浏览器对应的路径。</li>
+<li>还提供一个 <code>fixture</code> 对象：<code>default_page</code>，它使用 <code>playwright</code> 最新的 <code>chromium</code> 浏览器进行测试。</li>
+<li>重写了 <code>playwright</code> 的断言语句，以保持统一的断言语句风格。</li>
+</ul>
+</li>
+<li>
+<p>新增远程控制功能，在用例步骤中操作远程机器，且远程操作方法实现了编辑器代码补全。<a href="https://github.com/mikigo">@mikigo</a></p>
+</li>
+<li>新增命令行入参或配置文件传入远程机器的 <code>user</code>、<code>ip</code>、<code>password</code> 信息，用例中通过框架提供的 <code>fixture</code> 对象：<code>slaves</code> 获取数据，供用例层使用。<a href="https://github.com/mikigo">@mikigo</a></li>
+</ul>
 <h2 id="25220240327">2.5.2（2024/03/27）<a class="headerlink" href="#25220240327" title="Permanent link">&para;</a></h2>
 <p><strong>New</strong></p>
 <ul>
