@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.B8l-RbIf.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"实践/命令行自动化测试/分层结构.md","filePath":"实践/命令行自动化测试/分层结构.md","lastUpdated":null}'),r={name:"实践/命令行自动化测试/分层结构.md"};function o(s,n,c,_,d,p){return a(),t("div")}const m=e(r,[["render",o]]);export{l as __pageData,m as default};
